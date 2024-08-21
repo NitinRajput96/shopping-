@@ -31,7 +31,7 @@ export const Home = () => {
           <div className=' w-full h-auto   '>
 
         
-          <div className='w-full  h-auto bg-gradient-to-r from-fuchsia-400 to-pink-200 shadow-2xl flex flex-col justify-evenly items-center sm:flex sm:flex-row sm:justify-evenly sm:items-center '>
+          <div className='w-full lg:h-full h-auto bg-gradient-to-r from-fuchsia-400 to-pink-200 shadow-2xl flex flex-col justify-evenly items-center sm:flex sm:flex-row sm:justify-evenly sm:items-center '>
                 <div className=' w-full full  sm:w-2/6 h-12  flex justify-center items-center'>
                          <input type="search" placeholder='Search Items' className=' w-5/6 sm:w-3/4 h-6 p-1 text-center text:sm rounded-md border-black shadow-md outline-none' onChange={(e)=>{setProduct(e.target.value)}} />
                </div>
