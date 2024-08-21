@@ -1,0 +1,25 @@
+{
+    "cate-male":[
+        { "male":" male"} ,
+        {"male":"male cloths"},
+        {"male" :"male watch"},
+       { "male":"male shoes"} 
+      
+    ],
+    "cate-female":[
+        {  "female":"female"},
+        {"female":"female cloths"},
+        {  "female" :"female watch"},
+        {  "female":"female shoes"}
+       
+    ],
+    "cate-electric":[
+        {"electric":"electric"},
+        { "electric":"Sound spaker"},
+        { "electric" :"light"},
+        {"electric":" Fan"}
+    ],
+    "cate-allProduct":[
+       {"allproduct":"all product"}
+    ]
+}
