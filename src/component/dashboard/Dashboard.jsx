@@ -17,7 +17,9 @@ export const Dashboard = () => {
       <SwiperSlide>
       <img src="/image/base-e-2.jpg" alt="" />
       </SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
+      <SwiperSlide>
+              <h1> nitin</h1>
+      </SwiperSlide>
       <SwiperSlide>Slide 4</SwiperSlide>
       ...
     </Swiper>
