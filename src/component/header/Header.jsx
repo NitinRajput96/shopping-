@@ -8,7 +8,7 @@ import { IoMdCart } from "react-icons/io";
 
 export const Header = () => {
     const [state,setState]=useState(false)
-    console.log(state);
+ 
     
   return (
    <>
@@ -26,6 +26,8 @@ export const Header = () => {
              </div>
              <button className=' sm:hidden' onClick={()=>setState(!state)}><FaList/></button>
     
+    
+       </div>
        {
             state?<>
             <div className='w-full font-bold bg-gradient-to-r from-fuchsia-600 to-pink-300 py-3 px-3 flex flex-col items-start '>
@@ -38,7 +40,6 @@ export const Header = () => {
              </div>
             </>:""
        }
-       </div>
    </>
   )
 }
