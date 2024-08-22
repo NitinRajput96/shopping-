@@ -15,9 +15,7 @@ function App(){
            
 
 
-          useEffect(()=>{
-
-          },[cate])
+          
             
                    
   return(
@@ -27,7 +25,7 @@ function App(){
       <BrowserRouter>
          <Header/>
          <Routes>
-             <Route path="/home/:footerCate" element={<Home/>} />
+             <Route path="/home" element={<Home/>} />
              <Route path="/about" element={<About/>} />
              <Route path='/view/:subcetegory' element={<View/>} />
              <Route path="/" element={<Dashboard/>} />

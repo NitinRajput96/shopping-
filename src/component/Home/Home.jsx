@@ -7,19 +7,16 @@ import stateCategroy from '../../context/StateContext';
 
 export const Home = () => {
     
-            const {footerCate}=useParams()
-            const reference=useRef()
+           
             const [cetegory,setCetegroy]=useState(Catego)
             const [state,setState]=useState(Data)
             const [product,setProduct]=useState()
-            const navigate_=useNavigate();
+            const {cate,setCate}=stateCategroy()
+            console.log(cate);
             
-           const getFooterCate=()=>{
-                 setProduct(footerCate)
-           }
+       
             
-           
-            
+         
             
             
             
@@ -32,8 +29,8 @@ export const Home = () => {
       
             useEffect(()=>{ 
                window.scroll(0,0)
-               getFooterCate()
-            },[sendComponent,footerCate])
+              
+            },[sendComponent])
 
             
   return (
@@ -61,7 +58,7 @@ export const Home = () => {
                 </div>
                
                  <div>  
-                      <select name="" id="" onChange={(e)=>{setProduct(e.target.value)}} className='  outline-none bg-fuchsia-800 w-full font-semibold text-sm md:px-5  text-white cursor-pointer text-center uppercase text-[12]'  >
+                      <select  onChange={(e)=>{setProduct(e.target.value)}} className='  outline-none bg-fuchsia-800 w-full font-semibold text-sm md:px-5  text-white cursor-pointer text-center uppercase text-[12]'  >
                         {
                           cetegory['cate-male'].map((item,i)=>
                                 <>
@@ -74,9 +71,7 @@ export const Home = () => {
 
 
                   <div>  
-                      <select name="" id="" onChange={(e)=>{setProduct(e.target.value)}} className='   outline-none bg-fuchsia-800 w-full text-sm font-semibold md:px-5  text-white cursor-pointer text-center uppercase text-[12] ' >
-                    
-
+                      <select  onChange={(e)=>{setProduct(e.target.value)}} className='   outline-none bg-fuchsia-800 w-full text-sm font-semibold md:px-5  text-white cursor-pointer text-center uppercase text-[12] ' >
                         {
                           cetegory['cate-female'].map((item,i)=>
                                 <>
@@ -89,7 +84,7 @@ export const Home = () => {
 
 
                   <div>  
-                      <select name="" id="" onChange={(e)=>setProduct(e.target.value)} className='  outline-none bg-fuchsia-800 w-full text-sm font-semibold md:px-5  text-white cursor-pointer text-center uppercase text-[12]'  >
+                      <select  onChange={(e)=>setProduct(e.target.value)} className='  outline-none bg-fuchsia-800 w-full text-sm font-semibold md:px-5  text-white cursor-pointer text-center uppercase text-[12]'  >
                     
                         {
                           cetegory['cate-electric'].map((item,i)=>

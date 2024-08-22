@@ -13,11 +13,7 @@ import { FaLinkedin } from "react-icons/fa";
 export const Footer = () => {
 
           const navigate_=useNavigate()
-          const footerCate=(footerCate)=>{
-                 navigate_(`/home/${footerCate}`)
-          }
          
-
   return (
     <>
         <div className=' w-full h-auto  bg-gradient-to-r from-fuchsia-600 to-pink-300 text-white p-3 text-center '>
@@ -30,9 +26,9 @@ export const Footer = () => {
              <div className='text-white shadow-2xl   w-full h-40  sm:w-96 md:w-72 lg:w-96 ' >
                      <h4 className='text-md font-bold text-black text-left pl-6 bg-gradient-to-r from-fuchsia-400 to-pink-100'>Category</h4>
                      <div className='w-full h-5/6 flex justify-evenly items-center'>
-                           <img  className=' w-16 h-16 rounded-full hover:border-2 hover:border-red-900' onClick={()=>{footerCate("male")}} src="/image/male-fff.webp" alt="" />
-                           <img  className=' w-16 h-16 rounded-full hover:border-2 hover:border-red-900' onClick={()=>{footerCate("electric")}} src="/image/mobileModel.jpeg" alt="" />
-                           <img  className=' w-16 h-16 rounded-full hover:border-2 hover:border-red-900' onClick={()=>{footerCate("female")}} src="/image/female-fff.avif" alt="" />
+                           <img  className=' w-16 h-16 rounded-full hover:border-2 hover:border-red-900'  src="/image/male-fff.webp" alt="" />
+                           <img  className=' w-16 h-16 rounded-full hover:border-2 hover:border-red-900'  src="/image/mobileModel.jpeg" alt="" />
+                           <img  className=' w-16 h-16 rounded-full hover:border-2 hover:border-red-900'  src="/image/female-fff.avif" alt="" />
                    </div>
                   </div>
 

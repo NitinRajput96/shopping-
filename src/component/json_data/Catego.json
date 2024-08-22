@@ -1,7 +1,6 @@
 {
     "cate-male":[
         { "male":" male"} ,
-        {"img":"/image/maleModel.jpg"},
         {"male":"male cloths"},
         {"male" :"male watch"},
        { "male":"male shoes"} 
@@ -9,7 +8,6 @@
     ],
     "cate-female":[
         {  "female":"female"},
-        {"img":"/image/femaleModel.jpeg"},
         {"female":"female cloths"},
         {  "female" :"female watch"},
         {  "female":"female shoes"}
@@ -17,7 +15,6 @@
     ],
     "cate-electric":[
         {"electric":"electric"},
-        {"img":"/image/mobileModel.jpeg"},
         { "electric":"Sound spaker"},
         { "electric" :"light"},
         {"electric":" Fan"}

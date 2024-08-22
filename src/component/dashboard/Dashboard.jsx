@@ -91,7 +91,7 @@ export const Dashboard = () => {
           {
                Catego['cate-al3'].map((item,i)=>
                     <div className=' w-20 h-20  md:w-36 md:h-36  rounded-full text-center' key={item.name}>
-                    <img className=' w-full h-full  md:w-36 md:h-36 shadow-2xl  rounded-full' onClick={()=>(setCate(item.name))} src={item.img} alt="" />
+                    <img className=' w-full h-full  md:w-36 md:h-36 shadow-2xl  rounded-full cursor-pointer  hover:scale-105 hover:border hover:border-pink-900 ' onClick={()=>(setCate(item.name))} src={item.img} alt="" />
                      <span className=' uppercase mt-2 font-bold'>{item.name}</span>
                     </div>
                )
