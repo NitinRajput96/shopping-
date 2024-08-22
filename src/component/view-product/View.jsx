@@ -38,7 +38,7 @@ export const View = () => {
          
   return (
    <>
-      <div className=' w-full h-screen bg-white flex justify-center flex-col items-center py-5'>
+      <div className=' w-full h-full bg-white flex justify-center flex-col items-center py-5'>
       {
         Data.ProductDetails.map((item,i)=>{
               return(item.subcetegory===useP?<>
