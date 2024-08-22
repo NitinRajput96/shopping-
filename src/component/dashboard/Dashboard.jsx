@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css/pagination';
@@ -6,8 +6,19 @@ import 'swiper/css';
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import Catego from '../json_data/Catego.json'
+import stateCategroy from '../../context/StateContext';
+
+
 
 export const Dashboard = () => {
+
+        const {cate,setCate}=stateCategroy()
+      
+        
+
+
+
+
   return (
    <>
       <section className=' lg:h-[85vh] h-[40vh] '>
@@ -79,8 +90,8 @@ export const Dashboard = () => {
 
           {
                Catego['cate-al3'].map((item,i)=>
-                    <div className=' w-20 h-20  md:w-36 md:h-36  rounded-full text-center'>
-                    <img className=' w-full h-full  md:w-36 md:h-36 shadow-2xl  rounded-full' src={item.img} alt="" />
+                    <div className=' w-20 h-20  md:w-36 md:h-36  rounded-full text-center' key={item.name}>
+                    <img className=' w-full h-full  md:w-36 md:h-36 shadow-2xl  rounded-full' onClick={()=>(setCate(item.name))} src={item.img} alt="" />
                      <span className=' uppercase mt-2 font-bold'>{item.name}</span>
                     </div>
                )

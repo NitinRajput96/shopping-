@@ -1,17 +1,27 @@
-import React, { useCallback, useEffect,useRef,useState } from 'react'
+import React, { useCallback, useContext, useEffect,useRef,useState } from 'react'
 import Data from '../json_data/Data.json';
 import Catego from '../json_data/Catego.json';
 import { useNavigate, useParams } from 'react-router-dom';
+import stateCategroy from '../../context/StateContext';
 
 
 export const Home = () => {
     
-            const {item}=useParams()
+            const {footerCate}=useParams()
             const reference=useRef()
             const [cetegory,setCetegroy]=useState(Catego)
             const [state,setState]=useState(Data)
             const [product,setProduct]=useState()
-            const navigate_=useNavigate()
+            const navigate_=useNavigate();
+            
+           const getFooterCate=()=>{
+                 setProduct(footerCate)
+           }
+            
+           
+            
+            
+            
             
            
 
@@ -22,8 +32,8 @@ export const Home = () => {
       
             useEffect(()=>{ 
                window.scroll(0,0)
-             
-            },[sendComponent])
+               getFooterCate()
+            },[sendComponent,footerCate])
 
             
   return (
