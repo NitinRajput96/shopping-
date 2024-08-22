@@ -16,7 +16,7 @@ export const Footer = () => {
 
   return (
     <>
-        <div className=' w-full h-auto  bg-gradient-to-r from-fuchsia-600 to-pink-300 text-white  pb-8 text-center '>
+        <div className=' w-full h-auto  bg-gradient-to-r from-fuchsia-600 to-pink-300 text-white p-5 text-center '>
                <div><span className=' text-xs font-bold text-black '>Copyright 2024 developed by Nitin Rajput</span></div>
              
 
@@ -24,7 +24,7 @@ export const Footer = () => {
              <div className='flex justify-center items-center flex-col gap-4 mb-5 h-auto md:flex md:flex-row md:gap-1 lg:gap-3 '>
              
              <div className='text-white shadow-2xl  w-5/6 h-40  sm:w-96 md:w-72 lg:w-96 ' >
-                     <h4 className='text-md font-bold text-black text-left pl-6 bg-gradient-to-r from-fuchsia-400 to-pink-100'>Cetegroy</h4>
+                     <h4 className='text-md font-bold text-black text-left pl-6 bg-gradient-to-r from-fuchsia-400 to-pink-100'>Category</h4>
                      <div className='w-full h-5/6 flex justify-evenly items-center'>
                            <img  className=' w-16 h-16 rounded-full hover:border-2 hover:border-red-900' src="/image/male-fff.webp" alt="" />
                            <img  className=' w-16 h-16 rounded-full hover:border-2 hover:border-red-900' src="/image/watch--f.webp" alt="" />

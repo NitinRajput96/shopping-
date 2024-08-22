@@ -12,7 +12,7 @@ export const Header = () => {
     
   return (
    <>
-       <div className=' w-full bg-gradient-to-r from-fuchsia-600 to-pink-300 h-12 text-black flex justify-between items-center px-5  md:px-20'>
+       <div className=' w-full bg-gradient-to-r from-fuchsia-600 to-pink-300 h-12 md:h- text-black flex justify-between items-center px-5  md:px-20'>
              <div className='font-serif font-bold  '>
                      Shopping 
              </div>
@@ -25,7 +25,7 @@ export const Header = () => {
                   
              </div>
              <button className=' sm:hidden' onClick={()=>setState(!state)}><FaList/></button>
-       </div>
+    
        {
             state?<>
             <div className='w-full font-bold bg-gradient-to-r from-fuchsia-600 to-pink-300 py-3 px-3 flex flex-col items-start '>
@@ -38,6 +38,7 @@ export const Header = () => {
              </div>
             </>:""
        }
+       </div>
    </>
   )
 }

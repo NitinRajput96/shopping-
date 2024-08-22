@@ -38,12 +38,12 @@ export const View = () => {
          
   return (
    <>
-      <div className=' w-full h-full bg-white flex justify-evenly flex-col items-center py-5'>
+      <div className=' w-full h-screen bg-white flex justify-center flex-col items-center py-5'>
       {
         Data.ProductDetails.map((item,i)=>{
               return(item.subcetegory===useP?<>
                      
-                      <div className=' w-5/6 sm:w-3/4 h-5/6 sm:flex sm:flex-row justify-evenly items-center shadow-2xl  bg-gradient-to-r from-fuchsia-400 to-pink-100' >
+                      <div className=' w-5/6 sm:w-3/4 h-4/6  sm:flex sm:flex-row justify-evenly items-center shadow-2xl  bg-gradient-to-r from-fuchsia-400 to-pink-100' >
                            <div className=' sm:w-2/4 flex justify-center items-center p-2'>
                             <img className=' w-5/6 h-72 sm:w-full sm:h-96 ' src={item.img} alt="" />
                            </div>
@@ -189,7 +189,7 @@ export const View = () => {
 
        {
         ceteData?<>
-        <div className=' w-5/6 sm:w-3/4 h-2/5  shadow-2xl bg-gradient-to-r from-fuchsia-400 to-pink-100 flex justify-evenly items-center flex-row  flex-wrap pt-1 mt-1 '>
+        <div className=' w-5/6 sm:w-3/4 h-40  shadow-2xl bg-gradient-to-r from-fuchsia-400 to-pink-100 flex justify-evenly items-center flex-row  flex-wrap pt-1 mt-1 '>
         <h4 className=' font-bold'>Products  Suggestions</h4>
         <div className=' w-full flex justify-evenly items-center flex-row  '>
         {
@@ -218,6 +218,7 @@ export const View = () => {
       
       
       </div>
+
    </>
   )
 }
