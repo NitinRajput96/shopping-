@@ -1,10 +1,12 @@
-import React, {  useCallback, useEffect,useState } from 'react'
+import React, {  useCallback, useContext, useEffect,useState } from 'react'
 import Data from '../json_data/Data.json';
 import Catego from '../json_data/Catego.json';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useCategory } from '../../context/createCont';
 import { addToCart } from '../../context/store/slice/slice';
 import { useDispatch } from 'react-redux';
+import toast, { Toaster } from 'react-hot-toast';
+
 
 
 
@@ -12,12 +14,15 @@ import { useDispatch } from 'react-redux';
 
 export const Home = () => {
     
-           const navigate_=useNavigate()
+            const navigate_=useNavigate()
             const [cetegory,setCetegroy]=useState(Catego)
             const [state,setState]=useState(Data)
             const {categ}=useCategory()
-            const [product,setProduct]=useState(categ)
+            const [product,setProduct]=useState()
             const dispatch = useDispatch();
+
+            
+            
 
 
           
@@ -29,6 +34,7 @@ export const Home = () => {
               
             const addtocart = (prod)=>{
               dispatch(addToCart(prod))
+              toast.success("Add to cart successfuly")
             }
 
 
@@ -36,11 +42,13 @@ export const Home = () => {
 
             useEffect(()=>{ 
                window.scroll(0,0)
-            },[sendComponent])
+             categ!=null?setProduct(categ):setProduct(product)
+            },[categ])
 
             
   return (
     <>
+      <Toaster/>
           <div className=' w-full h-full  '> 
 
         
