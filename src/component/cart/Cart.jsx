@@ -32,7 +32,7 @@ export const Cart = () => {
                  <div className=' w-full md:w-5/6 pl-7 h-8 text-left text-md md:text-lg font-semibold'>
                         Card items
                   </div>
-                  <div className=' w-full h-[380px] flex justify-center items-center rounded-md bg-gray-100 shadow-md flex-col z-20  overflow-y-auto  '>      
+                  <div className=' w-5/6 h-[380px] flex justify-center items-center rounded-md bg-gray-100 shadow-md flex-col z-20  overflow-y-auto  '>      
                     {
                       card.cartItems===0?<>
                           <h1 className=' text-lg font-bold'>Cpntinue to shopping </h1>
