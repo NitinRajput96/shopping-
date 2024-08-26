@@ -1,41 +1,47 @@
-import React, { useCallback, useContext, useEffect,useRef,useState } from 'react'
+import React, {  useCallback, useEffect,useState } from 'react'
 import Data from '../json_data/Data.json';
 import Catego from '../json_data/Catego.json';
-import { useNavigate, useParams } from 'react-router-dom';
-import stateCategroy from '../../context/StateContext';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useCategory } from '../../context/createCont';
+import { addToCart } from '../../context/store/slice/slice';
+import { useDispatch } from 'react-redux';
+
+
+
 
 
 export const Home = () => {
     
-           
+           const navigate_=useNavigate()
             const [cetegory,setCetegroy]=useState(Catego)
             const [state,setState]=useState(Data)
-            const [product,setProduct]=useState()
-            const {cate,setCate}=stateCategroy()
-            console.log(cate);
-            
-       
-            
-         
-            
-            
-            
-           
+            const {categ}=useCategory()
+            const [product,setProduct]=useState(categ)
+            const dispatch = useDispatch();
+
+
+          
+
 
             const sendComponent=(subcetegory)=>{
                   navigate_(`/view/${subcetegory}`)    
             }
               
+            const addtocart = (prod)=>{
+              dispatch(addToCart(prod))
+            }
+
+
       
+
             useEffect(()=>{ 
                window.scroll(0,0)
-              
             },[sendComponent])
 
             
   return (
     <>
-          <div className=' w-full h-auto   '>
+          <div className=' w-full h-full  '> 
 
         
           <div className='w-full lg:h-full h-auto bg-gradient-to-r from-fuchsia-400 to-pink-200 shadow-2xl flex flex-col justify-evenly items-center sm:flex sm:flex-row sm:justify-evenly sm:items-center '>
@@ -99,21 +105,21 @@ export const Home = () => {
 
           </div>
 
-
-
           <div className='w-full h-auto bg-white'>
-             <div className=' w-full h-fit flex items-center  flex-wrap justify-evenly flex-col sm:flex-row sm:p-2 border-black '>    
+             <div className=' w-full h-fit flex items-center  flex-wrap justify-evenly flex-col sm:flex-row sm:p-2 border-black '>  
 
-              {
-               product?
-                 <>
+             
+            
+                  {
+                    product?
+                     <>
                   {
                         state.ProductDetails.filter((item)=>{
-                          return item.cetegory===product?item:""})
-                      .map((item,i)=>{
+                            return item.cetegory===product?item:""
+                        }).map((item,i)=>{
                       return(
                         <>
-                        <div className=' w-5/6 h-2/6   sm:w-4/6 md:w-2/5 sm:flex sm:flex-row  shadow-xl rounded-2xl border-grey-500 bg-gradient-to-r from-fuchsia-400 to-pink-100 m-2 flex items-center justify-evenly flex-col hover:scale-105 '  key={item.id}>
+                        <div className=' w-5/6 h-2/6   sm:w-4/6 md:w-2/5 sm:flex sm:flex-row  shadow-xl rounded-2xl border-grey-500 bg-gradient-to-r from-fuchsia-400 to-pink-100 m-2 flex items-center justify-evenly flex-col  '  key={item.id}>
                             <div className=' w-full  '>
                                 <img className=' rounded-2xl w-full p-1 h-56 ' src={item.img} alt="" />
                             </div>
@@ -151,23 +157,25 @@ export const Home = () => {
                             
                           <div className='flex justify-between items-center w-full px-2'>
                             <button className=' text-white text-[11px] font-semibold bg-fuchsia-700 rounded-md p-1 w-12 ' onClick={()=>{sendComponent(item.subcetegory)}} >View</button>
-                            <button className=' text-white text-[11px] font-semibold bg-fuchsia-700 p-1 w-28 sm:w-20 rounded-md '>Add to cart</button>
+                            <button className=' text-white text-[11px] font-semibold bg-fuchsia-700 p-1 w-28 sm:w-20 rounded-md ' 
+                               onClick={()=>{addtocart(item)}}
+                            >Add to cart</button>
                             </div>
                           
                           </div>
                     </div>
                         </>
                       )
-                    })
-                 }
-
-                  {
+                       })
+                    }
+             
+                   {
                     state.ProductDetails.filter((item)=>{
                       return item.allproduct1===product?item:""
                     }).map((item,i)=>{
                       return(
                         <>
-                        <div className=' w-5/6 h-2/5   sm:w-4/6 md:w-2/5 sm:flex sm:flex-row  shadow-xl rounded-2xl border-grey-500 bg-gradient-to-r from-fuchsia-400 to-pink-100 m-2 flex items-center justify-evenly flex-col hover:scale-105  '  key={item.id}>
+                        <div className=' w-5/6 h-2/5   sm:w-4/6 md:w-2/5 sm:flex sm:flex-row  shadow-xl rounded-2xl border-grey-500 bg-gradient-to-r from-fuchsia-400 to-pink-100 m-2 flex items-center justify-evenly flex-col '  key={item.id}>
                             <div className=' w-full  '>
                                 <img className=' rounded-2xl w-full p-1 h-56 ' src={item.img} alt="" />
                             </div>
@@ -205,7 +213,9 @@ export const Home = () => {
                             
                           <div className='flex justify-between items-center w-full px-2'>
                                <button  className=' text-white text-[11px] font-semibold bg-fuchsia-700 to-pink-700 rounded-md p-1 w-12 hover:bg-black hover:text-white ' onClick={()=>{sendComponent(item.subcetegory)}} >View</button>
-                                <button className=' text-white text-[11px] font-semibold bg-fuchsia-700 to-pink-700 p-1 w-28 sm:w-20 rounded-md '>Add to cart</button>
+                                <button className=' text-white text-[11px] font-semibold bg-fuchsia-700 to-pink-700 p-1 w-28 sm:w-20 rounded-md '   
+                                   onClick={()=>{addtocart(item)}}
+                                >Add to cart</button>
                             </div>
                           </div>
                     </div>
@@ -214,15 +224,13 @@ export const Home = () => {
                     })
                   }
 
-
-
                   {
                     state.ProductDetails.filter((item)=>{
                       return item.Department===product?item:""
                     }).map((item,i)=>{
                       return(
                         <>
-                        <div className=' w-5/6 h-2/5   sm:w-4/6 md:w-2/5 sm:flex sm:flex-row  shadow-xl rounded-2xl border-grey-500 bg-gradient-to-r from-fuchsia-400 to-pink-100 m-2 flex items-center justify-evenly flex-col hover:scale-105 '  key={item.id}>
+                        <div className=' w-5/6 h-2/5   sm:w-4/6 md:w-2/5 sm:flex sm:flex-row  shadow-xl rounded-2xl border-grey-500 bg-gradient-to-r from-fuchsia-400 to-pink-100 m-2 flex items-center justify-evenly flex-col '  key={item.id}>
                             <div className=' w-full  '>
                                 <img className=' rounded-2xl w-full p-1 h-56 ' src={item.img} alt="" />
                             </div>
@@ -260,7 +268,7 @@ export const Home = () => {
                             
                           <div className='flex justify-between items-center w-full px-2'>
                             <button className=' text-white text-[11px] font-semibold bg-fuchsia-700 rounded-md p-1 w-12 ' onClick={()=>{sendComponent(item.subcetegory)}} >View</button>
-                            <button className=' text-white text-[11px] font-semibold bg-fuchsia-700  p-1 w-28 sm:w-20 rounded-md '>Add to cart</button>
+                            <button className=' text-white text-[11px] font-semibold bg-fuchsia-700  p-1 w-28 sm:w-20 rounded-md '    onClick={()=>{addtocart(item)}}  >Add to cart</button>
                             </div>
                           
                           </div>
@@ -268,16 +276,18 @@ export const Home = () => {
                         </>
                       )
                     })
-                  }
-                    
-                  </>
-                :<div className='w-full h-auto bg-white'>
+                  } 
+                     
+                  
+                   
+                </>:
+                    <div className='w-full h-auto bg-white'>
                 <div className=' w-full  h-fit flex items-center  flex-wrap justify-evenly flex-col sm:flex-row sm:p-2 border-black '>
                 {
                   state && state.ProductDetails.map((item,i)=>{
                       return(
                         <>
-                        <div className=' w-5/6 h-2/5   sm:w-4/6 md:w-2/5  sm:flex sm:justify-evenly  sm:flex-row shadow-2xl rounded-2xl border-grey-500 bg-gradient-to-r from-fuchsia-400 to-pink-100 m-3 flex items-center justify-evenly flex-col hover:scale-105 hover:ease-linear hover:'  key={item.id}  >
+                        <div className=' w-5/6 h-2/5   sm:w-4/6 md:w-2/5  sm:flex sm:justify-evenly  sm:flex-row shadow-2xl rounded-2xl border-grey-500 bg-gradient-to-r from-fuchsia-400 to-pink-100 m-3 flex items-center justify-evenly flex-col'  key={item.id}  >
                             <div className=' w-full  '>
                                 <img className=' rounded-2xl w-full p-1 h-56 ' src={item.img} alt="" />
                             </div>
@@ -315,7 +325,10 @@ export const Home = () => {
                             
                           <div className='flex justify-between items-center w-full px-2'>
                             <button className=' text-white text-[11px] font-semibold bg-fuchsia-600  rounded-md p-1 w-12 ' onClick={()=>{sendComponent(item.subcetegory)}} >View</button>
-                            <button className=' text-white text-[11px] font-semibold bg-fuchsia-600 p-1 w-28 sm:w-20 rounded-md '>Add to cart</button>
+                            <button className=' text-white text-[11px] font-semibold bg-fuchsia-600 p-1 w-28 sm:w-20 rounded-md hover:bg-black hover:text-white'   
+                            onClick={()=>{addtocart(item)}}
+                            >Add to cart</button>
+
                             </div>
                           
                           </div>
@@ -324,14 +337,12 @@ export const Home = () => {
                       )
                   })
                 }
+                
                 </div>
-              </div>
+                    </div>
               }
          </div>
        </div>
-          
-          
-          
           
           </div>
     </>

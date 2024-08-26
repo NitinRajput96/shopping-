@@ -3,6 +3,11 @@ import React, { useCallback, useEffect, useState }  from 'react'
 import Data from '../json_data/Data.json';
 import { FaEye } from "react-icons/fa";
 import { Link, useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../context/store/slice/slice';
+
+
+
 
 
 export const View = () => {
@@ -11,6 +16,8 @@ export const View = () => {
          const {subcetegory}=useParams()
          const [useP,setUsep]=useState(subcetegory)
          const  [ceteData,setCeteData]=useState();
+         const dispatch=useDispatch();
+        
         
 
          const getCetegory=()=>{
@@ -21,7 +28,11 @@ export const View = () => {
                setUsep(data);
          }
 
-         
+      
+              
+         const addtocart = (prod)=>{
+          dispatch(addToCart(prod))
+        }
 
         
          
@@ -38,12 +49,12 @@ export const View = () => {
          
   return (
    <>
-      <div className=' w-full h-full bg-white flex justify-center flex-col items-center px-2 py-5'>
+      <div className=' w-full h-3/5 sm:h-screen bg-white flex justify-center flex-col items-center px-1 py-1'>
       {
         Data.ProductDetails.map((item,i)=>{
               return(item.subcetegory===useP?<>
                      
-                      <div className=' w-full sm:w-3/4 h-4/6  sm:flex sm:flex-row justify-evenly items-center shadow-2xl  bg-gradient-to-r from-fuchsia-400 to-pink-100' >
+                      <div className=' w-full sm:w-3/4 h-3/5    sm:flex sm:flex-row justify-evenly items-center shadow-2xl  bg-gradient-to-r from-fuchsia-400 to-pink-100' key={item.id} >
                            <div className=' sm:w-2/4 flex justify-center items-center p-2'>
                             <img className=' w-5/6 h-72 sm:w-full sm:h-96 ' src={item.img} alt="" />
                            </div>
@@ -174,7 +185,7 @@ export const View = () => {
                                   </div>
                                
                                   <div className=' w-full h-20 flex justify-evenly items-center  sm:flex sm:justify-between sm:px-8'>
-                                    <button className=' text-white text-[11px] font-semibold bg-fuchsia-700 sm:p-1 md:p-2 p-2 w-20  sm:w-20 rounded-md '>Add to cart</button>
+                                    <button className=' text-white text-[11px] font-semibold bg-fuchsia-700 sm:p-1 md:p-2 p-2 w-20  sm:w-20 rounded-md '    onClick={()=>{addtocart(item)}}  >Add to cart</button>
                                      <Link to="/home" className=' text-white text-center text-[11px] font-semibold bg-fuchsia-700 p-2 sm:p-1 md:p-2  w-20 sm:w-20 rounded-md '>Shoping</Link>
                                  </div>
                                 
@@ -196,7 +207,7 @@ export const View = () => {
                      Data.ProductDetails.map((item)=>{
                         return (
                                item.cetegory===ceteData?<>
-                                         <div className='flex justify-evenly items-center flex-col rounded-full w-26 h-26 p-2 sm:w-28 sm:h-28 '>
+                                         <div className='flex justify-evenly items-center flex-col rounded-full w-26 h-26 p-2 sm:w-28 sm:h-28 ' key={item.id}>
                                               <img onClick={()=>{nestdeData(item.subcetegory)}} className=' w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full hover:border-red-900  hover:border-2 ' src={item.img} alt="" />
                                               <span className=' text-xs font-semibold'>{item.Product.substring(0,10)}</span>
                                          </div>

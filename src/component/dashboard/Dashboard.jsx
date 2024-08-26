@@ -1,24 +1,25 @@
 import React, { useContext } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import {  Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css/pagination';
 import 'swiper/css';
 import { FaLongArrowAltRight } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link,  useNavigate } from 'react-router-dom';
 import Catego from '../json_data/Catego.json'
-import stateCategroy from '../../context/StateContext';
+import { useCategory } from '../../context/createCont';
+
 
 
 
 export const Dashboard = () => {
+          const {setCateg}=useCategory();
+          const navigate=useNavigate()
 
-        const {cate,setCate}=stateCategroy()
-      
-        
-
-
-
-
+          const sendProd=(item)=>{
+               setCateg(item)
+               navigate("/home")
+            }
+     
   return (
    <>
       <section className=' lg:h-[85vh] h-[40vh] '>
@@ -91,8 +92,9 @@ export const Dashboard = () => {
           {
                Catego['cate-al3'].map((item,i)=>
                     <div className=' w-20 h-20  md:w-36 md:h-36  rounded-full text-center' key={item.name}>
-                    <img className=' w-full h-full  md:w-36 md:h-36 shadow-2xl  rounded-full cursor-pointer  hover:scale-105 hover:border hover:border-pink-900 ' onClick={()=>(setCate(item.name))} src={item.img} alt="" />
-                     <span className=' uppercase mt-2 font-bold'>{item.name}</span>
+                     <img  onClick={()=>{sendProd(item.name)}} className=' w-full h-full  md:w-36 md:h-36 shadow-2xl  rounded-full cursor-pointer  hover:scale-105 hover:border hover:border-pink-900 '  src={item.img} alt="" />
+ 
+                      <span className=' uppercase mt-2 font-bold'>{item.name}</span>
                     </div>
                )
           
