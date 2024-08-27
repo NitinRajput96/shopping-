@@ -58,7 +58,7 @@ export const View = () => {
         Data.ProductDetails.map((item,i)=>{
               return(item.subcetegory===useP?<>
                      
-                      <div className=' w-full sm:w-3/4 h-3/5  sm:h-full  sm:flex sm:flex-row justify-evenly items-center shadow-2xl  bg-gradient-to-r from-fuchsia-400 to-pink-100' key={item.id} >
+                      <div className=' w-full sm:w-3/4 h-3/5  sm:h-full  sm:flex sm:flex-row justify-evenly items-center shadow-xl ' key={item.id} >
                            <div className=' sm:w-2/4 flex justify-center items-center p-2'>
                             <img className=' w-5/6 h-72 sm:w-full sm:h-80 ' src={item.img} alt="" />
                            </div>
@@ -289,9 +289,9 @@ export const View = () => {
 
                                   </div>
                                
-                                  <div className=' w-full h-20 flex justify-evenly items-center  sm:flex sm:justify-between sm:px-8'>
-                                     <Link to="/home" className=' text-white text-center text-[11px] font-semibold bg-fuchsia-700 p-2 sm:p-1 md:p-2  w-20 sm:w-20 rounded-md '>Shoping</Link>
-                                     <button className=' text-white text-[11px] font-semibold bg-fuchsia-700 sm:p-1 md:p-2 p-2 w-20  sm:w-20 rounded-md '    onClick={()=>{addtocart(item)}}  >Add to cart</button>
+                                  <div className=' w-full h-20 flex  justify-between max-[400px]:px-10 items-center  sm:flex sm:justify-between sm:px-8'>
+                                     <Link to="/home" className=' text-purple-950 text-center hover:border hover:border-fuchsia-400 hover:bg-fuchsia-300 shadow-md  bg-fuchsia-200  border-purple-950 text-[14px] font-semibold  p-1 sm:p-1 md:p-1  w-20 sm:w-20 rounded-md '>Shoping</Link>
+                                     <button className=' text-purple-950 hover:border hover:border-fuchsia-400 hover:bg-fuchsia-300 bg-fuchsia-200 shadow-md text-[14px]  font-semibold  sm:p-1 md:p-1 p-1 w-24  sm:w-24 rounded-md  '    onClick={()=>{addtocart(item)}}  >Add to cart</button>
 
                                  </div>
                                 
@@ -306,7 +306,7 @@ export const View = () => {
 
        {
         ceteData?<>
-        <div className=' w-full sm:w-3/4 h-36  shadow-2xl bg-gradient-to-r from-fuchsia-400 to-pink-100 flex justify-evenly items-center flex-row  flex-wrap pt-1 mt-1 '>
+        <div className=' w-full sm:w-3/4 h-36  shadow-2xl  flex justify-evenly items-center flex-row  flex-wrap pt-1  md:mt-5 '>
         <h4 className=' font-bold'>Products  Suggestions</h4>
         <div className=' w-full flex justify-evenly items-center flex-row  '>
         {
@@ -314,7 +314,7 @@ export const View = () => {
                         return (
                                item.cetegory===ceteData?<>
                                          <div className='flex justify-evenly items-center flex-col rounded-full w-26 h-26 p-2 sm:w-28 sm:h-28 ' key={item.id}>
-                                              <img onClick={()=>{nestdeData(item.subcetegory)}} className=' w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full hover:border-red-900  hover:border-2 ' src={item.img} alt="" />
+                                              <img onClick={()=>{nestdeData(item.subcetegory)}} className=' w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full hover:border-fuchsia-300  hover:border-2 ' src={item.img} alt="" />
                                               <span className=' text-xs font-semibold'>{item.Product.substring(0,10)}</span>
                                          </div>
                                          

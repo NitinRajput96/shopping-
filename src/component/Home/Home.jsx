@@ -52,9 +52,9 @@ export const Home = () => {
           <div className=' w-full h-full  '> 
 
         
-          <div className='w-full lg:h-full h-auto bg-gradient-to-r from-fuchsia-400 to-pink-200 shadow-2xl flex flex-col justify-evenly items-center sm:flex sm:flex-row sm:justify-evenly sm:items-center '>
+          <div className='w-full lg:h-full h-auto  shadow-2xl flex flex-col justify-evenly items-center sm:flex sm:flex-row sm:justify-evenly sm:items-center '>
                 <div className=' w-full full  sm:w-2/6 h-12  flex justify-center items-center'>
-                         <input type="search" placeholder='Search Items' className=' w-5/6 sm:w-3/4 h-6 p-1 text-center text:sm rounded-md border-black shadow-md outline-none' onChange={(e)=>{setProduct(e.target.value)}} />
+                         <input type="search" placeholder='Search Items' className=' w-5/6 sm:w-3/4 h-8 border border-fuchsia-300 p-1 text-center text:sm rounded-md border-black shadow-md outline-none' onChange={(e)=>{setProduct(e.target.value)}} />
                </div>
 
 
@@ -65,18 +65,18 @@ export const Home = () => {
                       {
                         cetegory['cate-allProduct'].map((item,i)=> 
                                 <>
-                                  <button className='bg-fuchsia-800 w-8  font-semibold text-[14px] cursor-pointer text-white' value={item.allproduct} onClick={(e)=>setProduct(e.target.value)} >All </button>
+                                  <button className='bg-fuchsia-200 text-purple-950 w-10  h-8 font-semibold text-[14px] cursor-pointer ' value={item.allproduct} onClick={(e)=>setProduct(e.target.value)} >All </button>
                                </>
                                )
                      } 
                 </div>
                
                  <div>  
-                      <select  onChange={(e)=>{setProduct(e.target.value)}} className='  outline-none bg-fuchsia-800 w-full font-semibold text-sm md:px-5  text-white cursor-pointer text-center uppercase text-[12]'  >
+                      <select  onChange={(e)=>{setProduct(e.target.value)}} className=' h-8  outline-none bg-fuchsia-200 text-purple-950  w-full font-semibold text-sm md:px-5  cursor-pointer text-center uppercase text-[12]'  >
                         {
                           cetegory['cate-male'].map((item,i)=>
                                 <>
-                               <option value={item.electric}  className=' text-left text-sm uppercase text-white '>{item.male}</option>
+                               <option value={item.electric}  className=' text-left text-sm uppercase text-purple-950'>{item.male}</option>
                                </>
                               )
                         }
@@ -85,11 +85,11 @@ export const Home = () => {
 
 
                   <div>  
-                      <select  onChange={(e)=>{setProduct(e.target.value)}} className='   outline-none bg-fuchsia-800 w-full text-sm font-semibold md:px-5  text-white cursor-pointer text-center uppercase text-[12] ' >
+                      <select  onChange={(e)=>{setProduct(e.target.value)}} className=' h-8   outline-none bg-fuchsia-200 text-purple-950  w-full text-sm font-semibold md:px-5   cursor-pointer text-center uppercase text-[12] ' >
                         {
                           cetegory['cate-female'].map((item,i)=>
                                 <>
-                               <option value={item.electric} className='text-left text-sm uppercase text-white '>{item.female}</option>
+                               <option value={item.electric} className='text-left text-sm uppercase text-purple-950 '>{item.female}</option>
                                </>
                               )
                         }
@@ -98,12 +98,12 @@ export const Home = () => {
 
 
                   <div>  
-                      <select  onChange={(e)=>setProduct(e.target.value)} className='  outline-none bg-fuchsia-800 w-full text-sm font-semibold md:px-5  text-white cursor-pointer text-center uppercase text-[12]'  >
+                      <select  onChange={(e)=>setProduct(e.target.value)} className=' h-8  outline-none bg-fuchsia-200 text-purple-950  w-full text-sm font-semibold md:px-5   cursor-pointer text-center uppercase text-[12]'  >
                     
                         {
                           cetegory['cate-electric'].map((item,i)=>
                                 <>
-                               <option value={item.electric} className=' text-left text-sm uppercase text-white'>{item.electric}</option>
+                               <option value={item.electric} className=' text-left text-sm uppercase text-purple-950'>{item.electric}</option>
                                </>
                               )
                         }
@@ -111,12 +111,12 @@ export const Home = () => {
                   </div>
 
                   <div>  
-                      <select  onChange={(e)=>setProduct(e.target.value)} className='  outline-none bg-fuchsia-800 w-full text-sm font-semibold md:px-5  text-white cursor-pointer text-center uppercase text-[12]'  >
+                      <select  onChange={(e)=>setProduct(e.target.value)} className='  h-8 outline-none bg-fuchsia-200 text-purple-950  w-full text-sm font-semibold md:px-5  cursor-pointer text-center uppercase text-[12]'  >
                     
                         {
                           cetegory['cate-mobile'].map((item,i)=>
                                 <>
-                               <option value={item.electric} className=' text-left text-sm uppercase text-white'>{item.mobile}</option>
+                               <option value={item.electric} className=' text-left text-sm uppercase text-purple-950'>{item.mobile}</option>
                                </>
                               )
                         }
@@ -427,13 +427,13 @@ export const Home = () => {
                   
                    
                 </>:
-                    <div className='w-full h-auto bg-white'>
-                <div className=' w-full  h-fit flex items-center  flex-wrap justify-evenly flex-col sm:flex-row sm:p-2 border-black '>
+                    <div className='w-full h-auto  bg-gray-100'>
+                <div className=' w-full  h-fit flex items-center  flex-wrap justify-evenly flex-col sm:flex-row sm:p-2  '>
                 {
                   state && state.ProductDetails.map((item,i)=>{
                       return(
                         <>
-                        <div className=' w-5/6 h-2/5   sm:w-4/6 md:w-2/5  sm:flex sm:justify-evenly  sm:flex-row shadow-2xl rounded-2xl border-grey-500 bg-gradient-to-r from-fuchsia-400 to-pink-100 m-3 flex items-center justify-evenly flex-col'  key={item.id}  >
+                        <div className=' w-5/6 h-2/5   sm:w-4/6 md:w-2/5  sm:flex sm:justify-evenly  bg-white sm:flex-row shadow-2xl    m-3 flex items-center justify-evenly flex-col'  key={item.id}  >
                             <div className=' w-full  '>
                                 <img className=' rounded-2xl w-full p-1 h-56 ' src={item.img} alt="" />
                             </div>
