@@ -22,7 +22,7 @@ export const Header = () => {
              <div className='font-serif font-bold  '>
                      Shopping 
              </div>
-             <div className='w-52 sm:flex justify-evenly items-center sm:w-80 hidden sm:block font-bold'>
+             <div className='w-52 sm:flex justify-evenly items-center sm:w-96 hidden sm:block font-bold'>
                    <Link to="cart" className=' text-2xl      hover:bg-fuchsia-400 hover:text-black p-2 hover:rounded-md flex justify-center items-center'><IoMdCart/><span className='text-[18px] font-sans font font-semibold'>{quantity.cartItems.length}</span> </Link>
                    <Link to="/home" className=' text-md   hover:bg-fuchsia-400 hover:text-black p-2 md:text-md hover:rounded-md'>Shop</Link>
                    <Link to="/" className=' text-md  hover:bg-fuchsia-400 hover:text-black p-2 md:text-md hover:rounded-md'>Home</Link>

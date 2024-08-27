@@ -17,8 +17,19 @@
         {"electric":"electric"},
         { "electric":"Sound spaker"},
         { "electric" :"light"},
-        {"electric":" Fan"}
+        {"electric":"fan"}
     ],
+    "cate-mobile":[
+        {"mobile":"mobile"},
+        { "mobile":"i phone"},
+        { "mobile" :"android"},
+        {"mobile":"keypad"}
+    ],
+
+
+
+
+
     "cate-allProduct":[
        {"allproduct":"all product"}
     ],

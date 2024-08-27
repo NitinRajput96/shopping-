@@ -29,7 +29,7 @@ export const Footer = () => {
            
   return (
     <>
-        <div className=' w-full h-auto  mt-24 bg-gradient-to-r from-fuchsia-600 to-pink-300 text-white p-3 text-center '>
+        <div className=' w-full h-auto  mt-2 bg-gradient-to-r from-fuchsia-600 to-pink-300 text-white p-3 text-center '>
                <div><span className=' text-xs font-bold text-black '>Copyright 2024 developed by Nitin Rajput</span></div>
              
 

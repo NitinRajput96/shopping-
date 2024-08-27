@@ -5,6 +5,8 @@ import { FaEye } from "react-icons/fa";
 import { Link, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../context/store/slice/slice';
+import toast, { Toaster } from 'react-hot-toast';
+
 
 
 
@@ -32,6 +34,7 @@ export const View = () => {
               
          const addtocart = (prod)=>{
           dispatch(addToCart(prod))
+          toast.success("Add to cart Successfuly")
         }
 
         
@@ -49,17 +52,18 @@ export const View = () => {
          
   return (
    <>
-      <div className=' w-full h-3/5 sm:h-screen bg-white flex justify-center flex-col items-center px-1 py-1'>
+   <Toaster/>
+      <div className=' w-full h-3/5 sm:h-full bg-white flex justify-center flex-col items-center px-1 py-1'>
       {
         Data.ProductDetails.map((item,i)=>{
               return(item.subcetegory===useP?<>
                      
-                      <div className=' w-full sm:w-3/4 h-3/5    sm:flex sm:flex-row justify-evenly items-center shadow-2xl  bg-gradient-to-r from-fuchsia-400 to-pink-100' key={item.id} >
+                      <div className=' w-full sm:w-3/4 h-3/5  sm:h-full  sm:flex sm:flex-row justify-evenly items-center shadow-2xl  bg-gradient-to-r from-fuchsia-400 to-pink-100' key={item.id} >
                            <div className=' sm:w-2/4 flex justify-center items-center p-2'>
-                            <img className=' w-5/6 h-72 sm:w-full sm:h-96 ' src={item.img} alt="" />
+                            <img className=' w-5/6 h-72 sm:w-full sm:h-80 ' src={item.img} alt="" />
                            </div>
                            <div className=' sm:w-2/4 sm:h-96 text-black flex justify-evenly items-center flex-col text-md mt-3 sm:m-0 '>
-                           <h1 className=' w-5/6 text-lg font-semibold'>{item.Product}</h1>
+                           <h1 className=' w-5/6 text-lg font-semibold'>{item.Product.substring(0,120)}</h1>
                                   <div className=' w-full px-1 h-auto'>
                                   {
                                  item.Rating?<>
@@ -98,6 +102,14 @@ export const View = () => {
                                  <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
                                         <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Color</th>
                                           <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.color}</p>
+                                 </div>
+                                 </>:""
+                                }
+                                {
+                                 item.Colour?<>
+                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Color</th>
+                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.Colour}</p>
                                  </div>
                                  </>:""
                                 }
@@ -182,11 +194,105 @@ export const View = () => {
                                  </div>
                                  </>:""
                                 }
+                                {
+                                 item.Brand?<>
+                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Brand</th>
+                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.Brand}</p>
+                                 </div>
+                                 </>:""
+                                }
+                                {
+                                 item['CPU Model']?<>
+                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>CPU Model</th>
+                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item['CPU Model']}</p>
+                                 </div>
+                                 </>:""
+                                }
+                                {
+                                 item['Closure type']?<>
+                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Closure type</th>
+                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Closure type"]}</p>
+                                 </div>
+                                 </>:""
+                                }
+                                {
+                                 item['Connectivity Technology']?<>
+                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Connectivity Technology</th>
+                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Connectivity Technology"]}</p>
+                                 </div>
+                                 </>:""
+                                }
+                                {
+                                 item['Electric fan design']?<>
+                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Electric fan design</th>
+                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Electric fan design"]}</p>
+                                 </div>
+                                 </>:""
+                                }
+                                {
+                                 item['Heel type']?<>
+                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Heel type</th>
+                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Heel type"]}</p>
+                                 </div>
+                                 </>:""
+                                }
+                                {
+                                 item['Frequency Response']?<>
+                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Frequency Response</th>
+                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Frequency Response"]}</p>
+                                 </div>
+                                 </>:""
+                                }
+                                {
+                                 item['Indoor/Outdoor Usagen']?<>
+                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Indoor/Outdoor Usagen</th>
+                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Indoor/Outdoor Usagen"]}</p>
+                                 </div>
+                                 </>:""
+                                }
+                                {
+                                 item['Light Source Type']?<>
+                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Light Source Type</th>
+                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Light Source Type"]}</p>
+                                 </div>
+                                 </>:""
+                                }
+                                {
+                                 item['Memory Storage Capacity']?<>
+                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Memory Storage Capacity</th>
+                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Memory Storage Capacity"]}</p>
+                                 </div>
+                                 </>:""
+                                }
+                                {
+                                 item['Model Name']?<>
+                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Model Name</th>
+                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Model Name"]}</p>
+                                 </div>
+                                 </>:""
+                                }
+
+
+
+
+
                                   </div>
                                
                                   <div className=' w-full h-20 flex justify-evenly items-center  sm:flex sm:justify-between sm:px-8'>
-                                    <button className=' text-white text-[11px] font-semibold bg-fuchsia-700 sm:p-1 md:p-2 p-2 w-20  sm:w-20 rounded-md '    onClick={()=>{addtocart(item)}}  >Add to cart</button>
                                      <Link to="/home" className=' text-white text-center text-[11px] font-semibold bg-fuchsia-700 p-2 sm:p-1 md:p-2  w-20 sm:w-20 rounded-md '>Shoping</Link>
+                                     <button className=' text-white text-[11px] font-semibold bg-fuchsia-700 sm:p-1 md:p-2 p-2 w-20  sm:w-20 rounded-md '    onClick={()=>{addtocart(item)}}  >Add to cart</button>
+
                                  </div>
                                 
                            </div>

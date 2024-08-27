@@ -109,6 +109,21 @@ export const Home = () => {
                         }
                      </select>
                   </div>
+
+                  <div>  
+                      <select  onChange={(e)=>setProduct(e.target.value)} className='  outline-none bg-fuchsia-800 w-full text-sm font-semibold md:px-5  text-white cursor-pointer text-center uppercase text-[12]'  >
+                    
+                        {
+                          cetegory['cate-mobile'].map((item,i)=>
+                                <>
+                               <option value={item.electric} className=' text-left text-sm uppercase text-white'>{item.mobile}</option>
+                               </>
+                              )
+                        }
+                     </select>
+                  </div>
+
+
                </div>
 
           </div>
@@ -133,7 +148,7 @@ export const Home = () => {
                             </div>
 
                           <div className='w-full h-48  flex justify-evenly items-center flex-col text-center px-1 md:flex md:justify-evenly md:items-center md:text-[11px]'>
-                            <div className='w-[200px] font-bold text-[12px] sm:w-full sm:text-[13px] h-16 flex justify-center items-center'>{item.Product}</div>
+                            <div className='w-[200px] font-bold text-[12px] sm:w-full sm:text-[13px] h-16 flex justify-center items-center'>{item.Product.substring(0,60)}</div>
                             <div className='w-full mt-2 h-26 sm:h-36 sm:mt-5 '>
                                 
                                 {
@@ -161,6 +176,47 @@ export const Home = () => {
                                     </div>
                                   </>:""
                                 }
+                                {
+                                  item.Brand?<>
+                                  <div className=' flex justify-center items-center'>
+                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Brand</th>
+                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item.Brand}</p>
+                                    </div>
+                                  </>:""
+                                }
+                                {
+                                  item['Audio Output Mode']?<>
+                                  <div className=' flex justify-center items-center'>
+                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Audio Output Mode</th>
+                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item['Audio Output Mode']}</p>
+                                    </div>
+                                  </>:""
+                                }
+                                {
+                                  item['Closure type']?<>
+                                  <div className=' flex justify-center items-center'>
+                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Closure type</th>
+                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item['Closure type']}</p>
+                                    </div>
+                                  </>:""
+                                }
+                                {
+                                  item.Size?<>
+                                  <div className=' flex justify-center items-center'>
+                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Size</th>
+                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item.Size}</p>
+                                    </div>
+                                  </>:""
+                                }
+                                {
+                                  item['CPU Model']?<>
+                                  <div className=' flex justify-center items-center'>
+                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>CPU Model</th>
+                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item['CPU Model']}</p>
+                                    </div>
+                                  </>:""
+                                }
+                              
                           </div>
                             
                           <div className='flex justify-between items-center w-full px-2'>
@@ -189,7 +245,7 @@ export const Home = () => {
                             </div>
 
                           <div className='w-full h-48  flex justify-evenly items-center flex-col text-center px-1 md:flex md:justify-evenly md:items-center md:text-[11px]'>
-                            <div className='w-[200px] font-bold text-[12px] sm:w-full sm:text-[13px] h-16 flex justify-center items-center'>{item.Product}</div>
+                            <div className='w-[200px] font-bold text-[12px] sm:w-full sm:text-[13px] h-16 flex justify-center items-center'>{item.Product.substring(0,60)}</div>
                             <div className='w-full mt-2 h-26 sm:h-36 sm:mt-5 '>
                                 
                                 {
@@ -217,6 +273,47 @@ export const Home = () => {
                                     </div>
                                   </>:""
                                 }
+                                {
+                                  item.Brand?<>
+                                  <div className=' flex justify-center items-center'>
+                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Brand</th>
+                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item.Brand}</p>
+                                    </div>
+                                  </>:""
+                                }
+                                {
+                                  item['Audio Output Mode']?<>
+                                  <div className=' flex justify-center items-center'>
+                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Audio Output Mode</th>
+                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item['Audio Output Mode']}</p>
+                                    </div>
+                                  </>:""
+                                }
+                                {
+                                  item['Closure type']?<>
+                                  <div className=' flex justify-center items-center'>
+                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Closure type</th>
+                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item['Closure type']}</p>
+                                    </div>
+                                  </>:""
+                                }
+                                {
+                                  item.Size?<>
+                                  <div className=' flex justify-center items-center'>
+                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Size</th>
+                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item.Size}</p>
+                                    </div>
+                                  </>:""
+                                }
+                                {
+                                  item['CPU Model']?<>
+                                  <div className=' flex justify-center items-center'>
+                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>CPU Model</th>
+                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item['CPU Model']}</p>
+                                    </div>
+                                  </>:""
+                                }
+                              
                           </div>
                             
                           <div className='flex justify-between items-center w-full px-2'>
@@ -244,7 +341,7 @@ export const Home = () => {
                             </div>
 
                           <div className='w-full h-48  flex justify-evenly items-center flex-col text-center px-1 md:flex md:justify-evenly md:items-center md:text-[11px]'>
-                            <div className='w-[200px] font-bold text-[12px] sm:w-full sm:text-[13px] h-16 flex justify-center items-center'>{item.Product}</div>
+                            <div className='w-[200px] font-bold text-[12px] sm:w-full sm:text-[13px] h-16 flex justify-center items-center'>{item.Product.substring(0,60)}</div>
                             <div className='w-full mt-2 h-26 sm:h-36 sm:mt-5 '>
                                 
                                 {
@@ -272,6 +369,47 @@ export const Home = () => {
                                     </div>
                                   </>:""
                                 }
+                                {
+                                  item.Brand?<>
+                                  <div className=' flex justify-center items-center'>
+                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Brand</th>
+                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item.Brand}</p>
+                                    </div>
+                                  </>:""
+                                }
+                                {
+                                  item['Audio Output Mode']?<>
+                                  <div className=' flex justify-center items-center'>
+                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Audio Output Mode</th>
+                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item['Audio Output Mode']}</p>
+                                    </div>
+                                  </>:""
+                                }
+                                {
+                                  item['Closure type']?<>
+                                  <div className=' flex justify-center items-center'>
+                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Closure type</th>
+                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item['Closure type']}</p>
+                                    </div>
+                                  </>:""
+                                }
+                                {
+                                  item.Size?<>
+                                  <div className=' flex justify-center items-center'>
+                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Size</th>
+                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item.Size}</p>
+                                    </div>
+                                  </>:""
+                                }
+                                {
+                                  item['CPU Model']?<>
+                                  <div className=' flex justify-center items-center'>
+                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>CPU Model</th>
+                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item['CPU Model']}</p>
+                                    </div>
+                                  </>:""
+                                }
+                              
                           </div>
                             
                           <div className='flex justify-between items-center w-full px-2'>
@@ -301,7 +439,7 @@ export const Home = () => {
                             </div>
 
                           <div className='w-full h-48  flex justify-evenly items-center flex-col text-center px-1 md:flex md:justify-evenly md:items-center md:text-[11px] '>
-                            <div className='w-[200px] font-bold text-[12px] sm:w-full sm:text-[13px] h-16 flex justify-center items-center'>{item.Product}</div>
+                            <div className='w-[200px] font-bold text-[12px] sm:w-full sm:text-[13px] h-16 flex justify-center items-center'>{item.Product.substring(0,60)}</div>
                             <div className='w-full mt-2 h-26 sm:h-36 sm:mt-5 '>
                                 
                                 {
@@ -329,6 +467,49 @@ export const Home = () => {
                                     </div>
                                   </>:""
                                 }
+                                {
+                                  item.Brand?<>
+                                  <div className=' flex justify-center items-center'>
+                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Brand</th>
+                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item.Brand}</p>
+                                    </div>
+                                  </>:""
+                                }
+                                {
+                                  item['Audio Output Mode']?<>
+                                  <div className=' flex justify-center items-center'>
+                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Audio Output Mode</th>
+                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item['Audio Output Mode']}</p>
+                                    </div>
+                                  </>:""
+                                }
+                                {
+                                  item['Closure type']?<>
+                                  <div className=' flex justify-center items-center'>
+                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Closure type</th>
+                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item['Closure type']}</p>
+                                    </div>
+                                  </>:""
+                                }
+                                {
+                                  item.Size?<>
+                                  <div className=' flex justify-center items-center'>
+                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Size</th>
+                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item.Size}</p>
+                                    </div>
+                                  </>:""
+                                }
+                                {
+                                  item['CPU Model']?<>
+                                  <div className=' flex justify-center items-center'>
+                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>CPU Model</th>
+                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item['CPU Model']}</p>
+                                    </div>
+                                  </>:""
+                                }
+                              
+                                
+                                
                           </div>
                             
                           <div className='flex justify-between items-center w-full px-2'>
