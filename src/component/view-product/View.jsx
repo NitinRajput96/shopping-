@@ -53,18 +53,18 @@ export const View = () => {
   return (
    <>
    <Toaster/>
-      <div className=' w-full h-3/5 sm:h-full bg-gray-100 flex justify-center flex-col items-center px-3 py-2'>
+      <div className=' w-full h-auto sm:h-full bg-gray-100 flex justify-center flex-col items-center px-3 py-2'>
       {
         Data.ProductDetails.map((item,i)=>{
               return(item.subcetegory===useP?<>
                      
-                      <div className=' w-full sm:w-3/4 h-3/5 bg-white  sm:h-full  sm:flex sm:flex-row justify-evenly items-center shadow-xl ' key={item.id} >
-                           <div className=' sm:w-2/4 flex justify-center items-center p-2'>
-                            <img className=' w-5/6 h-72 sm:w-full sm:h-80 ' src={item.img} alt="" />
+                      <div className=' w-full md:h-[450px] sm:w-5/6 lg:w-4/6 py-3  bg-white  sm:h-full  sm:flex sm:flex-row justify-evenly items-center shadow-xl ' key={item.id} >
+                           <div className=' sm:w-2/4 h-5/6 flex justify-center items-center p-2'>
+                            <img className='  w-full h-full ' src={item.img} alt="" />
                            </div>
-                           <div className=' sm:w-2/4 sm:h-96 text-black flex justify-evenly items-center flex-col text-md mt-3 sm:m-0 '>
-                           <h1 className=' w-5/6 text-lg font-semibold'>{item.Product.substring(0,120)}</h1>
-                                  <div className=' w-full px-1 h-auto'>
+                              <div className='  sm:w-2/4 h-5/6 text-black flex justify-evenly items-center flex-col text-md mt-3 sm:m-3 '>
+                                      <h1 className=' w-full text-center text-md md:text-[20px] font-semibold'>{item.Product.substring(0,120)}</h1>
+                                  <div className=' w-full pl-6 h-full text-center'>
                                   {
                                  item.Rating?<>
                                  <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
@@ -289,7 +289,7 @@ export const View = () => {
 
                                   </div>
                                
-                                  <div className=' w-full h-20 flex  justify-between max-[400px]:px-10 items-center  sm:flex sm:justify-between sm:px-8'>
+                                    <div className=' w-full h-1/6 grid grid-cols-2  mt-3 justify-items-center items-center '>
                                      <Link to="/home" className=' text-purple-950 text-center hover:border hover:border-fuchsia-400 hover:bg-fuchsia-300 shadow-md  bg-fuchsia-200  border-purple-950 text-[14px] font-semibold  p-1 sm:p-1 md:p-1  w-20 sm:w-20 rounded-md '>Shoping</Link>
                                      <button className=' text-purple-950 hover:border hover:border-fuchsia-400 hover:bg-fuchsia-300 bg-fuchsia-200 shadow-md text-[14px]  font-semibold  sm:p-1 md:p-1 p-1 w-24  sm:w-24 rounded-md  '    onClick={()=>{addtocart(item)}}  >Add to cart</button>
 
@@ -306,7 +306,7 @@ export const View = () => {
 
        {
         ceteData?<>
-        <div className=' w-full sm:w-3/4 h-36 bg-white  shadow-2xl  flex justify-evenly items-center flex-row  flex-wrap pt-1  md:mt-5 '>
+        <div className=' w-full sm:w-5/6 lg:w-4/6 h-36 mt-1 bg-white  shadow-2xl  flex justify-evenly items-center flex-row  flex-wrap pt-1  md:mt-2 '>
         <h4 className=' font-bold'>Products  Suggestions</h4>
         <div className=' w-full flex justify-evenly items-center flex-row  '>
         {

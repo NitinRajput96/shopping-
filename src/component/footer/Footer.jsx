@@ -48,11 +48,11 @@ export const Footer = () => {
 
                 <div className='text-white shadow-lg  bg-white  w-full h-40  sm:w-96 md:w-72 lg:w-96 ' >
                      <h4 className='text-md bg-fuchsia-100 font-bold text-purple-950 text-left pl-6'>Links</h4>
-                       <div className='  w-full h-5/6 max-[400px]:flex max-[400px]:justify-center max-[400px]:items-start max-[400px]:flex-col max-[400px]:px-5 sm:w-96  sm:flex md:flex-col sm:justify-center gap-1 sm:items-center'>
-                         <Link to="/contact"  className=' text-black text-md font-semibold text-center flex justify-start gap-2 pl-2 items-center  w-28    hover:text-purple-700 '><span className=' text-black font-bold text-lg '><IoMdContact/></span>Contact</Link>
-                          <Link to="/"        className=' text-black text-md font-semibold text-center flex justify-start gap-2 pl-2 items-center  w-28    hover:text-purple-700 '><span className=' text-black font-bold text-lg '><FaHome/></span>Home</Link>
-                          <Link to="home"     className=' text-black text-md font-semibold text-center flex justify-start gap-2 pl-2 items-center  w-28    hover:text-purple-700 '><span className=' text-black font-bold text-lg '><FaShopify/></span>Shoping</Link>
-                          <Link to="/about"   className=' text-black text-md font-semibold text-center flex justify-start gap-2 pl-2 items-center  w-28    hover:text-purple-700 '><span className=' text-black font-bold text-lg '><MdOutlineRoundaboutRight/></span>About us</Link>
+                       <div className='  w-full pl-10 h-5/6 grid grid-rows-4 justify-items-start items-center'>
+                         <Link to="/contact"  className=' 2/4 text-purple-950 text-md font-semibold text-center flex justify-start gap-2 pl-2 items-center  w-28    hover:text-purple-700 '><span className=' text-black font-bold text-lg '><IoMdContact/></span>Contact</Link>
+                          <Link to="/"        className=' 2/4 text-purple-950 text-md font-semibold text-center flex justify-start gap-2 pl-2 items-center  w-28    hover:text-purple-700 '><span className=' text-black font-bold text-lg '><FaHome/></span>Home</Link>
+                          <Link to="home"     className=' 2/4 text-purple-950 text-md font-semibold text-center flex justify-start gap-2 pl-2 items-center  w-28    hover:text-purple-700 '><span className=' text-black font-bold text-lg '><FaShopify/></span>Shoping</Link>
+                          <Link to="/about"   className=' 2/4 text-purple-950 text-md font-semibold text-center flex justify-start gap-2 pl-2 items-center  w-28    hover:text-purple-700 '><span className=' text-black font-bold text-lg '><MdOutlineRoundaboutRight/></span>About us</Link>
 
                        </div>
                   </div>
@@ -60,11 +60,11 @@ export const Footer = () => {
 
                   <div className='text-white shadow-lg bg-white  w-full h-40  sm:w-96 md:w-72 lg:w-96 ' >
                      <h4 className='text-md bg-fuchsia-100 font-bold text-purple-950 text-left pl-6 '>Follow us</h4>
-                       <div className='text-white  max-[400px]:flex max-[400px]:justify-center max-[400px]:items-start max-[400px]:flex-col max-[400px]:px-5 w-full h-5/6  sm:w-full   flex flex-col justify-center gap-1 items-center'>
-                         <Link to=""  className=' text-black text-md font-semibold text-center flex justify-start gap-5 items-center  w-24  hover:text-purple-700 '><span className=' rounded-full overflow-hiden w-4  h-4 flex justify-center items-center text-blue-800 font-bold text-lg bg-white'><FaLinkedin/></span>Linkedin</Link>
-                          <Link to="" className=' text-black text-md font-semibold text-center flex justify-start gap-5 items-center  w-24  hover:text-purple-700 '><span className=' rounded-full overflow-hiden w-4  h-4 flex justify-center items-center text-red-800 font-bold text-lg bg-white'><FaInstagramSquare/></span>Instagram</Link>
-                          <Link to="" className=' text-black text-md font-semibold text-center flex justify-start gap-5 items-center  w-24  hover:text-purple-700 '><span className=' rounded-full overflow-hiden w-4  h-4 flex justify-center items-center text-white font-bold text-lg bg-black'><FaGitSquare/></span>Github</Link>
-                          <Link to="" className=' text-black text-md font-semibold text-center flex justify-start gap-5 items-center  w-24  hover:text-purple-700 '><span className=' rounded-full overflow-hiden w-4  h-4 flex justify-center items-center text-blue-800 font-bold text-lg bg-white'><FaFacebook/></span>Facbook</Link>
+                       <div className=' w-full pl-10 h-5/6 grid grid-rows-4 justify-items-start  items-center'>
+                         <Link to=""  className=' text-purple-950 text-md font-semibold text-center flex justify-start gap-5 items-center  w-24  hover:text-purple-700 '><span className=' rounded-full overflow-hiden w-4  h-4 flex justify-center items-center text-blue-800 font-bold text-lg bg-white'><FaLinkedin/></span>Linkedin</Link>
+                          <Link to="" className=' text-purple-950 text-md font-semibold text-center flex justify-start gap-5 items-center  w-24  hover:text-purple-700 '><span className=' rounded-full overflow-hiden w-4  h-4 flex justify-center items-center text-red-800 font-bold text-lg bg-white'><FaInstagramSquare/></span>Instagram</Link>
+                          <Link to="" className=' text-purple-950 text-md font-semibold text-center flex justify-start gap-5 items-center  w-24  hover:text-purple-700 '><span className=' rounded-full overflow-hiden w-4  h-4 flex justify-center items-center text-white font-bold text-lg bg-black'><FaGitSquare/></span>Github</Link>
+                          <Link to="" className=' text-purple-950 text-md font-semibold text-center flex justify-start gap-5 items-center  w-24  hover:text-purple-700 '><span className=' rounded-full overflow-hiden w-4  h-4 flex justify-center items-center text-blue-800 font-bold text-lg bg-white'><FaFacebook/></span>Facbook</Link>
                        </div>
                   </div>
 

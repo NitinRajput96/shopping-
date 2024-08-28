@@ -7,6 +7,7 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 import { Link,  useNavigate } from 'react-router-dom';
 import Catego from '../json_data/Catego.json'
 import { useCategory } from '../../context/createCont';
+import Data from '../json_data/Data.json';
 
 
 
@@ -44,7 +45,7 @@ export const Dashboard = () => {
                               <div className='w-2/4 h-full flex justify-center items-center flex-col'> 
                                      <p className='  text-2xl lg:text-[50px] lg:pb-5 bg-gradient-to-r from-gray-900 to-lime-400 bg-clip-text text-transparent font-bold'>India's Brand</p>
                                      <p className=' text-2xl text-bold bg-gradient-to-r from-gray-900 to-lime-400 bg-clip-text text-transparent'>Fashion shopping </p>
-                                     <span className=' w-24 h-6 border-2 rounded-lg px-2 text-xs flex justify-center items-center  border-fuchsia-400 text-purple-950 gap-2 mt-5 text-black'><Link to="/home">Shopping</Link> <FaLongArrowAltRight/> </span>
+                                     <span className=' w-24 h-6 border-2 rounded-lg px-2 text-xs flex justify-center items-center  border-fuchsia-400 text-purple-950 gap-2 mt-5'><Link to="/home">Shopping</Link> <FaLongArrowAltRight/> </span>
                               </div>
 
                               <div className='w-2/4 h-full flex justify-center items-center'>
@@ -84,25 +85,43 @@ export const Dashboard = () => {
               </Swiper>
       </section>
 
-      <div className='w-full p-2 md:p-6 bg-gray-200 h-[60vh]  '>
-           <div className='w-full h-3/6 md:h-full  bg-white  flex justify-center flex-col items-center flex-wrap'>
-           <h1 className= ' text-lg lg:text-[40px] font-bold'>Browse by categories</h1>
-           <div className=' w-full md:w-4/6 h-auto flex justify-evenly items-center py-4  md:py-10'>
-
-          {
+      <div className='w-full h-full p-2 md:p-6 bg-gray-200  '>
+           <div className='w-full h-80 md:h-full  bg-white  flex justify-center flex-col items-center flex-wrap py-5'>
+             <h1 className= ' text-[30px] lg:text-[40px] font-bold'>Browse by categories</h1>
+              <div className=' w-full md:w-4/6 h-auto flex justify-evenly items-center py-4  md:py-10'>
+             {
                Catego['cate-al3'].map((item,i)=>
                     <div className=' w-20 h-20  md:w-36 md:h-36  rounded-full text-center' key={item.name}>
                      <img  onClick={()=>{sendProd(item.name)}} className=' w-full h-full  md:w-36 md:h-36 shadow-2xl  rounded-full cursor-pointer  hover:scale-105 hover:border hover:border-pink-900 '  src={item.img} alt="" />
  
                       <span className=' uppercase mt-2 font-bold'>{item.name}</span>
-                    </div>
-               )
-          
-          }
-              
-           </div>
+                    </div>)
+             }</div>
+          </div>
+
+
+
+           <div className='w-full h-auto bg-white  flex justify-evenly  flex-col items-center py-5  mt-10'>
+              <h1 className= ' text-[35px] lg:text-[40px] font-bold'>Futures Products</h1>
+               <div className='w-full h-full p-4 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center items-center '>
+               {
+                       Data?<>
+                        {
+                         Data.ProductDetails.map((item,i)=>{
+                              return item.featuresProduct==="fature"?<>
+                                   <div className=' sm:w-[270px] md:w-[290px] lg:w-[330px] h-[29 80px] text-center'>
+                                        <img className='w-full h-full' src={item.img} alt="img" />
+                                        <span className=' uppercase font-bold text-lg'>{item.cetegory}</span>
+                                   </div>
+                              </>:""
+                         })
+                        }
+                       </>:""
+                    }           
+               </div>  
            </div>
       </div>
+     
    </>
   )
 }
