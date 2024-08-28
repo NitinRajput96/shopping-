@@ -12,14 +12,19 @@ import Data from '../json_data/Data.json';
 
 
 
+
 export const Dashboard = () => {
-          const {setCateg}=useCategory();
+          const {categ,setCateg}=useCategory();
           const navigate=useNavigate()
 
           const sendProd=(item)=>{
                setCateg(item)
                navigate("/home")
             }
+           
+           
+            
+           
      
   return (
    <>
@@ -109,10 +114,12 @@ export const Dashboard = () => {
                         {
                          Data.ProductDetails.map((item,i)=>{
                               return item.featuresProduct==="fature"?<>
-                                   <div className=' sm:w-[270px] md:w-[290px] lg:w-[330px] h-[29 80px] text-center'>
+                                 <Link to="/view">
+                                 <div onClick={()=>{setCateg(item.subcetegory)}} className=' sm:w-[270px] md:w-[290px] lg:w-[330px] h-[29 80px] text-center' key={i}>
                                         <img className='w-full h-full' src={item.img} alt="img" />
                                         <span className=' uppercase font-bold text-lg'>{item.cetegory}</span>
                                    </div>
+                                 </Link>
                               </>:""
                          })
                         }

@@ -6,6 +6,7 @@ import { Link, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../context/store/slice/slice';
 import toast, { Toaster } from 'react-hot-toast';
+import { useCategory } from '../../context/createCont';
 
 
 
@@ -14,17 +15,22 @@ import toast, { Toaster } from 'react-hot-toast';
 
 export const View = () => {
         
-     
-         const {subcetegory}=useParams()
-         const [useP,setUsep]=useState(subcetegory)
+         const {categ}=useCategory()
+         const [useP,setUsep]=useState(categ)
          const  [ceteData,setCeteData]=useState();
          const dispatch=useDispatch();
+       
         
-        
+         
+      
 
          const getCetegory=()=>{
              Data.ProductDetails.filter((item)=>{return (item.subcetegory===useP?setCeteData(item.cetegory):"")})
+            
          }
+
+      
+         
         
          const nestdeData=(data)=>{
                setUsep(data);
@@ -43,6 +49,7 @@ export const View = () => {
          useEffect(()=>{
           window.scroll(0,0)
            getCetegory()
+         
          },[])
          
 

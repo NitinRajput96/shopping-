@@ -24,7 +24,7 @@ return(
                   <Route path="home" element={<Home/>}  />
                   <Route path="about" element={<About/>} />
                   <Route path="cart" element={<Cart/>} />
-                  <Route path='view/:subcetegory' element={<View/>} />
+                  <Route path='view' element={<View/>} />
                   <Route path="/" element={<Dashboard/>} />
                </Routes>
             <Footer/>

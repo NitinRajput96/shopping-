@@ -18,20 +18,22 @@ export const Home = () => {
             const navigate_=useNavigate()
             const [cetegory,setCetegroy]=useState(Catego)
             const [state,setState]=useState(Data)
-            const {categ}=useCategory()
+            const {categ,setCateg}=useCategory()
             const [product,setProduct]=useState()
             const dispatch = useDispatch();
-            const [newData,setNewData]=useState()
+          
 
             
+           
             
 
 
           
-
-
+ 
+          
             const sendComponent=(subcetegory)=>{
-                  navigate_(`/view/${subcetegory}`)    
+                 setCateg(subcetegory)
+              navigate_("/view")   
             }
               
             const addtocart = (prod)=>{
@@ -39,23 +41,22 @@ export const Home = () => {
               toast.success("Add to cart successfuly")
             }
 
+           
+              
+              
+           
 
-            const getCete=()=>{
-              state.ProductDetails.filter((item)=>item.cetegory===product?setNewData(item):"")
 
-            }
-
-            useEffect(()=>{
-               
-            },[])
-
+          
 
       
 
             useEffect(()=>{ 
                window.scroll(0,0)
-             categ!=null?setProduct(categ):setProduct(product)
-            },[categ])
+               categ!=null?setProduct(categ):setProduct(product)
+           
+            
+            },[0,categ])
 
             
   return (
@@ -64,7 +65,7 @@ export const Home = () => {
           <div className=' w-full h-auto '> 
 
             <div className='w-full  my-4   md:grid grid-cols-1  justify-items-center items-center '>
-                 <div className='w-full  lg:w-5/6 border-4 h-auto max-[500px]:py-5 border-fuchsia-200 max-[500px]:border-none max-[500px]:py-1  rounded-md  flex justify-center items-center max-[500px]:flex-col '>
+                 <div className='w-full  lg:w-5/6 border-4 h-auto max-[500px]:py-5 border-fuchsia-200 max-[500px]:border-none   rounded-md  flex justify-center items-center max-[500px]:flex-col '>
                     <div className=' w-full lg:w-2/6  h-12 md:pl-2  bg-white flex  justify-start max-[500px]:justify-center  items-center '>
                             <input type="search" placeholder='Search Items' className='  w-11/12 sm:w-5/6  h-8 border border-fuchsia-300 p-1 text-center text:sm rounded-sm  shadow-md outline-none' onChange={(e)=>{setProduct(e.target.value)}} />
                    </div>
@@ -250,7 +251,7 @@ export const Home = () => {
                               )})
                             }
                           </>:
-                          state && state.ProductDetails.map((item,i)=>{
+                           state.ProductDetails.map((item,i)=>{
                               return(
                                 <>
                                 <div className=' max-[300px]:w-[200px] max-[400px]:w-[165px] max-[500px]:w-[180px] max-[640px]:w-[210px] max-[639px]:h-[220px] sm:w-[290px] md:w-[225px] lg:w-[270px] xl:w-[340px] 2xl:w-[320px] sm:h-[400px] bg-white  shadow-lg pb-3' >

@@ -16,13 +16,15 @@ import { useCategory } from '../../context/createCont';
 
 
 export const Footer = () => {
-           const {categ,setCateg}=useCategory()
+           const {setCateg}=useCategory()
            const navigate=useNavigate()
 
              const sendCate=(cate)=>{
                 setCateg(cate)
                 navigate("/home")
              }
+
+            
    
 
           
@@ -39,9 +41,9 @@ export const Footer = () => {
              <div className='text-white shadow-lg bg-white  w-full h-40  sm:w-96 md:w-72 lg:w-96 ' >
                      <h4 className='text-md font-bold text-purple-950 text-left pl-6 bg-fuchsia-100'>Category</h4>
                      <div className='w-full h-5/6 flex justify-evenly items-center'>
-                        <img onClick={()=>{sendCate("male")}} className=' w-16 h-16 rounded-full hover:border-2     hover:border-fuchsia-300'  src="/image/male-fff.webp" alt="" />
+                        <img onClick={()=>{sendCate("male")}}     className=' w-16 h-16 rounded-full hover:border-2     hover:border-fuchsia-300'  src="/image/male-fff.webp" alt="" />
                         <img onClick={()=>{sendCate("electric")}} className=' w-16 h-16 rounded-full hover:border-2 hover:border-fuchsia-300'  src="/image/mobileModel.jpeg" alt="" />
-                        <img onClick={()=>{sendCate("female")}} className=' w-16 h-16 rounded-full hover:border-2   hover:border-fuchsia-300 bg-white'   src="/image/without-g-removebg-preview.png" alt="" />
+                        <img onClick={()=>{sendCate("female")}}   className=' w-16 h-16 rounded-full hover:border-2   hover:border-fuchsia-300 bg-white'   src="/image/without-g-removebg-preview.png" alt="" />
                    </div>
                   </div>
                 
@@ -51,7 +53,7 @@ export const Footer = () => {
                        <div className='  w-full pl-10 h-5/6 grid grid-rows-4 justify-items-start items-center'>
                          <Link to="/contact"  className=' 2/4 text-purple-950 text-md font-semibold text-center flex justify-start gap-2 pl-2 items-center  w-28    hover:text-purple-700 '><span className=' text-black font-bold text-lg '><IoMdContact/></span>Contact</Link>
                           <Link to="/"        className=' 2/4 text-purple-950 text-md font-semibold text-center flex justify-start gap-2 pl-2 items-center  w-28    hover:text-purple-700 '><span className=' text-black font-bold text-lg '><FaHome/></span>Home</Link>
-                          <Link to="home"     className=' 2/4 text-purple-950 text-md font-semibold text-center flex justify-start gap-2 pl-2 items-center  w-28    hover:text-purple-700 '><span className=' text-black font-bold text-lg '><FaShopify/></span>Shoping</Link>
+                          <Link to="/home"     className=' 2/4 text-purple-950 text-md font-semibold text-center flex justify-start gap-2 pl-2 items-center  w-28    hover:text-purple-700 '><span className=' text-black font-bold text-lg '><FaShopify/></span>Shopping</Link>
                           <Link to="/about"   className=' 2/4 text-purple-950 text-md font-semibold text-center flex justify-start gap-2 pl-2 items-center  w-28    hover:text-purple-700 '><span className=' text-black font-bold text-lg '><MdOutlineRoundaboutRight/></span>About us</Link>
 
                        </div>
