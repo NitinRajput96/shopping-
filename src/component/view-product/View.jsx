@@ -53,12 +53,12 @@ export const View = () => {
   return (
    <>
    <Toaster/>
-      <div className=' w-full h-3/5 sm:h-full bg-white flex justify-center flex-col items-center px-1 py-1'>
+      <div className=' w-full h-3/5 sm:h-full bg-gray-100 flex justify-center flex-col items-center px-3 py-2'>
       {
         Data.ProductDetails.map((item,i)=>{
               return(item.subcetegory===useP?<>
                      
-                      <div className=' w-full sm:w-3/4 h-3/5  sm:h-full  sm:flex sm:flex-row justify-evenly items-center shadow-xl ' key={item.id} >
+                      <div className=' w-full sm:w-3/4 h-3/5 bg-white  sm:h-full  sm:flex sm:flex-row justify-evenly items-center shadow-xl ' key={item.id} >
                            <div className=' sm:w-2/4 flex justify-center items-center p-2'>
                             <img className=' w-5/6 h-72 sm:w-full sm:h-80 ' src={item.img} alt="" />
                            </div>
@@ -306,7 +306,7 @@ export const View = () => {
 
        {
         ceteData?<>
-        <div className=' w-full sm:w-3/4 h-36  shadow-2xl  flex justify-evenly items-center flex-row  flex-wrap pt-1  md:mt-5 '>
+        <div className=' w-full sm:w-3/4 h-36 bg-white  shadow-2xl  flex justify-evenly items-center flex-row  flex-wrap pt-1  md:mt-5 '>
         <h4 className=' font-bold'>Products  Suggestions</h4>
         <div className=' w-full flex justify-evenly items-center flex-row  '>
         {

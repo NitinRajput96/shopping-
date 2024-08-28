@@ -129,406 +129,45 @@ export const Home = () => {
           </div>
 
           <div className='w-full h-auto bg-white'>
-             <div className=' w-full h-fit flex items-center  flex-wrap justify-evenly flex-col sm:flex-row sm:p-2 border-black '>  
-
-             
-            
+             <div className=' w-full h-auto flex  justify-center items-center  '>  
                   {
-                    product?
-                     <>
-                  {
-                        state.ProductDetails.filter((item)=>{
-                            return item.cetegory===product?item:""
-                        }).map((item,i)=>{
-                      return(
-                        <>
-                        <div className=' w-5/6 h-2/6   sm:w-4/6 md:w-2/5 sm:flex sm:flex-row  shadow-xl rounded-2xl border-grey-500 bg-gradient-to-r from-fuchsia-400 to-pink-100 m-2 flex items-center justify-evenly flex-col  '  key={item.id}>
-                            <div className=' w-full  '>
-                                <img className=' rounded-2xl w-full p-1 h-56 ' src={item.img} alt="" />
-                            </div>
+                 
+                    <div className='w-full h-auto md:w-5/6 lg:w-5/6 bg-fuchsia-200 grid max-[300px]:grid-cols-1 max-[639px]:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 md:gap-4 lg:grid-cols-3 xl:grid-cols-3 p-4 gap-4 justify-items-center '>
+                        {
+                          state && state.ProductDetails.map((item,i)=>{
+                              return(
+                                <>
+                                <div className=' max-[300px]:w-[200px] max-[400px]:w-[165px] max-[500px]:w-[180px] max-[640px]:w-[210px] max-[639px]:h-[220px] sm:w-[290px] md:w-[240px] lg:w-[300px] xl:w-[320px] sm:h-[400px] bg-white  shadow-lg pb-3' >
+                                       <div className='w-full h-5/6  ' onClick={()=>{sendComponent(item.subcetegory)}}>
+                                           <img className=' w-full h-full' src={item.img} alt="" />
+                                       </div>
+                                       <div className=' w-full h-1/6  grid grid-rows-2'>
+                                             <div className='h-8 w-full grid grid-cols-2 '>
+                                                    <div className=' flex justify-center items-center gap-1'>
+                                                        <th className='text-sm font-semibold text-purple-950'>Price</th>
+                                                        <td className=' text-sm font-semibold text-purple-950'>{item.Price}</td>
+                                                    </div>
 
-                          <div className='w-full h-48  flex justify-evenly items-center flex-col text-center px-1 md:flex md:justify-evenly md:items-center md:text-[11px]'>
-                            <div className='w-[200px] font-bold text-[12px] sm:w-full sm:text-[13px] h-16 flex justify-center items-center'>{item.Product.substring(0,60)}</div>
-                            <div className='w-full mt-2 h-26 sm:h-36 sm:mt-5 '>
-                                
-                                {
-                                  item['Band_material type']?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]  max-lg:text-xs w-2/4 '>Band material typer</th>
-                                        <p className='text-[11px]  max-lg:text-xs w-2/4'>{item['Band_material type']}</p>   
-                                    </div>
-                                  </>:""
-                                }           
-                                                  
-                                {
-                                  item.Price?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Price</th>
-                                        <p className='text-[12px]  font-semibold max-lg:text-xs w-2/4'><span className='bg-bg-fuchsia-700 px-3'>{item.Price+"$"}</span></p>
-                                    </div>
-                                  </>:""
-                                }
-                                {
-                                  item.Department?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Department</th>
-                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item.Department}</p>
-                                    </div>
-                                  </>:""
-                                }
-                                {
-                                  item.Brand?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Brand</th>
-                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item.Brand}</p>
-                                    </div>
-                                  </>:""
-                                }
-                                {
-                                  item['Audio Output Mode']?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Audio Output Mode</th>
-                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item['Audio Output Mode']}</p>
-                                    </div>
-                                  </>:""
-                                }
-                                {
-                                  item['Closure type']?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Closure type</th>
-                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item['Closure type']}</p>
-                                    </div>
-                                  </>:""
-                                }
-                                {
-                                  item.Size?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Size</th>
-                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item.Size}</p>
-                                    </div>
-                                  </>:""
-                                }
-                                {
-                                  item['CPU Model']?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>CPU Model</th>
-                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item['CPU Model']}</p>
-                                    </div>
-                                  </>:""
-                                }
-                              
-                          </div>
-                            
-                          <div className='flex justify-between items-center w-full px-2'>
-                            <button className=' text-white text-[11px] font-semibold bg-fuchsia-700 rounded-md p-1 w-12 ' onClick={()=>{sendComponent(item.subcetegory)}} >View</button>
-                            <button className=' text-white text-[11px] font-semibold bg-fuchsia-700 p-1 w-28 sm:w-20 rounded-md ' 
-                               onClick={()=>{addtocart(item)}}
-                            >Add to cart</button>
-                            </div>
-                          
-                          </div>
-                    </div>
-                        </>
-                      )
-                       })
-                    }
-             
-                   {
-                    state.ProductDetails.filter((item)=>{
-                      return item.allproduct1===product?item:""
-                    }).map((item,i)=>{
-                      return(
-                        <>
-                        <div className=' w-5/6 h-2/5   sm:w-4/6 md:w-2/5 sm:flex sm:flex-row  shadow-xl rounded-2xl border-grey-500 bg-gradient-to-r from-fuchsia-400 to-pink-100 m-2 flex items-center justify-evenly flex-col '  key={item.id}>
-                            <div className=' w-full  '>
-                                <img className=' rounded-2xl w-full p-1 h-56 ' src={item.img} alt="" />
-                            </div>
+                                                    <div className=' w-auto flex justify-center items-center h-full uppercase  text-xs font-semibold text-center'>
+                                                        <span className='text-purple-950'>{item.cetegory}</span>
+                                                    </div>
+                                             </div>
 
-                          <div className='w-full h-48  flex justify-evenly items-center flex-col text-center px-1 md:flex md:justify-evenly md:items-center md:text-[11px]'>
-                            <div className='w-[200px] font-bold text-[12px] sm:w-full sm:text-[13px] h-16 flex justify-center items-center'>{item.Product.substring(0,60)}</div>
-                            <div className='w-full mt-2 h-26 sm:h-36 sm:mt-5 '>
-                                
-                                {
-                                  item['Band_material type']?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]  max-lg:text-xs w-2/4 '>Band material typer</th>
-                                        <p className='text-[11px]  max-lg:text-xs w-2/4'>{item['Band_material type']}</p>   
-                                    </div>
-                                  </>:""
-                                }           
-                                                  
-                                {
-                                  item.Price?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Price</th>
-                                        <p className='text-[12px]  font-semibold max-lg:text-xs w-2/4'><span className='bg-white px-3'>{item.Price+"$"}</span></p>
-                                    </div>
-                                  </>:""
-                                }
-                                {
-                                  item.Department?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Department</th>
-                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item.Department}</p>
-                                    </div>
-                                  </>:""
-                                }
-                                {
-                                  item.Brand?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Brand</th>
-                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item.Brand}</p>
-                                    </div>
-                                  </>:""
-                                }
-                                {
-                                  item['Audio Output Mode']?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Audio Output Mode</th>
-                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item['Audio Output Mode']}</p>
-                                    </div>
-                                  </>:""
-                                }
-                                {
-                                  item['Closure type']?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Closure type</th>
-                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item['Closure type']}</p>
-                                    </div>
-                                  </>:""
-                                }
-                                {
-                                  item.Size?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Size</th>
-                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item.Size}</p>
-                                    </div>
-                                  </>:""
-                                }
-                                {
-                                  item['CPU Model']?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>CPU Model</th>
-                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item['CPU Model']}</p>
-                                    </div>
-                                  </>:""
-                                }
-                              
-                          </div>
-                            
-                          <div className='flex justify-between items-center w-full px-2'>
-                               <button  className=' text-white text-[11px] font-semibold bg-fuchsia-700 to-pink-700 rounded-md p-1 w-12 hover:bg-black hover:text-white ' onClick={()=>{sendComponent(item.subcetegory)}} >View</button>
-                                <button className=' text-white text-[11px] font-semibold bg-fuchsia-700 to-pink-700 p-1 w-28 sm:w-20 rounded-md '   
-                                   onClick={()=>{addtocart(item)}}
-                                >Add to cart</button>
-                            </div>
-                          </div>
-                    </div>
-                        </>
-                      )
-                    })
-                  }
+                                             <div className=' grid  grid-cols-2 max-[640px]:hidden'>
+                                                  <div className='w-full flex justify-center items-center '><button className='border  sm:py-[2px] sm:px-2  text-[12px] font-semibold rounded-xl text-purple-950 border-fuchsia-400'>view</button></div>
+                                                  <div className='w-full flex justify-center items-center '><button className='border  sm:py-[2px] sm:px-2  text-[12px] font-semibold rounded-xl text-purple-950 border-fuchsia-400'>Add to cart</button></div>
 
-                  {
-                    state.ProductDetails.filter((item)=>{
-                      return item.Department===product?item:""
-                    }).map((item,i)=>{
-                      return(
-                        <>
-                        <div className=' w-5/6 h-2/5   sm:w-4/6 md:w-2/5 sm:flex sm:flex-row  shadow-xl rounded-2xl border-grey-500 bg-gradient-to-r from-fuchsia-400 to-pink-100 m-2 flex items-center justify-evenly flex-col '  key={item.id}>
-                            <div className=' w-full  '>
-                                <img className=' rounded-2xl w-full p-1 h-56 ' src={item.img} alt="" />
-                            </div>
+                                             </div>
 
-                          <div className='w-full h-48  flex justify-evenly items-center flex-col text-center px-1 md:flex md:justify-evenly md:items-center md:text-[11px]'>
-                            <div className='w-[200px] font-bold text-[12px] sm:w-full sm:text-[13px] h-16 flex justify-center items-center'>{item.Product.substring(0,60)}</div>
-                            <div className='w-full mt-2 h-26 sm:h-36 sm:mt-5 '>
-                                
-                                {
-                                  item['Band_material type']?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]  max-lg:text-xs w-2/4 '>Band material typer</th>
-                                        <p className='text-[11px]  max-lg:text-xs w-2/4'>{item['Band_material type']}</p>   
-                                    </div>
-                                  </>:""
-                                }           
-                                                  
-                                {
-                                  item.Price?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Price</th>
-                                        <p className='text-[12px]  font-semibold max-lg:text-xs w-2/4'><span className='bg-white px-3'>{item.Price+"$"}</span></p>
-                                    </div>
-                                  </>:""
-                                }
-                                {
-                                  item.Department?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Department</th>
-                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item.Department}</p>
-                                    </div>
-                                  </>:""
-                                }
-                                {
-                                  item.Brand?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Brand</th>
-                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item.Brand}</p>
-                                    </div>
-                                  </>:""
-                                }
-                                {
-                                  item['Audio Output Mode']?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Audio Output Mode</th>
-                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item['Audio Output Mode']}</p>
-                                    </div>
-                                  </>:""
-                                }
-                                {
-                                  item['Closure type']?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Closure type</th>
-                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item['Closure type']}</p>
-                                    </div>
-                                  </>:""
-                                }
-                                {
-                                  item.Size?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Size</th>
-                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item.Size}</p>
-                                    </div>
-                                  </>:""
-                                }
-                                {
-                                  item['CPU Model']?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>CPU Model</th>
-                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item['CPU Model']}</p>
-                                    </div>
-                                  </>:""
-                                }
-                              
-                          </div>
-                            
-                          <div className='flex justify-between items-center w-full px-2'>
-                            <button className=' text-white text-[11px] font-semibold bg-fuchsia-700 rounded-md p-1 w-12 ' onClick={()=>{sendComponent(item.subcetegory)}} >View</button>
-                            <button className=' text-white text-[11px] font-semibold bg-fuchsia-700  p-1 w-28 sm:w-20 rounded-md '    onClick={()=>{addtocart(item)}}  >Add to cart</button>
-                            </div>
-                          
-                          </div>
-                    </div>
-                        </>
-                      )
-                    })
-                  } 
-                     
-                  
-                   
-                </>:
-                    <div className='w-full h-auto  bg-gray-100'>
-                <div className=' w-full  h-fit flex items-center  flex-wrap justify-evenly flex-col sm:flex-row sm:p-2  '>
-                {
-                  state && state.ProductDetails.map((item,i)=>{
-                      return(
-                        <>
-                        <div className=' w-5/6 h-2/5   sm:w-4/6 md:w-2/5  sm:flex sm:justify-evenly  bg-white sm:flex-row shadow-2xl    m-3 flex items-center justify-evenly flex-col'  key={item.id}  >
-                            <div className=' w-full  '>
-                                <img className=' rounded-2xl w-full p-1 h-56 ' src={item.img} alt="" />
-                            </div>
 
-                          <div className='w-full h-48  flex justify-evenly items-center flex-col text-center px-1 md:flex md:justify-evenly md:items-center md:text-[11px] '>
-                            <div className='w-[200px] font-bold text-[12px] sm:w-full sm:text-[13px] h-16 flex justify-center items-center'>{item.Product.substring(0,60)}</div>
-                            <div className='w-full mt-2 h-26 sm:h-36 sm:mt-5 '>
-                                
-                                {
-                                  item['Band_material type']?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]  max-lg:text-xs w-2/4 '>Band material typer</th>
-                                        <p className='text-[11px]  max-lg:text-xs w-2/4'>{item['Band_material type']}</p>   
-                                    </div>
-                                  </>:""
-                                }           
-                                                  
-                                {
-                                  item.Price?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Price</th>
-                                        <p className='text-[12px]  font-semibold max-lg:text-xs w-2/4'><span className='bg-white px-3'>{item.Price+"$"}</span></p>
-                                    </div>
-                                  </>:""
-                                }
-                                {
-                                  item.Department?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Department</th>
-                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item.Department}</p>
-                                    </div>
-                                  </>:""
-                                }
-                                {
-                                  item.Brand?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Brand</th>
-                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item.Brand}</p>
-                                    </div>
-                                  </>:""
-                                }
-                                {
-                                  item['Audio Output Mode']?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Audio Output Mode</th>
-                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item['Audio Output Mode']}</p>
-                                    </div>
-                                  </>:""
-                                }
-                                {
-                                  item['Closure type']?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Closure type</th>
-                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item['Closure type']}</p>
-                                    </div>
-                                  </>:""
-                                }
-                                {
-                                  item.Size?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>Size</th>
-                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item.Size}</p>
-                                    </div>
-                                  </>:""
-                                }
-                                {
-                                  item['CPU Model']?<>
-                                  <div className=' flex justify-center items-center'>
-                                        <th className='text-[12px]   max-lg:text-xs w-2/4'>CPU Model</th>
-                                        <p className='text-[12px]  max-lg:text-xs w-2/4'>{item['CPU Model']}</p>
-                                    </div>
-                                  </>:""
-                                }
-                              
-                                
-                                
-                          </div>
-                            
-                          <div className='flex justify-between items-center w-full px-2'>
-                            <button className=' text-white text-[11px] font-semibold bg-fuchsia-600  rounded-md p-1 w-12 ' onClick={()=>{sendComponent(item.subcetegory)}} >View</button>
-                            <button className=' text-white text-[11px] font-semibold bg-fuchsia-600 p-1 w-28 sm:w-20 rounded-md hover:bg-black hover:text-white'   
-                            onClick={()=>{addtocart(item)}}
-                            >Add to cart</button>
-
-                            </div>
-                          
-                          </div>
-                    </div>
-                        </>
-                      )
-                  })
-                }
-                
-                </div>
-                    </div>
+                                          
+                                       </div>
+                               </div>
+                                </>
+                              )
+                          })
+                        }
+                      </div>
               }
          </div>
        </div>
