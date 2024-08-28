@@ -44,7 +44,7 @@ export const Dashboard = () => {
                               <div className='w-2/4 h-full flex justify-center items-center flex-col'> 
                                      <p className='  text-2xl lg:text-[50px] lg:pb-5 bg-gradient-to-r from-gray-900 to-lime-400 bg-clip-text text-transparent font-bold'>India's Brand</p>
                                      <p className=' text-2xl text-bold bg-gradient-to-r from-gray-900 to-lime-400 bg-clip-text text-transparent'>Fashion shopping </p>
-                                     <span className=' w-24 h-6 border-2 rounded-lg px-2 text-xs flex justify-center items-center  border-fuchsia-500 gap-2 mt-5 text-black'><Link to="/home">Shopping</Link> <FaLongArrowAltRight/> </span>
+                                     <span className=' w-24 h-6 border-2 rounded-lg px-2 text-xs flex justify-center items-center  border-fuchsia-400 text-purple-950 gap-2 mt-5 text-black'><Link to="/home">Shopping</Link> <FaLongArrowAltRight/> </span>
                               </div>
 
                               <div className='w-2/4 h-full flex justify-center items-center'>
