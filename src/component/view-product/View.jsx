@@ -25,30 +25,24 @@ export const View = () => {
       
 
          const getCetegory=()=>{
-             Data.ProductDetails.filter((item)=>{return (item.subcetegory===useP?setCeteData(item.cetegory):"")})
-            
-         }
-
-      
-         
-        
+               Data.ProductDetails.filter((item)=>{return (item.subcetegory===useP?setCeteData(item.cetegory):"")})    
+              }
          const nestdeData=(data)=>{
                setUsep(data);
-         }
-
-      
-              
+              }        
          const addtocart = (prod)=>{
-          dispatch(addToCart(prod))
-          toast.success("Add to cart Successfuly")
-        }
+               dispatch(addToCart(prod))
+               toast.success("Add to cart Successfuly")
+              }
 
-        
-         
+          
+              
+              
 
          useEffect(()=>{
           window.scroll(0,0)
            getCetegory()
+          
          
          },[])
          
@@ -65,8 +59,8 @@ export const View = () => {
         Data.ProductDetails.map((item,i)=>{
               return(item.subcetegory===useP?<>
                      
-                      <div className=' w-full md:h-[450px] sm:w-5/6 lg:w-4/6 py-3  bg-white  sm:h-full  sm:flex sm:flex-row justify-evenly items-center shadow-xl ' key={item.id} >
-                           <div className=' sm:w-2/4 h-5/6 flex justify-center items-center p-2'>
+                      <div className=' w-full md:h-[450px] sm:w-5/6 lg:w-4/6 pb-3   bg-white  sm:h-full  sm:flex sm:flex-row justify-evenly items-center shadow-xl ' key={item.id} >
+                           <div className=' sm:w-2/4 h-5/6 flex justify-center items-center '>
                             <img className='  w-full h-full ' src={item.img} alt="" />
                            </div>
                               <div className='  sm:w-2/4 h-5/6 text-black flex justify-evenly items-center flex-col text-md mt-3 sm:m-3 '>
@@ -74,219 +68,219 @@ export const View = () => {
                                   <div className=' w-full pl-6 h-full text-center'>
                                   {
                                  item.Rating?<>
-                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                 <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
                                         <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Review</th>
-                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36 flex justify-center items-center gap-2 pl- '  >{item.Rating} <span><FaEye/></span> </p>
-                                 </div>
+                                          <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36 flex justify-center items-center gap-2 pl- '  >{item.Rating} <span><FaEye/></span> </td>
+                                 </table>
                                  </>:""
                                 }
                                 {
                                  item.Price?<>
-                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                 <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
                                         <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Price</th>
-                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36 text-center'  ><span className=' bg-yellow-300 px-2'>{item.Price} Rs</span></p>
-                                 </div>
+                                          <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36 text-center'  ><span className=' bg-yellow-300 px-2'>{item.Price} Rs</span></td>
+                                 </table>
                                  </>:""
                                 }
                                 {
                                  item['Band_material type']?<>
-                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3" >
+                                 <table className=" w-full flex justify-evenly items-center flex-row gap-3" >
                                         <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  ' >Band material type</th>
-                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '   >{item['Band_material type']}</p>
-                                 </div>
+                                          <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '   >{item['Band_material type']}</td>
+                                 </table>
                                  </>:""
                                 }
                                 {
                                  item['Case diameter']?<>
-                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                 <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
                                         <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Case diameter</th>
-                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item['Case diameter']}</p>
-                                 </div>
+                                          <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item['Case diameter']}</td>
+                                 </table>
                                  </>:""
                                 }
                                 {
                                  item.color?<>
-                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                 <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
                                         <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Color</th>
-                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.color}</p>
-                                 </div>
+                                          <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.color}</td>
+                                 </table>
                                  </>:""
                                 }
                                 {
                                  item.Colour?<>
-                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                 <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
                                         <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Color</th>
-                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.Colour}</p>
-                                 </div>
+                                          <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.Colour}</td>
+                                 </table>
                                  </>:""
                                 }
                                 {
                                  item.Collarstyle?<>
-                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                 <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
                                         <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Collarstyle</th>
-                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.Collarstyle}</p>
-                                 </div>
+                                          <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.Collarstyle}</td>
+                                 </table>
                                  </>:""
                                 }
                                 {
                                  item.Dial_Colour?<>
-                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                 <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
                                         <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Dial Colour</th>
-                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.Dial_Colour}</p>
-                                 </div>
+                                          <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.Dial_Colour}</td>
+                                 </table>
                                  </>:""
                                 }
                                 {
                                  item['Fit type']?<>
-                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                 <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
                                         <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Fit type</th>
-                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item['Fit type']}</p>
-                                 </div>
+                                          <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item['Fit type']}</td>
+                                 </table>
                                  </>:""
                                 }
                                 {
                                  item['Item weight']?<>
-                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                 <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
                                         <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Item weight</th>
-                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item['Item weight']}</p>
-                                 </div>
+                                          <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item['Item weight']}</td>
+                                 </table>
                                  </>:""
                                 }
                                 {
                                  item.Length?<>
-                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                 <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
                                         <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Length</th>
-                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.Length}</p>
-                                 </div>
+                                          <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.Length}</td>
+                                 </table>
                                  </>:""
                                 }
 
                                 {
                                  item['Occasion-Type ']?<>
-                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                 <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
                                         <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Occasion</th>
-                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item['Occasion-Type ']}</p>
-                                 </div>
+                                          <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item['Occasion-Type ']}</td>
+                                 </table>
                                  </>:""
                                 }
                                 {
                                  item.Pattern?<>
-                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                 <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
                                         <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Pattren</th>
-                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.Pattern}</p>
-                                 </div>
+                                          <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.Pattern}</td>
+                                 </table>
                                  </>:""
                                 }
                                 {
                                  item.Sleeve_type?<>
-                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                 <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
                                         <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Sleeve type</th>
-                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.Sleeve_type}</p>
-                                 </div>
+                                          <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.Sleeve_type}</td>
+                                 </table>
                                  </>:""
                                 }
                                 {
                                  item.Warranty?<>
-                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                 <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
                                         <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Warranty</th>
-                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.Warranty}</p>
-                                 </div>
+                                          <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.Warranty}</td>
+                                 </table>
                                  </>:""
                                 }
                                 {
                                  item.cetegory?<>
-                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                 <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
                                         <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>cetegory</th>
-                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.cetegory}</p>
-                                 </div>
+                                          <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.cetegory}</td>
+                                 </table>
                                  </>:""
                                 }
                                 {
                                  item.Brand?<>
-                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                 <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
                                         <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Brand</th>
-                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.Brand}</p>
-                                 </div>
+                                          <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.Brand}</td>
+                                 </table>
                                  </>:""
                                 }
                                 {
                                  item['CPU Model']?<>
-                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                 <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
                                         <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>CPU Model</th>
-                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item['CPU Model']}</p>
-                                 </div>
+                                          <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item['CPU Model']}</td>
+                                 </table>
                                  </>:""
                                 }
                                 {
                                  item['Closure type']?<>
-                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                 <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
                                         <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Closure type</th>
-                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Closure type"]}</p>
-                                 </div>
+                                          <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Closure type"]}</td>
+                                 </table>
                                  </>:""
                                 }
                                 {
                                  item['Connectivity Technology']?<>
-                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                 <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
                                         <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Connectivity Technology</th>
-                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Connectivity Technology"]}</p>
-                                 </div>
+                                          <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Connectivity Technology"]}</td>
+                                 </table>
                                  </>:""
                                 }
                                 {
                                  item['Electric fan design']?<>
-                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                 <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
                                         <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Electric fan design</th>
-                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Electric fan design"]}</p>
-                                 </div>
+                                          <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Electric fan design"]}</td>
+                                 </table>
                                  </>:""
                                 }
                                 {
                                  item['Heel type']?<>
-                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                 <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
                                         <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Heel type</th>
-                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Heel type"]}</p>
-                                 </div>
+                                          <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Heel type"]}</td>
+                                 </table>
                                  </>:""
                                 }
                                 {
                                  item['Frequency Response']?<>
-                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                 <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
                                         <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Frequency Response</th>
-                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Frequency Response"]}</p>
-                                 </div>
+                                          <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Frequency Response"]}</td>
+                                 </table>
                                  </>:""
                                 }
                                 {
                                  item['Indoor/Outdoor Usagen']?<>
-                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                 <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
                                         <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Indoor/Outdoor Usagen</th>
-                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Indoor/Outdoor Usagen"]}</p>
-                                 </div>
+                                          <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Indoor/Outdoor Usagen"]}</td>
+                                 </table>
                                  </>:""
                                 }
                                 {
                                  item['Light Source Type']?<>
-                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                 <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
                                         <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Light Source Type</th>
-                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Light Source Type"]}</p>
-                                 </div>
+                                          <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Light Source Type"]}</td>
+                                 </table>
                                  </>:""
                                 }
                                 {
                                  item['Memory Storage Capacity']?<>
-                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                 <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
                                         <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Memory Storage Capacity</th>
-                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Memory Storage Capacity"]}</p>
-                                 </div>
+                                          <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Memory Storage Capacity"]}</td>
+                                 </table>
                                  </>:""
                                 }
                                 {
                                  item['Model Name']?<>
-                                 <div className=" w-full flex justify-evenly items-center flex-row gap-3 " >
+                                 <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
                                         <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Model Name</th>
-                                          <p className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Model Name"]}</p>
-                                 </div>
+                                          <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Model Name"]}</td>
+                                 </table>
                                  </>:""
                                 }
 
@@ -313,16 +307,18 @@ export const View = () => {
 
        {
         ceteData?<>
-        <div className=' w-full sm:w-5/6 lg:w-4/6 h-36 mt-1 bg-white  shadow-2xl  flex justify-evenly items-center flex-row  flex-wrap pt-1  md:mt-2 '>
+        <div className=' w-full sm:w-5/6 lg:w-4/6 h-1/6 mt-1 bg-white  shadow-2xl  flex justify-evenly items-center flex-row  flex-wrap pt-1  md:mt-1 '>
         <h4 className=' font-bold'>Products  Suggestions</h4>
-        <div className=' w-full flex justify-evenly items-center flex-row  '>
+        <div className=' w-full h-full flex justify-evenly flex-row '>
         {
                      Data.ProductDetails.map((item)=>{
                         return (
                                item.cetegory===ceteData?<>
-                                         <div className='flex justify-evenly items-center flex-col rounded-full w-26 h-26 p-2 sm:w-28 sm:h-28 ' key={item.id}>
-                                              <img onClick={()=>{nestdeData(item.subcetegory)}} className=' w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full hover:border-fuchsia-300  hover:border-2 ' src={item.img} alt="" />
-                                              <span className=' text-xs font-semibold'>{item.Product.substring(0,10)}</span>
+                                         <div className=' w-full pb-2 flex justify-center  flex-col items-center w-26 h-26  sm:w-26 sm:h-26 ' key={item.id}>
+                                             <div onClick={()=>{nestdeData(item.subcetegory)}}  className='w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full flex justify-center items-center   hover:border-fuchsia-300  hover:border-2'>
+                                                 <img className=' w-full h-full p-1 rounded-full ' src={item.img} alt="" />
+                                             </div>
+                                              <span className=' text-xs font-semibold '>{item.Product.substring(0,13)}</span>
                                          </div>
                                          
                                

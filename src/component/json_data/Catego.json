@@ -1,29 +1,77 @@
 {
     "cate-male":[
-        { "male":" male"} ,
-        {"male":"male cloths"},
-        {"male" :"male watch"},
-       { "male":"male shoes"} 
+        { 
+            "id":1,
+            "male":" male"
+        } ,
+        {
+            "id":2,
+            "male":"male cloths"
+        },
+        {
+            "id":3,
+            "male" :"male watch"
+        },
+        {
+        "id":4,
+        "male":"male shoes"
+        } 
       
     ],
     "cate-female":[
-        {  "female":"female"},
-        {"female":"female cloths"},
-        {  "female" :"female watch"},
-        {  "female":"female shoes"}
+        { 
+            "id":1,    
+            "female":"female"
+        },
+        {   
+            "id":2,
+            "female":"female cloths"
+        },
+        { 
+            "id":3,
+            "female" :"female watch"
+        },
+        { 
+            "id":4,
+            "female":"female shoes"
+        }
        
     ],
     "cate-electric":[
-        {"electric":"electric"},
-        { "electric":"Sound spaker"},
-        { "electric" :"light"},
-        {"electric":"fan"}
+        { 
+            "id":1,
+            "electric":"electric"
+        },
+        {   
+            "id":2,
+            "electric":"Sound spaker"
+        },
+        {  
+            "id":3,
+            "electric" :"light"
+        },
+        {
+            "id":4,
+            "electric":"fan"
+        }
     ],
     "cate-mobile":[
-        {"mobile":"mobile"},
-        { "mobile":"i phone"},
-        { "mobile" :"android"},
-        {"mobile":"keypad"}
+        {
+            "id":1,
+            "mobile":"mobile"
+        },
+        {
+            "id":2,   
+            "mobile":"i phone"
+        },
+        { 
+            "id":3,
+            "mobile" :"android"
+        },
+        { 
+            "id":4,
+            "mobile":"keypad"
+        }
     ],
 
 
@@ -31,21 +79,27 @@
 
 
     "cate-allProduct":[
-       {"allproduct":"all product"}
+        { 
+            "id":1,
+            "allproduct":"all product"
+        }
     ],
 
     "cate-al3":[
         { 
+            "id":1,
             "name":"male",
             "img":"/image/maleModel.jpg"
        },
        {
-          "name":"female",
-          "img":"/image/femaleModel.jpeg"
+            "id":2,
+            "name":"female",
+            "img":"/image/femaleModel.jpeg"
        },
        {
-        "name":"electric",
-       "img":"/image/mobileModel.jpeg"
+            "id":3,
+            "name":"electric",
+            "img":"/image/mobileModel.jpeg"
        }
      
       

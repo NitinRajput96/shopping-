@@ -6,7 +6,8 @@ import { useCategory } from '../../context/createCont';
 import { addToCart } from '../../context/store/slice/slice';
 import { useDispatch } from 'react-redux';
 import toast, { Toaster } from 'react-hot-toast';
-import { retry } from '@reduxjs/toolkit/query';
+import { render } from 'react-dom';
+
 
 
 
@@ -21,15 +22,7 @@ export const Home = () => {
             const {categ,setCateg}=useCategory()
             const [product,setProduct]=useState()
             const dispatch = useDispatch();
-          
 
-            
-           
-            
-
-
-          
- 
           
             const sendComponent=(subcetegory)=>{
                  setCateg(subcetegory)
@@ -40,45 +33,35 @@ export const Home = () => {
               dispatch(addToCart(prod))
               toast.success("Add to cart successfuly")
             }
-
-           
-              
-              
-           
-
-
           
-
-      
-
-            useEffect(()=>{ 
-               window.scroll(0,0)
-               categ!=null?setProduct(categ):setProduct(product)
-           
             
-            },[0,categ])
-
+            useEffect(()=>{
+              window.scroll(0,10)
+                categ!=null?setProduct(categ):""
+            },[categ])
+           
             
   return (
     <>
+  
       <Toaster/>
           <div className=' w-full h-auto '> 
 
-            <div className='w-full  my-4   md:grid grid-cols-1  justify-items-center items-center '>
-                 <div className='w-full  lg:w-5/6 border-4 h-auto max-[500px]:py-5 border-fuchsia-200 max-[500px]:border-none   rounded-md  flex justify-center items-center max-[500px]:flex-col '>
+          <div className='w-full  lg:my-1   md:grid grid-cols-1  justify-items-center items-center '>
+          <div className='w-full   lg:w-5/6 border-4 h-20 md:h-14 max[640px]:mt-2 max-[500px]:py-5 border-fuchsia-200 max-[500px]:border-none   rounded-md  flex justify-center gap-2 items-center max-[500px]:flex-col '>
                     <div className=' w-full lg:w-2/6  h-12 md:pl-2  bg-white flex  justify-start max-[500px]:justify-center  items-center '>
                             <input type="search" placeholder='Search Items' className='  w-11/12 sm:w-5/6  h-8 border border-fuchsia-300 p-1 text-center text:sm rounded-sm  shadow-md outline-none' onChange={(e)=>{setProduct(e.target.value)}} />
                    </div>
 
 
 
-               <div className=' w-full sm:w-11/12 lg:w-4/6   flex justify-evenly items-center gap-2  max-[500px]:flex-warp  '>
+               <div className='  w-full max-[640px]:w-full sm:w-11/12 lg:w-4/6   flex justify-evenly items-center    max-[500px]:flex-warp  '>
 
                <div className='w-[75px]'>
                       {
                         cetegory['cate-allProduct'].map((item,i)=> 
                                 <>
-                                  <button className='bg-fuchsia-200 text-purple-950 w-full   sm:text-md h-8 font-semibold  max-[500px]:text-[12px] cursor-pointer  ' value={item.allproduct} onClick={(e)=>setProduct(e.target.value)} >All </button>
+                                  <button className='bg-fuchsia-200 text-purple-950 w-full   sm:text-md h-8 font-semibold  max-[500px]:text-[12px] cursor-pointer  ' value={item.allproduct} onClick={(e)=>setProduct(e.target.value)} key={Math.random()} >All </button>
                                </>
                                )
                      } 
@@ -89,7 +72,7 @@ export const Home = () => {
                         {
                           cetegory['cate-male'].map((item,i)=>
                                 <>
-                               <option value={item.electric}  className=' text-left text-sm uppercase text-purple-950'>{item.male}</option>
+                               <option value={item.electric}  className=' text-left text-sm uppercase text-purple-950' key={Math.random()}>{item.male}</option>
                                </>
                               )
                         }
@@ -102,7 +85,7 @@ export const Home = () => {
                         {
                           cetegory['cate-female'].map((item,i)=>
                                 <>
-                               <option value={item.electric} className='text-left text-sm uppercase text-purple-950 '>{item.female}</option>
+                               <option value={item.electric} className='text-left text-sm uppercase text-purple-950 ' key={Math.random()}>{item.female}</option>
                                </>
                               )
                         }
@@ -116,7 +99,7 @@ export const Home = () => {
                         {
                           cetegory['cate-electric'].map((item,i)=>
                                 <>
-                               <option value={item.electric} className=' text-left text-sm uppercase text-purple-950'>{item.electric}</option>
+                               <option value={item.electric} className=' text-left text-sm uppercase text-purple-950' key={Math.random()}>{item.electric}</option>
                                </>
                               )
                         }
@@ -129,7 +112,7 @@ export const Home = () => {
                         {
                           cetegory['cate-mobile'].map((item,i)=>
                                 <>
-                               <option value={item.electric} className=' text-left text-sm uppercase text-purple-950'>{item.mobile}</option>
+                               <option value={item.electric} className=' text-left text-sm uppercase text-purple-950' key={Math.random()}>{item.mobile}</option>
                                </>
                               )
                         }
@@ -147,13 +130,13 @@ export const Home = () => {
              <div className=' w-full h-auto flex  justify-center items-center  '>  
                   {
                  
-                    <div className='w-full h-auto md:w-11/12 lg:w-5/6 bg-fuchsia-200 grid max-[300px]:grid-cols-1 max-[639px]:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 md:gap-4 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 p-4 gap-4 justify-items-center '>
+                    <div className='w-full h-auto md:w-11/12 lg:w-5/6 bg-fuchsia-100 grid max-[300px]:grid-cols-1 max-[639px]:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 md:gap-4 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 p-4 gap-4 justify-items-center '>
                         {
                           product?<>
                             {
-                              state && state.ProductDetails.map((item,i)=>{
+                               state.ProductDetails.map((item,i)=>{
                               return( item.Department===product?<>
-                                <div className=' max-[300px]:w-[200px] max-[400px]:w-[165px] max-[500px]:w-[180px] max-[640px]:w-[210px] max-[639px]:h-[220px] sm:w-[290px] md:w-[225px] lg:w-[270px] xl:w-[340px] 2xl:w-[320px] sm:h-[400px] bg-white  shadow-lg pb-3' >
+                                <div className=' max-[300px]:w-[200px] max-[400px]:w-[165px] max-[500px]:w-[180px] max-[640px]:w-[210px] max-[639px]:h-[220px] sm:w-[290px] md:w-[225px] lg:w-[270px] xl:w-[340px] 2xl:w-[320px] sm:h-[400px] bg-white  shadow-lg pb-3' key={Math.random()} >
                                        <div className='w-full h-5/6  ' onClick={()=>{sendComponent(item.subcetegory)}}>
                                            <img className=' w-full h-full' src={item.img} alt="" />
                                        </div>
@@ -185,9 +168,9 @@ export const Home = () => {
                               })
                             }
                             {
-                              state && state.ProductDetails.map((item,i)=>{
+                               state.ProductDetails.map((item,i)=>{
                               return( item.cetegory===product?<>
-                                <div className=' max-[300px]:w-[200px] max-[400px]:w-[165px] max-[500px]:w-[180px] max-[640px]:w-[210px] max-[639px]:h-[220px] sm:w-[290px] md:w-[225px] lg:w-[270px] xl:w-[340px] 2xl:w-[320px] sm:h-[400px] bg-white  shadow-lg pb-3' >
+                                <div className=' max-[300px]:w-[200px] max-[400px]:w-[165px] max-[500px]:w-[180px] max-[640px]:w-[210px] max-[639px]:h-[220px] sm:w-[290px] md:w-[225px] lg:w-[270px] xl:w-[340px] 2xl:w-[320px] sm:h-[400px] bg-white  shadow-lg pb-3' key={Math.random()}  >
                                        <div className='w-full h-5/6  ' onClick={()=>{sendComponent(item.subcetegory)}}>
                                            <img className=' w-full h-full' src={item.img} alt="" />
                                        </div>
@@ -218,9 +201,9 @@ export const Home = () => {
                               )})
                             }
                             {
-                              state && state.ProductDetails.map((item,i)=>{
+                               state.ProductDetails.map((item,i)=>{
                               return( item.allproduct1===product?<>
-                                <div className=' max-[300px]:w-[200px] max-[400px]:w-[165px] max-[500px]:w-[180px] max-[640px]:w-[210px] max-[639px]:h-[220px] sm:w-[290px] md:w-[225px] lg:w-[270px] xl:w-[340px] 2xl:w-[320px] sm:h-[400px] bg-white  shadow-lg pb-3' >
+                                <div className=' max-[300px]:w-[200px] max-[400px]:w-[165px] max-[500px]:w-[180px] max-[640px]:w-[210px] max-[639px]:h-[220px] sm:w-[290px] md:w-[225px] lg:w-[270px] xl:w-[340px] 2xl:w-[320px] sm:h-[400px] bg-white  shadow-lg pb-3' key={Math.random()} >
                                        <div className='w-full h-5/6  ' onClick={()=>{sendComponent(item.subcetegory)}}>
                                            <img className=' w-full h-full' src={item.img} alt="" />
                                        </div>
@@ -250,11 +233,11 @@ export const Home = () => {
                                
                               )})
                             }
-                          </>:
-                           state.ProductDetails.map((item,i)=>{
+                          </>:(
+                           state && state.ProductDetails.map((item,i)=>{
                               return(
                                 <>
-                                <div className=' max-[300px]:w-[200px] max-[400px]:w-[165px] max-[500px]:w-[180px] max-[640px]:w-[210px] max-[639px]:h-[220px] sm:w-[290px] md:w-[225px] lg:w-[270px] xl:w-[340px] 2xl:w-[320px] sm:h-[400px] bg-white  shadow-lg pb-3' >
+                                <div className=' max-[300px]:w-[200px] max-[400px]:w-[165px] max-[500px]:w-[180px] max-[640px]:w-[210px] max-[639px]:h-[220px] sm:w-[290px] md:w-[225px] lg:w-[270px] xl:w-[340px] 2xl:w-[320px] sm:h-[400px] bg-white  shadow-lg pb-3' key={Math.random()} >
                                        <div className='w-full h-5/6  ' onClick={()=>{sendComponent(item.subcetegory)}}>
                                            <img className=' w-full h-full' src={item.img} alt="" />
                                        </div>
@@ -281,8 +264,9 @@ export const Home = () => {
                                        </div>
                                </div>
                                 </>
-                              )
-                          })
+                              )})
+                          )
+                        
                         }
                       </div>
               }
