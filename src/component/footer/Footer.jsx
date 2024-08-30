@@ -9,6 +9,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaGitSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { useCategory } from '../../context/createCont';
+import Catego from '../json_data/Catego.json'
 
 
 
@@ -41,9 +42,13 @@ export const Footer = () => {
              <div className='text-white shadow-lg bg-white  w-full h-40  sm:w-96 md:w-72 lg:w-96 ' >
                      <h4 className='text-md font-bold text-purple-950 text-left pl-6 bg-fuchsia-100'>Category</h4>
                      <div className='w-full h-5/6 flex justify-evenly items-center'>
-                        <img onClick={()=>{sendCate("male")}}     className=' w-16 h-16 rounded-full hover:border-2     hover:border-fuchsia-300'  src="/image/male-fff.webp" alt="" />
-                        <img onClick={()=>{sendCate("electric")}} className=' w-16 h-16 rounded-full hover:border-2 hover:border-fuchsia-300'  src="/image/mobileModel.jpeg" alt="" />
-                        <img onClick={()=>{sendCate("female")}}   className=' w-16 h-16 rounded-full hover:border-2   hover:border-fuchsia-300 bg-white'   src="/image/without-g-removebg-preview.png" alt="" />
+                        {
+                          Catego['cate-al3'].map((item,i)=>
+
+                            <img onClick={()=>{sendCate(item.name)}}     className=' w-16 h-16 rounded-full hover:border-2     hover:border-fuchsia-300'  src={item.img} alt="" />
+
+                          )
+                        }                       
                    </div>
                   </div>
                 
