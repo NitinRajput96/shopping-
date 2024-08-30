@@ -110,13 +110,13 @@ export const Dashboard = () => {
 
 
 
-           <div className='w-full h-auto bg-white  flex justify-evenly  flex-col items-center py-5  mt-10'>
+           <div className='w-full h-auto  bg-white flex justify-evenly  flex-col items-center py-5  mt-10'>
               <h1 className= ' text-[35px] lg:text-[40px] font-bold'>Futures Products</h1>
-               <div className='w-full h-full p-4 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center items-center '>
+               <div className='w-full h-full p-4 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2  justify-items-center items-center '>
                {
                     Data.ProductDetails.map((item,i)=>{
                               return item.featuresProduct==="fature"?
-                                 <div onClick={()=>{futureProdts(item.subcetegory)}}  className=' bg-gray-100 shadow-md flex justify-center items-center flex-col h-80 max-[640px]:w-full sm:w-[270px] md:w-[290px] lg:w-[330px]  text-center' key={item.id}>
+                                 <div onClick={()=>{futureProdts(item.subcetegory)}}  className=' bg-gray-50 shadow-md flex justify-center items-center flex-col h-80 max-[640px]:w-full sm:w-[270px] md:w-[290px] lg:w-[330px]  text-center' key={item.id}>
                                         <img className=' w-5/6  h-5/6 ' src={item.img} alt="img" />
                                         <div className=' uppercase font-bold text-lg'>{item.cetegory}</div>
                                    </div>
