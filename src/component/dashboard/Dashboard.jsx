@@ -50,12 +50,12 @@ export const Dashboard = () => {
                     className="mySwiper h-full"
               >
               <SwiperSlide>
-                         <div className=' w-full h-full flex flex-row justify-center sm:gap-5 items-center bg-gradient-to-r from-violet-200 to-pink-200 p-3'>
+                         <div className=' w-full h-full flex flex-row justify-center sm:gap-5 items-center bg-gradient-to-r from-purple-300 to-sky-50  p-3'>
                             
                               <div className='w-2/4 h-full flex justify-center items-center flex-col'> 
                                      <p className='  text-2xl lg:text-[50px] lg:pb-5 bg-gradient-to-r from-gray-900 to-lime-400 bg-clip-text text-transparent font-bold'>India's Brand</p>
-                                     <p className=' text-2xl text-bold bg-gradient-to-r from-gray-900 to-lime-400 bg-clip-text text-transparent'>Fashion shopping </p>
-                                     <span className=' w-24 h-6 border-2 rounded-lg px-2 text-xs flex justify-center items-center  border-fuchsia-400 text-purple-950 gap-2 mt-5'><Link to="/home">Shopping</Link> <FaLongArrowAltRight/> </span>
+                                     <p className=' text-lg text-bold bg-gradient-to-r from-gray-900 to-lime-400 bg-clip-text text-transparent'>Fashion shopping </p>
+                                     <span className=' w-24 h-6 border rounded-lg px-2 text-xs flex justify-center items-center  border-fuchsia-400 text-purple-950 gap-2 mt-5'><Link to="/home">Shopping</Link> <FaLongArrowAltRight/> </span>
                               </div>
 
                               <div className='w-2/4 h-full flex justify-center items-center'>
@@ -64,12 +64,12 @@ export const Dashboard = () => {
                          </div>
               </SwiperSlide>
               <SwiperSlide>
-                         <div className=' w-full h-full flex flex-row justify-center sm:gap-2 items-center bg-gradient-to-r from-fuchsia-200 to-cyan-700 p-3'>
+                         <div className=' w-full h-full flex flex-row justify-center sm:gap-2 items-center bg-gradient-to-r from-zinc-100 to-rose-300 p-3'>
                             
                               <div className='w-2/4 h-full flex justify-center items-center flex-col'> 
-                                     <p className=' text-2xl lg:text-[50px] lg:pb-5 bg-gradient-to-r from-fuchsia-500 to-rose-500 bg-clip-text text-transparent font-bold'>India's Brand</p>
+                                     <p className=' text-2xl lg:text-[50px] lg:pb-5 bg-gradient-to-r from-fuchsia-500 to-lime-400 bg-clip-text text-transparent font-bold'>India's Brand</p>
                                      <p className=' text-lg text-semibold text-black'>Fashion shopping </p>
-                                     <span className=' w-24 h-6 border-2 rounded-lg px-2 text-xs flex justify-center items-center   border-fuchsia-500 gap-2 mt-5 text-black'><Link to="/home">Shopping</Link> <FaLongArrowAltRight/> </span>
+                                     <span className=' w-24 h-6 border rounded-lg px-2 text-xs flex justify-center items-center   border-fuchsia-400 gap-2 mt-5 text-black'><Link to="/home">Shopping</Link> <FaLongArrowAltRight/> </span>
                               </div>
 
                               <div className='w-2/4 h-full flex justify-center items-center'>
@@ -79,16 +79,16 @@ export const Dashboard = () => {
               </SwiperSlide>
 
               <SwiperSlide>
-                         <div className=' w-full h-full flex flex-row justify-center sm:gap-2 items-center bg-gradient-to-r from-slate-500 to-slate-800 p-3'>
+                         <div className=' w-full h-full flex flex-row justify-center sm:gap-2 items-center bg-gradient-to-r from-zinc-100 to-fuchsia-200 p-3'>
                             
                               <div className='w-2/4 h-full flex justify-center items-center flex-col'> 
-                                     <p className=' text-2xl lg:text-[50px] lg:mb-4 text-black font-bold'>India's Brand</p>
+                                     <p className=' text-2xl lg:text-[50px] lg:mb-4 bg-gradient-to-r from-orange-500 to-violet-500 bg-clip-text text-transparent  font-bold'>India's Brand</p>
                                      <p className=' text-lg text-semibold text-black'>Fashion shopping </p>
-                                     <span className=' w-24 h-6 border-2 rounded-lg px-2 text-xs flex justify-center items-center   border-fuchsia-500 gap-2 mt-5 text-black'><Link to="/home">Shopping</Link> <FaLongArrowAltRight/> </span>
+                                     <span className=' w-24 h-6 border rounded-lg px-2 text-xs flex justify-center items-center   border-fuchsia-400 gap-2 mt-5 text-black'><Link to="/home">Shopping</Link> <FaLongArrowAltRight/> </span>
                               </div>
 
                               <div className='w-2/4 h-full flex justify-center items-center'>
-                                   <img src="/image/shop-removebg-preview.png" className=' w-full h-full' alt="" />
+                                   <img src="/image/allProductE-r.png" className=' w-full h-full' alt="" />
                               </div>
                          </div>
               </SwiperSlide>

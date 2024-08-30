@@ -18,7 +18,7 @@ export const Header = () => {
     
   return (
    <>
-       <div className=' sticky top-0 z-40 w-full bg-fuchsia-200 h-14   text-purple-950 flex justify-between items-center px-5  md:px-20'>
+       <div className=' sticky top-0 z-40 w-full bg-gradient-to-r from-violet-200 to-pink-200 h-14   text-purple-950 flex justify-between items-center px-5  md:px-20'>
              <div className='font-serif font-bold  '>
                      Shopping 
              </div>
@@ -40,7 +40,7 @@ export const Header = () => {
        </div>
        {
             state?<>
-            <div className='w-full  sticky  top-[54px] z-20 font-bold bg-fuchsia-200 text-purple-950 py-3 px-3 flex flex-col items-start '>
+            <div className='w-full  sticky  top-[54px] z-20 font-bold bg-gradient-to-r from-violet-200 to-pink-200 text-purple-950 py-3 px-3 flex flex-col items-start '>
                    <Link to="/home" className=' text-md  w-full   pl-3 hover:bg-gray-100 hover:text-orange-500 p-1 md:text-md '>Shop</Link>
                    <Link to="/"  className=' text-md  w-full     pl-3 hover:bg-gray-100 hover:text-orange-500 p-1 md:text-md '>Home</Link>
                    <Link to="/about" className=' text-md  w-full pl-3 hover:bg-gray-100 hover:text-orange-500 p-1 md:text-md '>About</Link>

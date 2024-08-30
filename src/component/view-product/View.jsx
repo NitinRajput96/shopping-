@@ -292,8 +292,8 @@ export const View = () => {
                                   </div>
                                
                                     <div className=' w-full h-1/6 grid grid-cols-2  mt-3 justify-items-center items-center '>
-                                     <Link to="/home" className=' text-purple-950 text-center hover:border hover:border-fuchsia-400 hover:bg-fuchsia-300 shadow-md  bg-fuchsia-200  border-purple-950 text-[14px] font-semibold  p-1 sm:p-1 md:p-1  w-20 sm:w-20 rounded-md '>Shoping</Link>
-                                     <button className=' text-purple-950 hover:border hover:border-fuchsia-400 hover:bg-fuchsia-300 bg-fuchsia-200 shadow-md text-[14px]  font-semibold  sm:p-1 md:p-1 p-1 w-24  sm:w-24 rounded-md  '    onClick={()=>{addtocart(item)}}  >Add to cart</button>
+                                     <Link to="/home" className=' text-purple-950 text-center border border-fuchsia-300 hover:bg-gradient-to-r from-violet-200 to-pink-200 shadow-md    text-[14px] font-semibold  p-1 sm:p-1 md:p-1  w-20 sm:w-20 rounded-md '>Shoping</Link>
+                                     <button className=' text-purple-950 border border-fuchsia-300 hover:bg-gradient-to-r from-violet-200 to-pink-200  shadow-md text-[14px]  font-semibold  sm:p-1 md:p-1 p-1 w-24  sm:w-24 rounded-md  '    onClick={()=>{addtocart(item)}}  >Add to cart</button>
 
                                  </div>
                                 

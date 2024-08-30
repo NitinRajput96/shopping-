@@ -65,18 +65,18 @@ export const Home = () => {
                       {
                         cetegory['cate-allProduct'].map((item,i)=> 
                                 <>
-                                  <button className='bg-fuchsia-200 text-purple-950 w-full   sm:text-md h-8 font-semibold  max-[500px]:text-[12px] cursor-pointer  ' value={item.allproduct} onClick={(e)=>setProduct(e.target.value)} key={Math.random()} >All </button>
+                                  <button className='bg-gradient-to-r from-violet-200 to-pink-200 text-purple-950 w-full   sm:text-md h-8 font-semibold  max-[500px]:text-[12px] cursor-pointer  ' value={item.allproduct} onClick={(e)=>setProduct(e.target.value)} key={Math.random()} >All </button>
                                </>
                                )
                      } 
                 </div>
                
                  <div  className='w-[75px] '>  
-                      <select  onChange={(e)=>{setProduct(e.target.value)}} className=' h-8  outline-none bg-fuchsia-200 text-purple-950  w-full font-semibold  max-[500px]:text-[12px]  sm:text-md cursor-pointer text-center uppercase text-[12]'  >
+                      <select  onChange={(e)=>{setProduct(e.target.value)}} className=' h-8  outline-none bg-gradient-to-r from-violet-200 to-pink-200 text-purple-950  w-full font-semibold  max-[500px]:text-[12px]  sm:text-md cursor-pointer text-center uppercase text-[12]'  >
                         {
                           cetegory['cate-male'].map((item,i)=>
                                 <>
-                               <option value={item.electric}  className=' text-left text-sm uppercase text-purple-950' key={Math.random()}>{item.male}</option>
+                               <option value={item.electric}  className=' text-left text-sm bg-gradient-to-r from-violet-200 to-pink-200 uppercase text-purple-950' key={Math.random()}>{item.male}</option>
                                </>
                               )
                         }
@@ -85,11 +85,11 @@ export const Home = () => {
 
 
                   <div  className='w-[75px]'>  
-                      <select  onChange={(e)=>{setProduct(e.target.value)}} className=' h-8   outline-none bg-fuchsia-200 text-purple-950 w-full  max-[500px]:text-[12px] sm:text-md font-semibold   cursor-pointer text-center uppercase text-[12] ' >
+                      <select  onChange={(e)=>{setProduct(e.target.value)}} className=' h-8 bg-gradient-to-r from-violet-200 to-pink-200  outline-none  text-purple-950 w-full  max-[500px]:text-[12px] sm:text-md font-semibold   cursor-pointer text-center uppercase text-[12] ' >
                         {
                           cetegory['cate-female'].map((item,i)=>
                                 <>
-                               <option value={item.electric} className='text-left text-sm uppercase text-purple-950 ' key={Math.random()}>{item.female}</option>
+                               <option value={item.electric} className='text-left text-sm bg-gradient-to-r from-violet-200 to-pink-200 uppercase text-purple-950 ' key={Math.random()}>{item.female}</option>
                                </>
                               )
                         }
@@ -98,12 +98,12 @@ export const Home = () => {
 
 
                   <div  className='w-[75px]'>  
-                      <select  onChange={(e)=>setProduct(e.target.value)} className=' h-8  outline-none bg-fuchsia-200 text-purple-950 w-full  max-[500px]:text-[12px] sm:text-md font-semibold  cursor-pointer text-center uppercase text-[12]'  >
+                      <select  onChange={(e)=>setProduct(e.target.value)} className=' h-8  outline-none bg-gradient-to-r from-violet-200 to-pink-200 text-purple-950 w-full  max-[500px]:text-[12px] sm:text-md font-semibold  cursor-pointer text-center uppercase text-[12]'  >
                     
                         {
                           cetegory['cate-electric'].map((item,i)=>
                                 <>
-                               <option value={item.electric} className=' text-left text-sm uppercase text-purple-950' key={Math.random()}>{item.electric}</option>
+                               <option value={item.electric} className='  text-left text-sm uppercase text-purple-950' key={Math.random()}>{item.electric}</option>
                                </>
                               )
                         }
@@ -111,7 +111,7 @@ export const Home = () => {
                   </div>
 
                   <div  className='w-[75px]'>  
-                      <select  onChange={(e)=>setProduct(e.target.value)} className='  h-8 outline-none bg-fuchsia-200 text-purple-950 w-full     max-[500px]:text-[12px] sm:text-md font-semibold   cursor-pointer text-center uppercase text-[12]'  >
+                      <select  onChange={(e)=>setProduct(e.target.value)} className='  h-8 outline-none bg-gradient-to-r from-violet-200 to-pink-200 text-purple-950 w-full     max-[500px]:text-[12px] sm:text-md font-semibold   cursor-pointer text-center uppercase text-[12]'  >
                     
                         {
                           cetegory['cate-mobile'].map((item,i)=>
@@ -195,8 +195,8 @@ export const Home = () => {
                                              </div>
 
                                              <div className=' grid  grid-cols-2 max-[640px]:hidden'>
-                                                  <div className='w-full flex justify-center items-center '><button className='border  sm:py-[2px] sm:px-2  text-[12px] font-semibold rounded-xl text-purple-950 border-fuchsia-400 hover:bg-fuchsia-300' onClick={()=>{sendComponent(item.subcetegory)}} >view</button></div>
-                                                  <div className='w-full flex justify-center items-center '><button className='border  sm:py-[2px] sm:px-2  text-[12px] font-semibold rounded-xl text-purple-950 border-fuchsia-400 hover:bg-fuchsia-300' onClick={()=>{addtocart(item)}}>Add to cart</button></div>
+                                                  <div className='w-full flex justify-center items-center '><button className='border  sm:py-[2px] sm:px-2  text-[12px] font-semibold rounded-xl text-purple-950 border-fuchsia-300 hover:bg-gradient-to-r from-violet-200 to-pink-200' onClick={()=>{sendComponent(item.subcetegory)}} >view</button></div>
+                                                  <div className='w-full flex justify-center items-center '><button className='border  sm:py-[2px] sm:px-2  text-[12px] font-semibold rounded-xl text-purple-950 border-fuchsia-300 hover:bg-gradient-to-r from-violet-200 to-pink-200' onClick={()=>{addtocart(item)}}>Add to cart</button></div>
 
                                              </div>
 
@@ -211,7 +211,7 @@ export const Home = () => {
                             {
                                state.ProductDetails.map((item,i)=>{
                               return( item.allproduct1===product?
-                                <div className=' max-[300px]:w-[200px] max-[400px]:w-[165px] max-[500px]:w-[180px] max-[640px]:w-[210px] max-[639px]:h-[220px] sm:w-[290px] md:w-[225px] lg:w-[270px] xl:w-[340px] 2xl:w-[320px] sm:h-[400px]  bg-fuchsia-100   pb-3' key={item.id} >
+                                <div className=' max-[300px]:w-[200px] max-[400px]:w-[165px] max-[500px]:w-[180px] max-[640px]:w-[210px] max-[639px]:h-[220px] sm:w-[290px] md:w-[225px] lg:w-[270px] xl:w-[340px] 2xl:w-[320px] sm:h-[400px]  bg-white   pb-3' key={item.id} >
                                        <div className='w-full h-5/6 shadow-md  bg-gray-50   ' onClick={()=>{sendComponent(item.subcetegory)}}>
                                            <img className=' w-full h-full p-4' src={item.img} alt="" />
                                        </div>
@@ -230,8 +230,8 @@ export const Home = () => {
                                              </div>
 
                                              <div className=' grid  grid-cols-2 max-[640px]:hidden'>
-                                                  <div className='w-full flex justify-center items-center '><button className='border  sm:py-[2px] sm:px-2  text-[12px] font-semibold rounded-xl text-purple-950 border-fuchsia-400 hover:bg-fuchsia-300' onClick={()=>{sendComponent(item.subcetegory)}} >view</button></div>
-                                                  <div className='w-full flex justify-center items-center '><button className='border  sm:py-[2px] sm:px-2  text-[12px] font-semibold rounded-xl text-purple-950 border-fuchsia-400 hover:bg-fuchsia-300' onClick={()=>{addtocart(item)}}>Add to cart</button></div>
+                                                  <div className='w-full flex justify-center items-center '><button className='border  sm:py-[2px] sm:px-2  text-[12px] font-semibold rounded-xl text-purple-950 border-fuchsia-300 hover:bg-gradient-to-r from-violet-200 to-pink-200' onClick={()=>{sendComponent(item.subcetegory)}} >view</button></div>
+                                                  <div className='w-full flex justify-center items-center '><button className='border  sm:py-[2px] sm:px-2  text-[12px] font-semibold rounded-xl text-purple-950 border-fuchsia-300 hover:bg-gradient-to-r from-violet-200 to-pink-200' onClick={()=>{addtocart(item)}}>Add to cart</button></div>
 
                                              </div>
 
@@ -266,8 +266,8 @@ export const Home = () => {
                                              </div>
 
                                              <div className=' grid  grid-cols-2 max-[640px]:hidden'>
-                                                  <div className='w-full flex justify-center items-center '><button className='border  sm:py-[2px] sm:px-2  text-[12px] font-semibold rounded-xl text-purple-950 border-fuchsia-400 hover:bg-fuchsia-300' onClick={()=>{sendComponent(item.subcetegory)}} >view</button></div>
-                                                  <div className='w-full flex justify-center items-center '><button className='border  sm:py-[2px] sm:px-2  text-[12px] font-semibold rounded-xl text-purple-950 border-fuchsia-400 hover:bg-fuchsia-300' onClick={()=>{addtocart(item)}}>Add to cart</button></div>
+                                                  <div className='w-full flex justify-center items-center '><button className='border  sm:py-[2px] sm:px-2  text-[12px] font-semibold rounded-xl text-purple-950 border-fuchsia-300 hover:bg-gradient-to-r from-violet-200 to-pink-200' onClick={()=>{sendComponent(item.subcetegory)}} >view</button></div>
+                                                  <div className='w-full flex justify-center items-center '><button className='border  sm:py-[2px] sm:px-2  text-[12px] font-semibold rounded-xl text-purple-950 border-fuchsia-300 hover:bg-gradient-to-r from-violet-200 to-pink-200' onClick={()=>{addtocart(item)}}>Add to cart</button></div>
 
                                              </div>
 
