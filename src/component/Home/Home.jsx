@@ -176,8 +176,8 @@ export const Home = () => {
                             {
                                state.ProductDetails.map((item,i)=>{
                               return( item.cetegory===product?
-                                <div className=' max-[300px]:w-[200px] max-[400px]:w-[165px] max-[500px]:w-[180px] max-[640px]:w-[210px] max-[639px]:h-[220px] sm:w-[290px] md:w-[225px] lg:w-[270px] xl:w-[340px] 2xl:w-[320px] sm:h-[400px] bg-white  shadow-lg pb-3' key={item.id}  >
-                                       <div className='w-full h-5/6  ' onClick={()=>{sendComponent(item.subcetegory)}}>
+                                <div className=' max-[300px]:w-[200px] max-[400px]:w-[165px] max-[500px]:w-[180px] max-[640px]:w-[210px] max-[639px]:h-[220px] sm:w-[290px] md:w-[225px] lg:w-[270px] xl:w-[340px] 2xl:w-[320px] sm:h-[400px] bg-white   pb-3' key={item.id}  >
+                                       <div className='w-full h-5/6 shadow-md  bg-gray-50   ' onClick={()=>{sendComponent(item.subcetegory)}}>
                                            <img className=' w-full h-full p-4' src={item.img} alt="" />
                                        </div>
                                        <div className=' w-full h-1/6  grid grid-rows-2'>
@@ -190,7 +190,7 @@ export const Home = () => {
                                                     </div>
 
                                                     <div className=' w-auto flex justify-center items-center h-full uppercase  text-xs font-semibold text-center'>
-                                                        <span className='text-purple-950 text-xs'>{item.cetegory}</span>
+                                                        <span className='text-purple-950 text-[1-px]'>{item.cetegory}</span>
                                                     </div>
                                              </div>
 
@@ -211,8 +211,8 @@ export const Home = () => {
                             {
                                state.ProductDetails.map((item,i)=>{
                               return( item.allproduct1===product?
-                                <div className=' max-[300px]:w-[200px] max-[400px]:w-[165px] max-[500px]:w-[180px] max-[640px]:w-[210px] max-[639px]:h-[220px] sm:w-[290px] md:w-[225px] lg:w-[270px] xl:w-[340px] 2xl:w-[320px] sm:h-[400px] bg-white  shadow-lg pb-3' key={item.id} >
-                                       <div className='w-full h-5/6  ' onClick={()=>{sendComponent(item.subcetegory)}}>
+                                <div className=' max-[300px]:w-[200px] max-[400px]:w-[165px] max-[500px]:w-[180px] max-[640px]:w-[210px] max-[639px]:h-[220px] sm:w-[290px] md:w-[225px] lg:w-[270px] xl:w-[340px] 2xl:w-[320px] sm:h-[400px]  bg-fuchsia-100   pb-3' key={item.id} >
+                                       <div className='w-full h-5/6 shadow-md  bg-gray-50   ' onClick={()=>{sendComponent(item.subcetegory)}}>
                                            <img className=' w-full h-full p-4' src={item.img} alt="" />
                                        </div>
                                        <div className=' w-full h-1/6  grid grid-rows-2'>
@@ -225,7 +225,7 @@ export const Home = () => {
                                                     </div>
 
                                                     <div className=' w-auto flex justify-center items-center h-full uppercase  text-xs font-semibold text-center'>
-                                                        <span className='text-purple-950 text-xs'>{item.cetegory}</span>
+                                                        <span className='text-purple-950 text-[10px]'>{item.cetegory}</span>
                                                     </div>
                                              </div>
 
@@ -248,7 +248,7 @@ export const Home = () => {
                               return(
                                 
                                 <div className=' max-[300px]:w-[200px] max-[400px]:w-[165px] max-[500px]:w-[180px] max-[640px]:w-[210px] max-[639px]:h-[220px] sm:w-[290px] md:w-[225px] lg:w-[270px] xl:w-[340px] 2xl:w-[320px] sm:h-[400px] bg-white   pb-3' key={item.id} >
-                                       <div className='w-full h-5/6  shadow-sm  bg-gray-50 ' onClick={()=>{sendComponent(item.subcetegory)}}>
+                                       <div className='w-full h-5/6  shadow-md  bg-gray-50 ' onClick={()=>{sendComponent(item.subcetegory)}}>
                                            <img className=' w-full h-full p-4' src={item.img} alt="" />
                                        </div>
                                        <div className=' w-full h-1/6  grid grid-rows-2'>
