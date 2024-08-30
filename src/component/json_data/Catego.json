@@ -89,17 +89,17 @@
         { 
             "id":1,
             "name":"male",
-            "img":"/image/maleModel.jpg"
+            "img":"/image/maleModel-r.png"
        },
        {
             "id":2,
             "name":"female",
-            "img":"/image/femaleModel.jpeg"
+            "img":"/image/girlmodel2-r.png"
        },
        {
             "id":3,
             "name":"electric",
-            "img":"/image/mobileModel.jpeg"
+            "img":"/image/allProductE-r.png"
        }
      
       

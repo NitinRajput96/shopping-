@@ -62,11 +62,11 @@ export const View = () => {
                      
                       <div className=' w-full md:h-[400px] sm:w-5/6 lg:w-4/6    bg-white  sm:h-full  sm:flex sm:flex-row justify-evenly items-center shadow-xl ' key={item.id} >
                            <div className=' sm:w-2/4 h-full p-2  flex justify-center items-center '>
-                            <img className='  w-5/6 h-5/6  ' src={item.img} alt="" />
+                            <img className='  w-5/6 sm:h-5/6 max-[640px]:h-3/6  ' src={item.img} alt="" />
                            </div>
-                              <div className='py-2 sm:w-2/4 h-full text-black flex justify-evenly items-center flex-col text-md mt-3 sm:m-3 '>
+                              <div className='py-2 max-[640px]:h-2/4 sm:w-2/4 h-full text-black flex justify-evenly items-center flex-col text-md mt-3 sm:m-3 '>
                                       <h1 className=' w-full text-center text-md md:text-[20px] font-semibold'>{item.Product.substring(0,120)}</h1>
-                                  <div className='  flex justify-center items-center flex-col w-full pl-6 h-full text-center'>
+                                  <div className='flex justify-center items-center flex-col w-full pl-6 h-full text-center'>
                                   {
                                  item.Rating?
                                  <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >

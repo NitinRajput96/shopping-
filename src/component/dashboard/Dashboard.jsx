@@ -101,9 +101,8 @@ export const Dashboard = () => {
               <div className=' w-full md:w-4/6 h-auto flex justify-evenly items-center py-4  md:py-10'>
              {
                Catego['cate-al3'].map((item,i)=>
-                    <div className=' w-20 h-20  md:w-36 md:h-36  rounded-full text-center' key={item.id}>
+                    <div className=' w-20 h-20  md:w-36 md:h-36  bg-gray-200  rounded-full text-center' key={item.id}>
                      <img  onClick={()=>{sendProd(item.name)}} className=' w-full h-full  md:w-36 md:h-36 shadow-2xl  rounded-full cursor-pointer  hover:scale-105 hover:border hover:border-pink-900 '  src={item.img} alt="" />
- 
                       <span className=' uppercase mt-2 font-bold'>{item.name}</span>
                     </div>)
              }</div>
@@ -117,7 +116,7 @@ export const Dashboard = () => {
                {
                     Data.ProductDetails.map((item,i)=>{
                               return item.featuresProduct==="fature"?
-                                 <div onClick={()=>{futureProdts(item.subcetegory)}}  className=' shadow-md flex justify-center items-center flex-col h-80 max-[640px]:w-full sm:w-[270px] md:w-[290px] lg:w-[330px]  text-center' key={item.id}>
+                                 <div onClick={()=>{futureProdts(item.subcetegory)}}  className=' bg-gray-100 shadow-md flex justify-center items-center flex-col h-80 max-[640px]:w-full sm:w-[270px] md:w-[290px] lg:w-[330px]  text-center' key={item.id}>
                                         <img className=' w-5/6  h-5/6 ' src={item.img} alt="img" />
                                         <div className=' uppercase font-bold text-lg'>{item.cetegory}</div>
                                    </div>

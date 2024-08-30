@@ -3,7 +3,7 @@
        {
         "id":1,
         "Product":"WHITE BIRD Formal Analogue Women's Watch(Black Dial Womens Standard Black Colored Strap)-IGP002",
-        "img":"/image/watch_f(1).jpg",
+        "img":"/image/watch_f_1_-r.png",
         "Department":"female",
         "cetegory":"female watch",
         "subcetegory":"female a",
@@ -22,7 +22,7 @@
        {
         "id":2,
         "Product":"LOREM Stainless Steel Analogue Gold Color Chain Bracelet Watch For Women & Girls L-#24",
-        "img":"/image/waitch_f.jpg",
+        "img":"/image/watch_f-r.png",
         "Department":"female",
         "cetegory":"female watch",
         "subcetegory":"female b",
@@ -41,7 +41,7 @@
        {
         "id":3,
         "Product":"SWISSTONE Analog Stainless Steel Silver Plated Women's Watch (Pink Dial Silver Colored Strap)",
-        "img":"/image/watch_f(2).jpg",
+        "img":"/image/watch_f_2_-r.png",
         "Department":"female",
         "cetegory":"female watch",
         "subcetegory":"female c",
@@ -125,7 +125,7 @@
        {
         "id":7,
         "Product":"Symbol Premium Women Fit & Flare Wrap Dress (Midi Length | Desk-to-Dinner)",
-        "img":"/image/dress-f.jpg",
+        "img":"/image/dress-f-r.png",
         "Department":"female",
         "cetegory":"female cloths",
         "allproduct1":"all product",
@@ -142,7 +142,7 @@
        {
         "id":8,
         "Product":"Symbol Premium Women Fit & Flare Wrap Dress (Midi Length | Desk-to-Dinner)",
-        "img":"/image/dress_f1.jpg",
+        "img":"/image/dress_f1-r.png",
         "Department":"female",
         "cetegory":"female cloths",
         "subcetegory":"female e",
@@ -160,7 +160,7 @@
        {
         "id":9,
         "Product":"Symbol Premium Women Fit & Flare Printing shirt (Standard Length)",
-        "img":"/image/male-de1.jpg",
+        "img":"/image/male-de1-r.png",
         "Department":"male",
         "cetegory":"male cloths",
         "subcetegory":"male d",
@@ -178,7 +178,7 @@
        {
         "id":10,
         "Product":"Symbol Premium Women Fit & Flare Printing shirt (Standard Length)",
-        "img":"/image/male-d2.jpg",
+        "img":"/image/male-d2-r.png",
         "Department":"male",
         "cetegory":"male cloths",
         "subcetegory":"male e",
@@ -196,7 +196,7 @@
        {
         "id":11,
         "Product":"Symbol Premium Women Fit & Flare Printing shirt (Standard Length)",
-        "img":"/image/male-d3.jpg",
+        "img":"/image/male-d3-r.png",
         "Department":"male",
         "cetegory":"male cloths",
         "subcetegory":"male f",
@@ -214,7 +214,7 @@
        {
         "id":12,
         "Product":"Camping/Tracking, Adjustable Light Modes, Night Safari, Adjustable Focus, Rechargeable",
-        "img":"/image/light-e-1.jpg",
+        "img":"/image/light-e-1-r.png",
         "Department":"electric",
         "cetegory":"light",
         "subcetegory":"electric a",
@@ -229,7 +229,7 @@
        {
         "id":13,
         "Product":"Oneplus Nord CE4 (Celadon Marble, 8GB RAM, 128Gb Storage)",
-        "img":"/image/one+.jpg",
+        "img":"/image/one+-r.png",
         "Department":"mobile",
         "cetegory":"android",
         "subcetegory":"mobile a",
@@ -247,7 +247,7 @@
        {
         "id":14,
         "Product":" Samsung Galaxy S24 Ultra 5G AI Smartphone (Titanium Black,",
-        "img":"/image/samsungG.jpg",
+        "img":"/image/samsungG-r.png",
         "Department":"mobile",
         "cetegory":"android",
         "subcetegory":"mobile b",
@@ -302,7 +302,7 @@
        {
         "id":17,
         "Product":"Atomberg Erica Ceiling Fan Atomberg Erica 1200 mm BLDC Motor with Remote 3 Blade Ceiling Fan(Aegean Blue)",
-        "img":"/image/fan1.webp",
+        "img":"/image/table-fan-r.png",
         "Department":"electric",
         "cetegory":"fan",
         "subcetegory":"fan a",
@@ -315,7 +315,7 @@
         {
             "id":19,
             "Product":"Havells 1200Mm Stealth Air Bldc Motor Ceiling Fan Most Silent & Premium,5 stars With Rf Remote,100% Copper Upto 55% Energy Saving,Timer,Memory Backup...",
-            "img":"/image/fan2.jpg",
+            "img":"/image/fan2-r.png",
             "Department":"electric",
             "cetegory":"fan",
             "subcetegory":"fan b",
@@ -331,7 +331,7 @@
         {
             "id":20,
             "Product":"Havells 1200Mm Stealth Air Bldc Motor Ceiling Fan Most Silent & Premium,5 stars With Rf Remote,100% Copper Upto 55% Energy Saving,Timer,Memory Backup...",
-            "img":"/image/fan3.jpg",
+            "img":"/image/fan3-r.png",
             "Department":"electric",
             "cetegory":"fan",
             "subcetegory":"fan c",
@@ -347,7 +347,7 @@
         {
             "id":21,
             "Product":" HOOH Latest Sneakers Cum Sports and Running Shoes for Men",
-            "img":"/image/male-ju1.jpg",
+            "img":"/image/male-ju1-r.png",
             "Department":"male",
             "cetegory":"male shoes",
             "subcetegory":"male-shoes1",
@@ -362,7 +362,7 @@
         {
             "id":22,
             "Product":"   ASIAN Boy's Thunder-12 Kids Casual White Sneaker High-Neck with Lightweight Synthetic Upper Lace-Up Shoes for Kid's & Boy's1",
-            "img":"/image/male-ju2.jpg",
+            "img":"/image/male-ju2-r.png",
             "Department":"male",
             "cetegory":"male shoes",
             "subcetegory":"male-shoes2",
@@ -377,7 +377,7 @@
         {
             "id":23,
             "Product":"   HOOH-Now comfort in Fashion unisex child Sneaker",
-            "img":"/image/male-ju3.jpg",
+            "img":"/image/male-ju3-r.png",
             "Department":"male",
             "cetegory":"male shoes",
             "subcetegory":"male-shoes3",
@@ -393,7 +393,7 @@
         {
             "id":24,
             "Product":"  FASHIMO Casual Boots for Women and Girl's Parent",
-            "img":"/image/female-ju1.jpg",
+            "img":"/image/female-ju1-r.png",
             "Department":"female",
             "cetegory":"female shoes",
             "subcetegory":"female-shoes1",
@@ -409,7 +409,7 @@
         {
             "id":25,
             "Product":"  FURIOZZ Stylish Casual Boots For Women's And Girls AmazonPN7",
-            "img":"/image/female-ju2.jpg",
+            "img":"/image/female-ju2-r.png",
             "Department":"female",
             "cetegory":"female shoes",
             "subcetegory":"female-shoes2",
@@ -424,7 +424,7 @@
         {
             "id":26,
             "Product":"  FURIOZZ Stylish Casual Boots For Women's And Girls AmazonPN7",
-            "img":"/image/female-ju3.jpg",
+            "img":"/image/female-ju3-r.png",
             "Department":"female",
             "cetegory":"female shoes",
             "subcetegory":"female-shoes3",
@@ -439,7 +439,7 @@
         {
             "id":27,
             "Product":"  FURIOZZ Stylish Casual Boots For Women's And Girls AmazonPN7",
-            "img":"/image/homeTheater-1.jpg",
+            "img":"/image/homeTheater-1-r.png",
             "Department":"electric",
             "cetegory":"Sound spaker",
             "subcetegory":"Soundspaker1",
@@ -454,7 +454,7 @@
         {
             "id":28,
             "Product":"  TRONICA PS07 Premium Series 7.1 Digital 60W Bluetooth Home Theater System PenDrive FM Aux TV Compatible with All Function Remote",
-            "img":"/image/hometheater-2.jpg",
+            "img":"/image/hometheater-2-r.png",
             "Department":"electric",
             "cetegory":"Sound spaker",
             "subcetegory":"Soundspaker2",
