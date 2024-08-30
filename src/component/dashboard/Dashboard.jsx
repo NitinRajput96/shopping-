@@ -14,13 +14,17 @@ import Data from '../json_data/Data.json';
 
 
 export const Dashboard = () => {
-          const {setCateg}=useCategory();
+          const {setCateg,setFutures}=useCategory();
           const navigate=useNavigate()
 
           const sendProd=(item)=>{
                setCateg(item)
                navigate("/home")
             }
+          const futureProdts=(item)=>{
+               setCateg(item)
+               navigate("/view")
+          }  
            
      
            
@@ -97,7 +101,7 @@ export const Dashboard = () => {
               <div className=' w-full md:w-4/6 h-auto flex justify-evenly items-center py-4  md:py-10'>
              {
                Catego['cate-al3'].map((item,i)=>
-                    <div className=' w-20 h-20  md:w-36 md:h-36  rounded-full text-center' key={i}>
+                    <div className=' w-20 h-20  md:w-36 md:h-36  rounded-full text-center' key={item.id}>
                      <img  onClick={()=>{sendProd(item.name)}} className=' w-full h-full  md:w-36 md:h-36 shadow-2xl  rounded-full cursor-pointer  hover:scale-105 hover:border hover:border-pink-900 '  src={item.img} alt="" />
  
                       <span className=' uppercase mt-2 font-bold'>{item.name}</span>
@@ -112,14 +116,13 @@ export const Dashboard = () => {
                <div className='w-full h-full p-4 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center items-center '>
                {
                     Data.ProductDetails.map((item,i)=>{
-                              return item.featuresProduct==="fature"?<>
-                                 <Link to="/view" key={item.id}>
-                                 <div onClick={()=>{setCateg(item.subcetegory)}} className=' sm:w-[270px] md:w-[290px] lg:w-[330px] h-[29 80px] text-center' key={item.id}>
+                              return item.featuresProduct==="fature"?
+                                 <div onClick={()=>{futureProdts(item.subcetegory)}}  className=' sm:w-[270px] md:w-[290px] lg:w-[330px] h-[29 80px] text-center' key={item.id}>
                                         <img className='w-full h-full' src={item.img} alt="img" />
                                         <span className=' uppercase font-bold text-lg'>{item.cetegory}</span>
                                    </div>
-                                 </Link>
-                              </>:""
+                              
+                              :""
                          })      
                }           
                </div>  

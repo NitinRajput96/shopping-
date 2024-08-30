@@ -33,12 +33,16 @@ export const Home = () => {
               dispatch(addToCart(prod))
               toast.success("Add to cart successfuly")
             }
+
+            const getCateg=()=>{
+               Data.ProductDetails.filter((item)=>{item.Department===categ?setProduct(categ):""})
+            }
           
             
             useEffect(()=>{
-              window.scroll(0,10)
-                categ!=null?setProduct(categ):""
-            },[categ])
+              window.scroll(0,0)
+               getCateg()
+            },[getCateg])
            
             
   return (
@@ -135,16 +139,18 @@ export const Home = () => {
                           product?<>
                             {
                                state.ProductDetails.map((item,i)=>{
-                              return( item.Department===product?<>
-                                <div className=' max-[300px]:w-[200px] max-[400px]:w-[165px] max-[500px]:w-[180px] max-[640px]:w-[210px] max-[639px]:h-[220px] sm:w-[290px] md:w-[225px] lg:w-[270px] xl:w-[340px] 2xl:w-[320px] sm:h-[400px] bg-white  shadow-lg pb-3' key={Math.random()} >
+                              return( item.Department===product?
+                                <div className=' max-[300px]:w-[200px] max-[400px]:w-[165px] max-[500px]:w-[180px] max-[640px]:w-[210px] max-[639px]:h-[220px] sm:w-[290px] md:w-[225px] lg:w-[270px] xl:w-[340px] 2xl:w-[320px] sm:h-[400px] bg-white  shadow-lg pb-3' key={item.id} >
                                        <div className='w-full h-5/6  ' onClick={()=>{sendComponent(item.subcetegory)}}>
                                            <img className=' w-full h-full' src={item.img} alt="" />
                                        </div>
                                        <div className=' w-full h-1/6  grid grid-rows-2'>
                                              <div className='h-8 w-full grid grid-cols-2 '>
                                                     <div className=' flex justify-center items-center gap-1'>
-                                                        <th className='text-sm font-semibold text-purple-950'>Price</th>
-                                                        <td className=' text-sm font-semibold text-purple-950'>{item.Price}</td>
+                                                       <table>
+                                                       <th className='text-sm font-semibold text-purple-950'>Price</th>
+                                                       <td className=' text-sm font-semibold text-purple-950'>{item.Price}</td>
+                                                       </table>
                                                     </div>
 
                                                     <div className=' w-auto flex justify-center items-center h-full uppercase  text-xs font-semibold text-center'>
@@ -162,23 +168,25 @@ export const Home = () => {
                                           
                                        </div>
                                </div>
-                              </>:""
+                               :""
                                
                               )
                               })
                             }
                             {
                                state.ProductDetails.map((item,i)=>{
-                              return( item.cetegory===product?<>
-                                <div className=' max-[300px]:w-[200px] max-[400px]:w-[165px] max-[500px]:w-[180px] max-[640px]:w-[210px] max-[639px]:h-[220px] sm:w-[290px] md:w-[225px] lg:w-[270px] xl:w-[340px] 2xl:w-[320px] sm:h-[400px] bg-white  shadow-lg pb-3' key={Math.random()}  >
+                              return( item.cetegory===product?
+                                <div className=' max-[300px]:w-[200px] max-[400px]:w-[165px] max-[500px]:w-[180px] max-[640px]:w-[210px] max-[639px]:h-[220px] sm:w-[290px] md:w-[225px] lg:w-[270px] xl:w-[340px] 2xl:w-[320px] sm:h-[400px] bg-white  shadow-lg pb-3' key={item.id}  >
                                        <div className='w-full h-5/6  ' onClick={()=>{sendComponent(item.subcetegory)}}>
                                            <img className=' w-full h-full' src={item.img} alt="" />
                                        </div>
                                        <div className=' w-full h-1/6  grid grid-rows-2'>
                                              <div className='h-8 w-full grid grid-cols-2 '>
                                                     <div className=' flex justify-center items-center gap-1'>
-                                                        <th className='text-sm font-semibold text-purple-950'>Price</th>
-                                                        <td className=' text-sm font-semibold text-purple-950'>{item.Price}</td>
+                                                       <table>
+                                                       <th className='text-sm font-semibold text-purple-950'>Price</th>
+                                                       <td className=' text-sm font-semibold text-purple-950'>{item.Price}</td>
+                                                       </table>
                                                     </div>
 
                                                     <div className=' w-auto flex justify-center items-center h-full uppercase  text-xs font-semibold text-center'>
@@ -196,22 +204,24 @@ export const Home = () => {
                                           
                                        </div>
                                </div>
-                              </>:""
+                              :""
                                
                               )})
                             }
                             {
                                state.ProductDetails.map((item,i)=>{
-                              return( item.allproduct1===product?<>
-                                <div className=' max-[300px]:w-[200px] max-[400px]:w-[165px] max-[500px]:w-[180px] max-[640px]:w-[210px] max-[639px]:h-[220px] sm:w-[290px] md:w-[225px] lg:w-[270px] xl:w-[340px] 2xl:w-[320px] sm:h-[400px] bg-white  shadow-lg pb-3' key={Math.random()} >
+                              return( item.allproduct1===product?
+                                <div className=' max-[300px]:w-[200px] max-[400px]:w-[165px] max-[500px]:w-[180px] max-[640px]:w-[210px] max-[639px]:h-[220px] sm:w-[290px] md:w-[225px] lg:w-[270px] xl:w-[340px] 2xl:w-[320px] sm:h-[400px] bg-white  shadow-lg pb-3' key={item.id} >
                                        <div className='w-full h-5/6  ' onClick={()=>{sendComponent(item.subcetegory)}}>
                                            <img className=' w-full h-full' src={item.img} alt="" />
                                        </div>
                                        <div className=' w-full h-1/6  grid grid-rows-2'>
                                              <div className='h-8 w-full grid grid-cols-2 '>
                                                     <div className=' flex justify-center items-center gap-1'>
-                                                        <th className='text-sm font-semibold text-purple-950'>Price</th>
-                                                        <td className=' text-sm font-semibold text-purple-950'>{item.Price}</td>
+                                                       <table>
+                                                       <th className='text-sm font-semibold text-purple-950'>Price</th>
+                                                       <td className=' text-sm font-semibold text-purple-950'>{item.Price}</td>
+                                                       </table>
                                                     </div>
 
                                                     <div className=' w-auto flex justify-center items-center h-full uppercase  text-xs font-semibold text-center'>
@@ -229,23 +239,25 @@ export const Home = () => {
                                           
                                        </div>
                                </div>
-                              </>:""
+                              :""
                                
                               )})
                             }
-                          </>:(
+                          </>:
                            state && state.ProductDetails.map((item,i)=>{
                               return(
-                                <>
-                                <div className=' max-[300px]:w-[200px] max-[400px]:w-[165px] max-[500px]:w-[180px] max-[640px]:w-[210px] max-[639px]:h-[220px] sm:w-[290px] md:w-[225px] lg:w-[270px] xl:w-[340px] 2xl:w-[320px] sm:h-[400px] bg-white  shadow-lg pb-3' key={Math.random()} >
+                                
+                                <div className=' max-[300px]:w-[200px] max-[400px]:w-[165px] max-[500px]:w-[180px] max-[640px]:w-[210px] max-[639px]:h-[220px] sm:w-[290px] md:w-[225px] lg:w-[270px] xl:w-[340px] 2xl:w-[320px] sm:h-[400px] bg-white  shadow-lg pb-3' key={item.id} >
                                        <div className='w-full h-5/6  ' onClick={()=>{sendComponent(item.subcetegory)}}>
                                            <img className=' w-full h-full' src={item.img} alt="" />
                                        </div>
                                        <div className=' w-full h-1/6  grid grid-rows-2'>
                                              <div className='h-8 w-full grid grid-cols-2 '>
                                                     <div className=' flex justify-center items-center gap-1'>
-                                                        <th className='text-sm font-semibold text-purple-950'>Price</th>
-                                                        <td className=' text-sm font-semibold text-purple-950'>{item.Price}</td>
+                                                       <table>
+                                                       <th className='text-sm font-semibold text-purple-950'>Price</th>
+                                                       <td className=' text-sm font-semibold text-purple-950'>{item.Price}</td>
+                                                       </table>
                                                     </div>
 
                                                     <div className=' w-auto flex justify-center items-center h-full uppercase  text-xs font-semibold text-center'>
@@ -263,9 +275,9 @@ export const Home = () => {
                                           
                                        </div>
                                </div>
-                                </>
+                                
                               )})
-                          )
+                          
                         
                         }
                       </div>

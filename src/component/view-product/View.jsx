@@ -20,13 +20,19 @@ export const View = () => {
          const  [ceteData,setCeteData]=useState();
          const dispatch=useDispatch();
        
+         const getCetegory=()=>{
+          Data.ProductDetails.filter((item)=>{return (item.subcetegory===useP?setCeteData(item.cetegory):"")})    
+         }
+
         
-         
+         useEffect(()=>{
+          window.scroll(0,0)
+           getCetegory()
+              
+         },[getCetegory])
       
 
-         const getCetegory=()=>{
-               Data.ProductDetails.filter((item)=>{return (item.subcetegory===useP?setCeteData(item.cetegory):"")})    
-              }
+        
          const nestdeData=(data)=>{
                setUsep(data);
               }        
@@ -39,12 +45,7 @@ export const View = () => {
               
               
 
-         useEffect(()=>{
-          window.scroll(0,0)
-           getCetegory()
-          
-         
-         },[])
+       
          
 
          
@@ -57,7 +58,7 @@ export const View = () => {
       <div className=' w-full h-auto sm:h-full bg-gray-100 flex justify-center flex-col items-center px-3 py-2'>
       {
         Data.ProductDetails.map((item,i)=>{
-              return(item.subcetegory===useP?<>
+              return(item.subcetegory===useP?
                      
                       <div className=' w-full md:h-[450px] sm:w-5/6 lg:w-4/6 pb-3   bg-white  sm:h-full  sm:flex sm:flex-row justify-evenly items-center shadow-xl ' key={item.id} >
                            <div className=' sm:w-2/4 h-5/6 flex justify-center items-center '>
@@ -67,12 +68,12 @@ export const View = () => {
                                       <h1 className=' w-full text-center text-md md:text-[20px] font-semibold'>{item.Product.substring(0,120)}</h1>
                                   <div className=' w-full pl-6 h-full text-center'>
                                   {
-                                 item.Rating?<>
+                                 item.Rating?
                                  <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
                                         <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Review</th>
                                           <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36 flex justify-center items-center gap-2 pl- '  >{item.Rating} <span><FaEye/></span> </td>
                                  </table>
-                                 </>:""
+                                 :""
                                 }
                                 {
                                  item.Price?<>
@@ -299,8 +300,7 @@ export const View = () => {
                            </div>
                             
                        </div>
-                     
-              </>:(""))
+                  :(""))
         })
           
       }
@@ -313,7 +313,7 @@ export const View = () => {
         {
                      Data.ProductDetails.map((item)=>{
                         return (
-                               item.cetegory===ceteData?<>
+                               item.cetegory===ceteData?
                                          <div className=' w-full pb-2 flex justify-center  flex-col items-center w-26 h-26  sm:w-26 sm:h-26 ' key={item.id}>
                                              <div onClick={()=>{nestdeData(item.subcetegory)}}  className='w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full flex justify-center items-center   hover:border-fuchsia-300  hover:border-2'>
                                                  <img className=' w-full h-full p-1 rounded-full ' src={item.img} alt="" />
@@ -322,7 +322,7 @@ export const View = () => {
                                          </div>
                                          
                                
-                               </>:""
+                               :""
                         )
                      })
                    }
