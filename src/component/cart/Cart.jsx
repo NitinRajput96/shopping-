@@ -5,13 +5,15 @@ import { addToCart, decreaseCardItem, removeSingleCart } from '../../context/sto
 import toast, { Toaster } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { FaShopify } from "react-icons/fa6";
-
+import { RxDividerVertical } from 'react-icons/rx';
+import Data from '../json_data/Data.json'
 
 
 export const Cart = () => {
 
      const card=useSelector((state)=>state.cart)
      const dispatch=useDispatch()
+     const [page,setPage]=useState(1)
 
     const decreaseItem=(item)=>{
               dispatch(decreaseCardItem(item))
@@ -32,55 +34,37 @@ export const Cart = () => {
   return (
     <>
     <Toaster/>
-      <div className='w-full h-[90vh]  pt-1 bg-fuchsia-100 '>
-          <div className=' w-full  h-10  text-md md:text-2xl font-bold flex justify-center items-center'>
-                   Shopping card
-          </div>
-          <div className=' w-full h-4/6   flex flex-col justify-center items-center px-2 sm:px-20  '>
-                 <div className=' w-full md:w-5/6 pl-7 h-8 text-left text-md md:text-lg font-semibold'>
-                        Card items
-                  </div>
-                  <div className='w-full md:w-5/6 h-[380px] flex justify-center items-center rounded-md bg-gray-200 shadow-md flex-col z-20  overflow-y-auto  '>      
-                    {
-                      card.cartItems.length===0?<>
-                          <h1 className=' text-lg font-bold'>Continue to shopping </h1>
-                          <Link to="/home" className=' mt-10 w-auto h-auto px-2 py-1 rounded-lg flex justify-center items-center gap-3 font-bold  bg-slate-400 shadow-lg hover:bg-pink-400 hover:text-black  hover:shadow-2xl'>Shopping <span><FaShopify/></span></Link>
-                      </>:
-                      card.cartItems.map((item,i)=>{
-                        return(
-                          <div className=' z-0 w-full h-16 md:w-5/6 shadow-lg m-1 flex justify-evenly items-center rounded-md bg-white md:flex md:justify-evenly'>
-                             <img className=' w-16 border shadow-2xl rounded-full   h-full' src={item.img} alt="" />
-                              <div className=' w-auto h-full flex justify-center items-center flex-col max-[400px]:hidden '>
-                                  <th className=' text-xs'>Product name</th>
-                                  <td>T-shirt</td>
-                              </div>
+         <div className='w-full h-auto  '>
+              <div className='w-full h-screen '>
+                  <div className='w-full text-center text-lg font-bold '>Shopping cart</div>
+                  <div className=' font-bold text-sm pl-4'>Your Items</div>
+                   <div className=' px-2 max-[640px]:w-full h-auto py-3  bg-white grid grid-cols-3 justify-items-center gap-3  items-center '>
+                   {
+                     card.cartItems.length>=0?<>
+                     {
+                      card.cartItems.map((item,i)=>
+                        <div className='w-11/12 border h-28 flex justify-center gap-1 flex-col bg-white  p-4   items-center'>
+                           <img className=' w-full h-16' src={item.img} alt="" />
+                           <span className='text-xs font-bold'>{item.Price*item.cartTotalQty}Rs</span>
+                           <div className='w-full h-6 m-0 grid grid-cols-3 justify-items-center items-center  '>
+                               <button onClick={()=>{decreaseItem(item)}} className='text-lg w-3/6 h-4/6 font-bold  shadow-2xl flex justify-center items-center'>-</button>
+                               <span   className='text-sm w-3/6 h-4/6 font-bold  shadow-2xl flex justify-center items-center'>{item.cartTotalQty}</span>
+                               <button onClick={()=>{increament(item)}} className='text-lg w-3/6 h-4/6 font-bold  shadow-2xl flex justify-center items-center'>+</button>
+                           </div>
+                           
+                        </div>
+                      )
+                     }
+                     </>:""
+                     
+                   }
+
+                   </div>
 
 
-                              <div className='w-auto h-full flex justify-center items-center flex-col'>
-                                  <th className=' text-xs'>Quantity</th>
-                                  <span className='w-20 h-auto border font-bold flex justify-evenly items-center  '>
-                                      <span onClick={()=> decreaseItem(item)}>-</span>
-                                      <span>{item.cartTotalQty}</span>
-                                      <span onClick={()=>increament(item)}>+</span>
-                                  </span>
-                              </div>
-
-
-                              <div className='w-auto h-full flex justify-center items-center flex-col'>
-                                     <th className='text-xs'>Price</th>
-                                     <td>{item.Price*item.cartTotalQty}</td>
-                              </div>
-
-                              <div className='w-auto h-full flex justify-center items-center'>
-                                   <span className=' hover:text-red-600 cursor-pointer text-[20px]' onClick={()=>removeSingpro(item)}><AiFillDelete/></span>
-                              </div>
-                        </div> 
-                        )
-                      })
-                    }
-                 </div>          
-          </div>
-      </div>
+              </div>
+             
+         </div>
     </>
   )
 }

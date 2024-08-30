@@ -60,13 +60,13 @@ export const View = () => {
         Data.ProductDetails.map((item,i)=>{
               return(item.subcetegory===useP?
                      
-                      <div className=' w-full md:h-[450px] sm:w-5/6 lg:w-4/6 pb-3   bg-white  sm:h-full  sm:flex sm:flex-row justify-evenly items-center shadow-xl ' key={item.id} >
-                           <div className=' sm:w-2/4 h-5/6 flex justify-center items-center '>
-                            <img className='  w-full h-full ' src={item.img} alt="" />
+                      <div className=' w-full md:h-[400px] sm:w-5/6 lg:w-4/6    bg-white  sm:h-full  sm:flex sm:flex-row justify-evenly items-center shadow-xl ' key={item.id} >
+                           <div className=' sm:w-2/4 h-full p-2  flex justify-center items-center '>
+                            <img className='  w-5/6 h-5/6  ' src={item.img} alt="" />
                            </div>
-                              <div className='  sm:w-2/4 h-5/6 text-black flex justify-evenly items-center flex-col text-md mt-3 sm:m-3 '>
+                              <div className='py-2 sm:w-2/4 h-full text-black flex justify-evenly items-center flex-col text-md mt-3 sm:m-3 '>
                                       <h1 className=' w-full text-center text-md md:text-[20px] font-semibold'>{item.Product.substring(0,120)}</h1>
-                                  <div className=' w-full pl-6 h-full text-center'>
+                                  <div className='  flex justify-center items-center flex-col w-full pl-6 h-full text-center'>
                                   {
                                  item.Rating?
                                  <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
@@ -316,7 +316,7 @@ export const View = () => {
                                item.cetegory===ceteData?
                                          <div className=' w-full pb-2 flex justify-center  flex-col items-center w-26 h-26  sm:w-26 sm:h-26 ' key={item.id}>
                                              <div onClick={()=>{nestdeData(item.subcetegory)}}  className='w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full flex justify-center items-center   hover:border-fuchsia-300  hover:border-2'>
-                                                 <img className=' w-full h-full p-1 rounded-full ' src={item.img} alt="" />
+                                                 <img className=' shadow-md w-full h-full p-1 rounded-full ' src={item.img} alt="" />
                                              </div>
                                               <span className=' text-xs font-semibold '>{item.Product.substring(0,13)}</span>
                                          </div>
