@@ -40,7 +40,7 @@ export const Header = () => {
        </div>
        {
             state?<>
-            <div className='w-full  sticky top-0 z-40 font-bold bg-fuchsia-200 text-purple-950 py-3 px-3 flex flex-col items-start '>
+            <div className='w-full  sticky  top-[54px] z-20 font-bold bg-fuchsia-200 text-purple-950 py-3 px-3 flex flex-col items-start '>
                    <Link to="/home" className=' text-md  w-full   pl-3 hover:bg-gray-100 hover:text-orange-500 p-1 md:text-md '>Shop</Link>
                    <Link to="/"  className=' text-md  w-full     pl-3 hover:bg-gray-100 hover:text-orange-500 p-1 md:text-md '>Home</Link>
                    <Link to="/about" className=' text-md  w-full pl-3 hover:bg-gray-100 hover:text-orange-500 p-1 md:text-md '>About</Link>
