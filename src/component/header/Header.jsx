@@ -34,7 +34,7 @@ export const Header = () => {
                    <Link to="#" className=' text-md       hover:bg-gray-100 hover:text-orange-500 p-2 md:text-md hover:rounded-md'>Contact</Link>      
              </div>
              
-               <span className='flex justify-center items-center gap-3 min-[640px]:hidden'>
+               <span className='flex justify-center items-center gap-3 sm:hidden'>
                <Link to="cart" className=' text-[18px] flex justify-center items-center text-purple-950'><IoMdCart/><span className='text-[15px] font-sans font font-semibold'>{quantity.cartItems.length}</span></Link>
                <button className=' sm:hidden' onClick={()=>setState(!state)}><FaList/></button>
                </span>

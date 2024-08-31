@@ -6,7 +6,7 @@ import { useCategory } from '../../context/createCont';
 import { addToCart } from '../../context/store/slice/slice';
 import { useDispatch } from 'react-redux';
 import toast, { Toaster } from 'react-hot-toast';
-import { render } from 'react-dom';
+import { FaCartArrowDown } from "react-icons/fa";
 
 
 
@@ -194,7 +194,7 @@ export const Home = () => {
                                                     </div>
                                              </div>
 
-                                             <div className=' grid  grid-cols-2 max-[640px]:hidden'>
+                                             <div className=' grid  grid-cols-2 max-[639px]:hidden'>
                                                   <div className='w-full flex justify-center items-center '><button className='border  sm:py-[2px] sm:px-2  text-[12px] font-semibold rounded-xl text-purple-950 border-fuchsia-300 hover:bg-gradient-to-r from-violet-200 to-pink-200' onClick={()=>{sendComponent(item.subcetegory)}} >view</button></div>
                                                   <div className='w-full flex justify-center items-center '><button className='border  sm:py-[2px] sm:px-2  text-[12px] font-semibold rounded-xl text-purple-950 border-fuchsia-300 hover:bg-gradient-to-r from-violet-200 to-pink-200' onClick={()=>{addtocart(item)}}>Add to cart</button></div>
 
@@ -229,7 +229,7 @@ export const Home = () => {
                                                     </div>
                                              </div>
 
-                                             <div className=' grid  grid-cols-2 max-[640px]:hidden'>
+                                             <div className=' grid  grid-cols-2 max-[639px]:hidden'>
                                                   <div className='w-full flex justify-center items-center '><button className='border  sm:py-[2px] sm:px-2  text-[12px] font-semibold rounded-xl text-purple-950 border-fuchsia-300 hover:bg-gradient-to-r from-violet-200 to-pink-200' onClick={()=>{sendComponent(item.subcetegory)}} >view</button></div>
                                                   <div className='w-full flex justify-center items-center '><button className='border  sm:py-[2px] sm:px-2  text-[12px] font-semibold rounded-xl text-purple-950 border-fuchsia-300 hover:bg-gradient-to-r from-violet-200 to-pink-200' onClick={()=>{addtocart(item)}}>Add to cart</button></div>
 
@@ -252,24 +252,24 @@ export const Home = () => {
                                            <img className=' w-full h-full p-4' src={item.img} alt="" />
                                        </div>
                                        <div className=' w-full h-1/6  grid grid-rows-2'>
-                                             <div className='h-8 w-full grid grid-cols-2 '>
+                                             <div className='h-10 w-full grid grid-cols-2  '>
                                                     <div className=' flex justify-center items-center gap-1'>
                                                        <table>
-                                                       <th className='text-xs font-semibold text-purple-950'>Price</th>
-                                                       <td className=' text-xs font-semibold text-purple-950'>{item.Price}</td>
+                                                       <th className='text-sm font-semibold text-purple-950'>Price</th>
+                                                       <td className=' text-sm font-semibold text-purple-950'>{item.Price}</td>
                                                        </table>
                                                     </div>
 
-                                                    <div className=' w-auto flex justify-center items-center h-full uppercase  text-xs font-semibold text-center'>
-                                                        <span className='text-purple-950  text-[10px]'>{item.cetegory}</span>
+                                                    <div className='  w-auto flex justify-center items-center h-full uppercase   lg:text-2xl  font-semibold text-center'>
+                                                        <span className='text-purple-950 sm:hidden  hover:text-pink-400 ' onClick={()=>{addtocart(item)}} ><FaCartArrowDown/></span>
+                                                        <button className=' max-[639px]:hidden w-3/6 h-4/6 border text-[10px] font-semibold rounded-xl text-purple-950 border-fuchsia-300 hover:bg-gradient-to-r from-violet-200 to-pink-200 flex justify-center items-center' >Add to cart</button>
                                                     </div>
                                              </div>
 
-                                             <div className=' grid  grid-cols-2 max-[640px]:hidden'>
+                                             {/* <div className=' grid  grid-cols-2  max-[639px]:hidden'>
                                                   <div className='w-full flex justify-center items-center '><button className='border  sm:py-[2px] sm:px-2  text-[12px] font-semibold rounded-xl text-purple-950 border-fuchsia-300 hover:bg-gradient-to-r from-violet-200 to-pink-200' onClick={()=>{sendComponent(item.subcetegory)}} >view</button></div>
-                                                  <div className='w-full flex justify-center items-center '><button className='border  sm:py-[2px] sm:px-2  text-[12px] font-semibold rounded-xl text-purple-950 border-fuchsia-300 hover:bg-gradient-to-r from-violet-200 to-pink-200' onClick={()=>{addtocart(item)}}>Add to cart</button></div>
 
-                                             </div>
+                                             </div> */}
 
 
                                           
