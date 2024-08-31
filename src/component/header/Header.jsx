@@ -63,7 +63,7 @@ export const Header = () => {
                                   <span className='text-[10px]'>Nitin Rajput</span>
                                 </div>
                         </>:<>
-                        <span className='border border-purple-600 text-purple-700 py-[2px] text-center px-1  rounded-full'  >Login</span>
+                        <span className='border border-purple-600 text-[12px] text-purple-700 py-[2px] text-center px-[8px]  rounded-full'  >Login</span>
                         </>
                      }
                   </Link>
