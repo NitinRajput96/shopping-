@@ -59,8 +59,8 @@ export const Header = () => {
                      {
                         login!=null?<>
                                 <div className='flex justify-center items-center gap-1 border-b  border-black pb-1  '>
-                                  <span className=' w-[30px] h-[30px] shadow-xl border border-black flex font-extrabold bg-gradient-to-r from-violet-200 to-pink-200 text-purple-950 justify-center items-center  rounded-full'>N</span>
-                                  <span className='text-[12px]'>Nitin Rajput</span>
+                                  <span className=' w-[27px] h-[27px] shadow-xl border border-black flex font-extrabold bg-gradient-to-r from-violet-200 to-pink-200 text-purple-950 justify-center items-center  rounded-full'>N</span>
+                                  <span className='text-[10px]'>Nitin Rajput</span>
                                 </div>
                         </>:<>
                         <span className='border border-purple-600 text-purple-700 py-[2px] text-center px-1  rounded-full'  >Login</span>
