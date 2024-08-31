@@ -73,6 +73,7 @@ export const Home = () => {
                
                  <div  className='w-[75px] '>  
                       <select  onChange={(e)=>{setProduct(e.target.value)}} className=' h-8  outline-none bg-gradient-to-r from-violet-200 to-pink-200 text-purple-950  w-full font-semibold  max-[500px]:text-[12px]  sm:text-md cursor-pointer text-center uppercase text-[12]'  >
+                      <option className='bg-black text-white font-bold' >Male</option>
                         {
                           cetegory['cate-male'].map((item,i)=>
                                 <>
@@ -86,6 +87,7 @@ export const Home = () => {
 
                   <div  className='w-[75px]'>  
                       <select  onChange={(e)=>{setProduct(e.target.value)}} className=' h-8 bg-gradient-to-r from-violet-200 to-pink-200  outline-none  text-purple-950 w-full  max-[500px]:text-[12px] sm:text-md font-semibold   cursor-pointer text-center uppercase text-[12] ' >
+                      <option className='bg-black text-white font-bold' >Female</option>
                         {
                           cetegory['cate-female'].map((item,i)=>
                                 <>
@@ -99,7 +101,7 @@ export const Home = () => {
 
                   <div  className='w-[75px]'>  
                       <select  onChange={(e)=>setProduct(e.target.value)} className=' h-8  outline-none bg-gradient-to-r from-violet-200 to-pink-200 text-purple-950 w-full  max-[500px]:text-[12px] sm:text-md font-semibold  cursor-pointer text-center uppercase text-[12]'  >
-                    
+                      <option className='bg-black text-white font-bold' >Electric</option>
                         {
                           cetegory['cate-electric'].map((item,i)=>
                                 <>
@@ -111,8 +113,9 @@ export const Home = () => {
                   </div>
 
                   <div  className='w-[75px]'>  
+                       
                       <select  onChange={(e)=>setProduct(e.target.value)} className='  h-8 outline-none bg-gradient-to-r from-violet-200 to-pink-200 text-purple-950 w-full     max-[500px]:text-[12px] sm:text-md font-semibold   cursor-pointer text-center uppercase text-[12]'  >
-                    
+                        <option className='bg-black text-white font-bold' >Mobile</option>
                         {
                           cetegory['cate-mobile'].map((item,i)=>
                                 <>
@@ -153,16 +156,13 @@ export const Home = () => {
                                                        </table>
                                                     </div>
 
-                                                    <div className=' w-auto flex justify-center items-center h-full uppercase  text-xs font-semibold text-center'>
-                                                        <span className='text-purple-950 text-xs'>{item.cetegory}</span>
+                                                    <div className='  w-auto flex justify-center items-center h-full uppercase   lg:text-2xl  font-semibold text-center'>
+                                                        <span className='text-purple-950 sm:hidden  hover:text-pink-400 ' onClick={()=>{addtocart(item)}} ><FaCartArrowDown/></span>
+                                                        <button onClick={()=>{addtocart(item)}} className=' max-[639px]:hidden w-3/6 h-4/6 border text-[10px] font-semibold rounded-xl text-purple-950 border-fuchsia-300 hover:bg-gradient-to-r from-violet-200 to-pink-200 flex justify-center items-center' >Add to cart</button>
                                                     </div>
                                              </div>
 
-                                             <div className=' grid  grid-cols-2 max-[640px]:hidden'>
-                                                  <div className='w-full flex justify-center items-center '><button className='border  sm:py-[2px] sm:px-2  text-[12px] font-semibold rounded-xl text-purple-950 border-fuchsia-400 hover:bg-fuchsia-300' onClick={()=>{sendComponent(item.subcetegory)}} >view</button></div>
-                                                  <div className='w-full flex justify-center items-center '><button className='border  sm:py-[2px] sm:px-2  text-[12px] font-semibold rounded-xl text-purple-950 border-fuchsia-400 hover:bg-fuchsia-300' onClick={()=>{addtocart(item)}}>Add to cart</button></div>
-
-                                             </div>
+                                       
 
 
                                           
@@ -189,16 +189,12 @@ export const Home = () => {
                                                        </table>
                                                     </div>
 
-                                                    <div className=' w-auto flex justify-center items-center h-full uppercase  text-xs font-semibold text-center'>
-                                                        <span className='text-purple-950 text-[1-px]'>{item.cetegory}</span>
+                                                    <div className='  w-auto flex justify-center items-center h-full uppercase   lg:text-2xl  font-semibold text-center'>
+                                                        <span className='text-purple-950 sm:hidden  hover:text-pink-400 ' onClick={()=>{addtocart(item)}} ><FaCartArrowDown/></span>
+                                                        <button onClick={()=>{addtocart(item)}} className=' max-[639px]:hidden w-3/6 h-4/6 border text-[10px] font-semibold rounded-xl text-purple-950 border-fuchsia-300 hover:bg-gradient-to-r from-violet-200 to-pink-200 flex justify-center items-center' >Add to cart</button>
                                                     </div>
                                              </div>
 
-                                             <div className=' grid  grid-cols-2 max-[639px]:hidden'>
-                                                  <div className='w-full flex justify-center items-center '><button className='border  sm:py-[2px] sm:px-2  text-[12px] font-semibold rounded-xl text-purple-950 border-fuchsia-300 hover:bg-gradient-to-r from-violet-200 to-pink-200' onClick={()=>{sendComponent(item.subcetegory)}} >view</button></div>
-                                                  <div className='w-full flex justify-center items-center '><button className='border  sm:py-[2px] sm:px-2  text-[12px] font-semibold rounded-xl text-purple-950 border-fuchsia-300 hover:bg-gradient-to-r from-violet-200 to-pink-200' onClick={()=>{addtocart(item)}}>Add to cart</button></div>
-
-                                             </div>
 
 
                                           
@@ -224,16 +220,13 @@ export const Home = () => {
                                                        </table>
                                                     </div>
 
-                                                    <div className=' w-auto flex justify-center items-center h-full uppercase  text-xs font-semibold text-center'>
-                                                        <span className='text-purple-950 text-[10px]'>{item.cetegory}</span>
+                                                    <div className='  w-auto flex justify-center items-center h-full uppercase   lg:text-2xl  font-semibold text-center'>
+                                                        <span className='text-purple-950 sm:hidden  hover:text-pink-400 ' onClick={()=>{addtocart(item)}} ><FaCartArrowDown/></span>
+                                                        <button onClick={()=>{addtocart(item)}} className=' max-[639px]:hidden w-3/6 h-4/6 border text-[10px] font-semibold rounded-xl text-purple-950 border-fuchsia-300 hover:bg-gradient-to-r from-violet-200 to-pink-200 flex justify-center items-center' >Add to cart</button>
                                                     </div>
                                              </div>
 
-                                             <div className=' grid  grid-cols-2 max-[639px]:hidden'>
-                                                  <div className='w-full flex justify-center items-center '><button className='border  sm:py-[2px] sm:px-2  text-[12px] font-semibold rounded-xl text-purple-950 border-fuchsia-300 hover:bg-gradient-to-r from-violet-200 to-pink-200' onClick={()=>{sendComponent(item.subcetegory)}} >view</button></div>
-                                                  <div className='w-full flex justify-center items-center '><button className='border  sm:py-[2px] sm:px-2  text-[12px] font-semibold rounded-xl text-purple-950 border-fuchsia-300 hover:bg-gradient-to-r from-violet-200 to-pink-200' onClick={()=>{addtocart(item)}}>Add to cart</button></div>
-
-                                             </div>
+                                            
 
 
                                           
@@ -266,10 +259,6 @@ export const Home = () => {
                                                     </div>
                                              </div>
 
-                                             {/* <div className=' grid  grid-cols-2  max-[639px]:hidden'>
-                                                  <div className='w-full flex justify-center items-center '><button className='border  sm:py-[2px] sm:px-2  text-[12px] font-semibold rounded-xl text-purple-950 border-fuchsia-300 hover:bg-gradient-to-r from-violet-200 to-pink-200' onClick={()=>{sendComponent(item.subcetegory)}} >view</button></div>
-
-                                             </div> */}
 
 
                                           
