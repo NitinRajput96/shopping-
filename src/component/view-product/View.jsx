@@ -307,7 +307,7 @@ export const View = () => {
 
        {
         ceteData?<>
-        <div className=' max sm:w-5/6 lg:w-4/6 h-1/6 mt-1 bg-white  shadow-2xl  flex justify-evenly items-center flex-row  flex-wrap pt-1  md:mt-1 '>
+        <div className=' w-full sm:w-5/6 lg:w-4/6 h-1/6 mt-1 bg-white  shadow-2xl  flex justify-evenly items-center flex-row  flex-wrap pt-1  md:mt-1 '>
         <h4 className=' font-bold'>Products  Suggestions</h4>
         <div className=' w-full h-full flex justify-evenly flex-row '>
         {

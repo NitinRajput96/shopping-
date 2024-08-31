@@ -262,7 +262,7 @@ export const Home = () => {
 
                                                     <div className='  w-auto flex justify-center items-center h-full uppercase   lg:text-2xl  font-semibold text-center'>
                                                         <span className='text-purple-950 sm:hidden  hover:text-pink-400 ' onClick={()=>{addtocart(item)}} ><FaCartArrowDown/></span>
-                                                        <button className=' max-[639px]:hidden w-3/6 h-4/6 border text-[10px] font-semibold rounded-xl text-purple-950 border-fuchsia-300 hover:bg-gradient-to-r from-violet-200 to-pink-200 flex justify-center items-center' >Add to cart</button>
+                                                        <button onClick={()=>{addtocart(item)}} className=' max-[639px]:hidden w-3/6 h-4/6 border text-[10px] font-semibold rounded-xl text-purple-950 border-fuchsia-300 hover:bg-gradient-to-r from-violet-200 to-pink-200 flex justify-center items-center' >Add to cart</button>
                                                     </div>
                                              </div>
 
