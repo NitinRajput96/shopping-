@@ -95,13 +95,13 @@ export const Dashboard = () => {
               </Swiper>
       </section>
 
-      <div className='w-full h-full p-2 md:p-6 bg-gray-200  '>
-           <div className='w-full h-80 md:h-full  bg-white  flex justify-center flex-col items-center flex-wrap py-5'>
+      <div className='w-full h-full p-2 md:p-6  bg-gray-100  '>
+           <div className='w-full h-80 md:h-full   bg-white  flex justify-center flex-col items-center flex-wrap py-5'>
              <h1 className= ' text-[30px] lg:text-[40px] font-bold'>Browse by categories</h1>
               <div className=' w-full md:w-4/6 h-auto flex justify-evenly items-center py-4  md:py-10'>
              {
                Catego['cate-al3'].map((item,i)=>
-                    <div className=' w-20 h-20  md:w-36 md:h-36  bg-gray-200  rounded-full text-center' key={item.id}>
+                    <div className=' w-20 h-20  md:w-36 md:h-36  bg-gray-50  rounded-full text-center' key={item.id}>
                      <img  onClick={()=>{sendProd(item.name)}} className=' w-full h-full  md:w-36 md:h-36 shadow-2xl  rounded-full cursor-pointer  hover:scale-105 hover:border hover:border-pink-900 '  src={item.img} alt="" />
                       <span className=' uppercase mt-2 font-bold'>{item.name}</span>
                     </div>)
@@ -111,14 +111,16 @@ export const Dashboard = () => {
 
 
            <div className='w-full h-auto  bg-white flex justify-evenly  flex-col items-center py-5  mt-10'>
-              <h1 className= ' text-[35px] lg:text-[40px] font-bold'>Futures Products</h1>
-               <div className='w-full h-full p-4 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2  justify-items-center items-center '>
+              <h1 className= ' text-[30px] lg:text-[40px] font-bold'>Futures Products</h1>
+               <div className='w-full h-full p-4 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2  justify-items-center items-center '>
                {
                     Data.ProductDetails.map((item,i)=>{
                               return item.featuresProduct==="fature"?
-                                 <div onClick={()=>{futureProdts(item.subcetegory)}}  className=' bg-gray-50 shadow-md flex justify-center items-center flex-col h-80 max-[640px]:w-full sm:w-[270px] md:w-[290px] lg:w-[330px]  text-center' key={item.id}>
-                                        <img className=' w-5/6  h-5/6 ' src={item.img} alt="img" />
-                                        <div className=' uppercase font-bold text-lg'>{item.cetegory}</div>
+                                 <div onClick={()=>{futureProdts(item.subcetegory)}} className=' shadow-2xl h-96 bg-gray-50  w-full sm:w-72 md:w-60 lg:w-80 flex flex-col justify-center items-center gap-2'  key={item.id}>
+                                   
+                                     <img className=' w-full h-5/6' src={item.img} alt="img" />
+                                     <p className=' text-xl font-bold uppercase'>{item.cetegory}</p>
+                                   
                                    </div>
                               
                               :""

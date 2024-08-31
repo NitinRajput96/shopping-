@@ -4,9 +4,10 @@ import Data from '../json_data/Data.json';
 import { FaEye } from "react-icons/fa";
 import { Link, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../../context/store/slice/slice';
+import { addToCart, clearCartItems } from '../../context/store/slice/slice';
 import toast, { Toaster } from 'react-hot-toast';
-import { useCategory } from '../../context/createCont';
+
+
 
 
 
