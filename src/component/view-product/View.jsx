@@ -55,22 +55,22 @@ export const View = () => {
   return (
    <>
    <Toaster/>
-      <div className=' w-full h-auto sm:h-full bg-gray-100 flex justify-center flex-col items-center px-3 py-2'>
+      <div className=' w-full  h-auto bg-gray-100 flex justify-center flex-col items-center px-3 py-2'>
       {
         Data.ProductDetails.map((item,i)=>{
               return(item.subcetegory===useP?
                      
-                      <div className=' w-full md:h-[400px] sm:w-5/6 lg:w-4/6    bg-white  sm:h-full  sm:flex sm:flex-row justify-evenly items-center shadow-xl ' key={item.id} >
-                           <div className=' sm:w-2/4 h-full p-2  flex justify-center items-center '>
-                            <img className='  w-5/6 sm:h-5/6 max-[640px]:h-3/6  ' src={item.img} alt="" />
+                      <div className=' w-full  max-[640px]:h-[80vh]  sm:h-[280px]   lg:h-[370px]  max-[640px]:h-5/6  sm:w-5/6 lg:w-4/6    bg-white    sm:flex sm:flex-row justify-evenly items-center shadow-xl ' key={item.id} >
+                           <div className=' sm:w-2/4  sm:h-full max-[640px]:h-2/4  p-2   flex justify-center items-center '>
+                            <img className='  w-5/6 h-full  max-[640]:h-full sm:w-full  ' src={item.img} alt="" />
                            </div>
-                              <div className='py-2 max-[640px]:h-2/4 sm:w-2/4 h-full text-black flex justify-evenly items-center flex-col text-md mt-3 sm:m-3 '>
-                                      <h1 className=' w-full text-center text-md md:text-[20px] font-semibold'>{item.Product.substring(0,120)}</h1>
+                              <div className=' sm:h-full  px-1 py-2 sm:pt-3 lg:m-0 max-[640px]:h-2/4 sm:w-2/4 text-black flex justify-evenly items-center flex-col text-md  sm:m-3 '>
+                                      <h1 className=' w-full text-center  sm:text-sm text-md md:text-[20px] font-semibold'>{item.Product.substring(0,120)}</h1>
                                   <div className='flex justify-center items-center flex-col w-full pl-6 h-full text-center'>
                                   {
                                  item.Rating?
                                  <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
-                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Review</th>
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[12px]  '>Review</th>
                                           <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36 flex justify-center items-center gap-2 pl- '  >{item.Rating} <span><FaEye/></span> </td>
                                  </table>
                                  :""
@@ -78,7 +78,7 @@ export const View = () => {
                                 {
                                  item.Price?<>
                                  <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
-                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Price</th>
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[12px]  '>Price</th>
                                           <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36 text-center'  ><span className=' bg-yellow-300 px-2'>{item.Price} Rs</span></td>
                                  </table>
                                  </>:""
@@ -86,7 +86,7 @@ export const View = () => {
                                 {
                                  item['Band_material type']?<>
                                  <table className=" w-full flex justify-evenly items-center flex-row gap-3" >
-                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  ' >Band material type</th>
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[12px]  ' >Band material type</th>
                                           <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '   >{item['Band_material type']}</td>
                                  </table>
                                  </>:""
@@ -94,7 +94,7 @@ export const View = () => {
                                 {
                                  item['Case diameter']?<>
                                  <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
-                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Case diameter</th>
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[12px]  '>Case diameter</th>
                                           <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item['Case diameter']}</td>
                                  </table>
                                  </>:""
@@ -102,7 +102,7 @@ export const View = () => {
                                 {
                                  item.color?<>
                                  <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
-                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Color</th>
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[12px]  '>Color</th>
                                           <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.color}</td>
                                  </table>
                                  </>:""
@@ -110,7 +110,7 @@ export const View = () => {
                                 {
                                  item.Colour?<>
                                  <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
-                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Color</th>
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[12px]  '>Color</th>
                                           <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.Colour}</td>
                                  </table>
                                  </>:""
@@ -118,7 +118,7 @@ export const View = () => {
                                 {
                                  item.Collarstyle?<>
                                  <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
-                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Collarstyle</th>
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[12px]  '>Collarstyle</th>
                                           <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.Collarstyle}</td>
                                  </table>
                                  </>:""
@@ -126,7 +126,7 @@ export const View = () => {
                                 {
                                  item.Dial_Colour?<>
                                  <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
-                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Dial Colour</th>
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[12px]  '>Dial Colour</th>
                                           <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.Dial_Colour}</td>
                                  </table>
                                  </>:""
@@ -134,7 +134,7 @@ export const View = () => {
                                 {
                                  item['Fit type']?<>
                                  <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
-                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Fit type</th>
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[12px]  '>Fit type</th>
                                           <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item['Fit type']}</td>
                                  </table>
                                  </>:""
@@ -142,7 +142,7 @@ export const View = () => {
                                 {
                                  item['Item weight']?<>
                                  <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
-                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Item weight</th>
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[12px]  '>Item weight</th>
                                           <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item['Item weight']}</td>
                                  </table>
                                  </>:""
@@ -150,7 +150,7 @@ export const View = () => {
                                 {
                                  item.Length?<>
                                  <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
-                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Length</th>
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[12px]  '>Length</th>
                                           <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.Length}</td>
                                  </table>
                                  </>:""
@@ -159,7 +159,7 @@ export const View = () => {
                                 {
                                  item['Occasion-Type ']?<>
                                  <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
-                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Occasion</th>
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[12px]  '>Occasion</th>
                                           <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item['Occasion-Type ']}</td>
                                  </table>
                                  </>:""
@@ -167,7 +167,7 @@ export const View = () => {
                                 {
                                  item.Pattern?<>
                                  <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
-                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Pattren</th>
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[12px]  '>Pattren</th>
                                           <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.Pattern}</td>
                                  </table>
                                  </>:""
@@ -175,7 +175,7 @@ export const View = () => {
                                 {
                                  item.Sleeve_type?<>
                                  <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
-                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Sleeve type</th>
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[12px]  '>Sleeve type</th>
                                           <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.Sleeve_type}</td>
                                  </table>
                                  </>:""
@@ -183,7 +183,7 @@ export const View = () => {
                                 {
                                  item.Warranty?<>
                                  <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
-                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Warranty</th>
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[12px]  '>Warranty</th>
                                           <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.Warranty}</td>
                                  </table>
                                  </>:""
@@ -191,7 +191,7 @@ export const View = () => {
                                 {
                                  item.cetegory?<>
                                  <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
-                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>cetegory</th>
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[12px]  '>cetegory</th>
                                           <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.cetegory}</td>
                                  </table>
                                  </>:""
@@ -199,7 +199,7 @@ export const View = () => {
                                 {
                                  item.Brand?<>
                                  <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
-                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Brand</th>
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[12px]  '>Brand</th>
                                           <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item.Brand}</td>
                                  </table>
                                  </>:""
@@ -207,7 +207,7 @@ export const View = () => {
                                 {
                                  item['CPU Model']?<>
                                  <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
-                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>CPU Model</th>
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[12px]  '>CPU Model</th>
                                           <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item['CPU Model']}</td>
                                  </table>
                                  </>:""
@@ -215,7 +215,7 @@ export const View = () => {
                                 {
                                  item['Closure type']?<>
                                  <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
-                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Closure type</th>
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[12px]  '>Closure type</th>
                                           <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Closure type"]}</td>
                                  </table>
                                  </>:""
@@ -223,7 +223,7 @@ export const View = () => {
                                 {
                                  item['Connectivity Technology']?<>
                                  <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
-                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Connectivity Technology</th>
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[12px]  '>Connectivity Technology</th>
                                           <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Connectivity Technology"]}</td>
                                  </table>
                                  </>:""
@@ -231,7 +231,7 @@ export const View = () => {
                                 {
                                  item['Electric fan design']?<>
                                  <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
-                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Electric fan design</th>
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[12px]  '>Electric fan design</th>
                                           <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Electric fan design"]}</td>
                                  </table>
                                  </>:""
@@ -239,7 +239,7 @@ export const View = () => {
                                 {
                                  item['Heel type']?<>
                                  <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
-                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Heel type</th>
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[12px]  '>Heel type</th>
                                           <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Heel type"]}</td>
                                  </table>
                                  </>:""
@@ -247,7 +247,7 @@ export const View = () => {
                                 {
                                  item['Frequency Response']?<>
                                  <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
-                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Frequency Response</th>
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[12px]  '>Frequency Response</th>
                                           <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Frequency Response"]}</td>
                                  </table>
                                  </>:""
@@ -255,7 +255,7 @@ export const View = () => {
                                 {
                                  item['Indoor/Outdoor Usagen']?<>
                                  <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
-                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Indoor/Outdoor Usagen</th>
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[12px]  '>Indoor/Outdoor Usagen</th>
                                           <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Indoor/Outdoor Usagen"]}</td>
                                  </table>
                                  </>:""
@@ -263,7 +263,7 @@ export const View = () => {
                                 {
                                  item['Light Source Type']?<>
                                  <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
-                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Light Source Type</th>
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[12px]  '>Light Source Type</th>
                                           <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Light Source Type"]}</td>
                                  </table>
                                  </>:""
@@ -271,7 +271,7 @@ export const View = () => {
                                 {
                                  item['Memory Storage Capacity']?<>
                                  <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
-                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Memory Storage Capacity</th>
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[12px]  '>Memory Storage Capacity</th>
                                           <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Memory Storage Capacity"]}</td>
                                  </table>
                                  </>:""
@@ -279,7 +279,7 @@ export const View = () => {
                                 {
                                  item['Model Name']?<>
                                  <table className=" w-full flex justify-evenly items-center flex-row gap-3 " >
-                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[14px]  '>Model Name</th>
+                                        <th className=' md:text-[16px]     text-black pl-2 font-semibold text-left w-44  text-[12px]  '>Model Name</th>
                                           <td className=' md:text-[16px]   text-black pr-2 text-xs font-semibold  w-36  text-center  '  >{item["Model Name"]}</td>
                                  </table>
                                  </>:""
@@ -292,8 +292,8 @@ export const View = () => {
                                   </div>
                                
                                     <div className=' w-full h-1/6 grid grid-cols-2  mt-3 justify-items-center items-center '>
-                                     <Link to="/home" className=' text-purple-950 text-center border border-fuchsia-300 hover:bg-gradient-to-r from-violet-200 to-pink-200 shadow-md    text-[14px] font-semibold  p-1 sm:p-1 md:p-1  w-20 sm:w-20 rounded-md '>Shoping</Link>
-                                     <button className=' text-purple-950 border border-fuchsia-300 hover:bg-gradient-to-r from-violet-200 to-pink-200  shadow-md text-[14px]  font-semibold  sm:p-1 md:p-1 p-1 w-24  sm:w-24 rounded-md  '    onClick={()=>{addtocart(item)}}  >Add to cart</button>
+                                     <Link to="/home" className=' text-purple-950 text-center border border-fuchsia-300 hover:bg-gradient-to-r from-violet-200 to-pink-200 shadow-md    text-[12px] font-semibold  p-1 sm:p-1 md:p-1  w-20 sm:w-20 rounded-md '>Shoping</Link>
+                                     <button className=' text-purple-950 border border-fuchsia-300 hover:bg-gradient-to-r from-violet-200 to-pink-200  shadow-md text-[12px]  font-semibold  sm:p-1 md:p-1 p-1 w-24  sm:w-24 rounded-md  '    onClick={()=>{addtocart(item)}}  >Add to cart</button>
 
                                  </div>
                                 
@@ -307,7 +307,7 @@ export const View = () => {
 
        {
         ceteData?<>
-        <div className=' w-full sm:w-5/6 lg:w-4/6 h-1/6 mt-1 bg-white  shadow-2xl  flex justify-evenly items-center flex-row  flex-wrap pt-1  md:mt-1 '>
+        <div className=' max sm:w-5/6 lg:w-4/6 h-1/6 mt-1 bg-white  shadow-2xl  flex justify-evenly items-center flex-row  flex-wrap pt-1  md:mt-1 '>
         <h4 className=' font-bold'>Products  Suggestions</h4>
         <div className=' w-full h-full flex justify-evenly flex-row '>
         {
