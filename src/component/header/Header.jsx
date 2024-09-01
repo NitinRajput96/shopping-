@@ -28,8 +28,8 @@ export const Header = () => {
                      Shopping 
              </div>
               <div className='w-52 sm:flex justify-evenly items-center sm:w-96 hidden sm:block font-bold'>
-                   <Link to="cart" className=' text-lg   hover:bg-gray-100 hover:text-orange-500 p-2 hover:rounded-md flex justify-center items-center'><IoMdCart/><span className='text-[15px] font-sans font font-semibold'>{cart.cartTotalQty}</span> </Link>
-                   <Link to="/home" className=' text-md   hover:bg-gray-100 hover:text-orange-500 p-2 md:text-md hover:rounded-md'>Shop</Link>
+                   <Link to="cart" className=' text-lg   hover:bg-gray-100 hover:text-orange-500 p-2 hover:rounded-md flex justify-center items-center'><IoMdCart/><span className='text-[15px] font-sans font font-semibold'>{cart.cartItems.length}</span> </Link>
+                   <Link to="/home" className=' text-md   hover:bg-gray-100 hover:text-orange-500 p-2 md:text-md hover:rounded-md'>Cetegory</Link>
                    <Link to="/" className=' text-md       hover:bg-gray-100 hover:text-orange-500 p-2 md:text-md hover:rounded-md'>Home</Link>
                    <Link to="#" className=' text-md       hover:bg-gray-100 hover:text-orange-500 p-2 md:text-md hover:rounded-md'>Service</Link>
                    <Link to="/about" className=' text-md  hover:bg-gray-100 hover:text-orange-500 p-2 md:text-md hover:rounded-md'>About</Link>
