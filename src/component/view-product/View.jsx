@@ -2,16 +2,11 @@
 import React, { useCallback, useEffect, useState }  from 'react'
 import Data from '../json_data/Data.json';
 import { FaEye } from "react-icons/fa";
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addToCart, clearCartItems } from '../../context/store/slice/slice';
+import { addToCart} from '../../context/store/slice/slice';
 import toast, { Toaster } from 'react-hot-toast';
-
-
-
-
-
-
+import { useCategory } from '../../context/createCont';
 
 
 export const View = () => {
@@ -56,12 +51,13 @@ export const View = () => {
   return (
    <>
    <Toaster/>
-      <div className=' w-full  h-auto bg-gray-100 flex justify-center flex-col items-center px-3 py-2'>
-      {
+      <div className=' w-full h-auto  md:h-screen bg-gray-100 flex justify-center flex-col items-center px-3 py-2'>
+          <div className=' w-full h-full  flex justify-center items-center flex-col '>
+          {
         Data.ProductDetails.map((item,i)=>{
               return(item.subcetegory===useP?
                      
-                      <div className=' w-full  max-[640px]:h-[80vh]  sm:h-[280px]   lg:h-[370px]  max-[640px]:h-5/6  sm:w-5/6 lg:w-4/6    bg-white    sm:flex sm:flex-row justify-evenly items-center shadow-xl ' key={item.id} >
+                      <div className=' w-full  max-[640px]:h-auto  sm:h-full  lg:h-2/6 xl:h-4/6    sm:w-5/6 lg:w-5/6    bg-white    sm:flex sm:flex-row justify-evenly items-center shadow-xl ' key={item.id} >
                            <div className=' sm:w-2/4  sm:h-full max-[640px]:h-2/4  p-2   flex justify-center items-center '>
                             <img className='  w-5/6 h-full  max-[640]:h-full sm:w-full  ' src={item.img} alt="" />
                            </div>
@@ -308,7 +304,7 @@ export const View = () => {
 
        {
         ceteData?<>
-        <div className=' w-full sm:w-5/6 lg:w-4/6 h-1/6 mt-1 bg-white  shadow-2xl  flex justify-evenly items-center flex-row  flex-wrap pt-1  md:mt-1 '>
+        <div className=' w-full h-full lg:h-1/6 sm:w-5/6 lg:w-5/6 xl:h-2/6  mt-1 bg-white  shadow-2xl  flex justify-evenly items-center flex-row  flex-wrap pt-1  md:mt-1 '>
         <h4 className=' font-bold'>Products  Suggestions</h4>
         <div className=' w-full h-full flex justify-evenly flex-row '>
         {
@@ -334,10 +330,7 @@ export const View = () => {
 
         </>:""
        }
-
-      
-      
-      
+          </div>
       </div>
 
    </>

@@ -1,7 +1,7 @@
-import React, {  useCallback, useContext, useEffect,useState } from 'react'
+import React, {   useEffect,useState } from 'react'
 import Data from '../json_data/Data.json';
 import Catego from '../json_data/Catego.json';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import { useCategory } from '../../context/createCont';
 import { addToCart } from '../../context/store/slice/slice';
 import { useDispatch } from 'react-redux';

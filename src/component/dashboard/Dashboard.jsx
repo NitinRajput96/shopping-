@@ -116,7 +116,7 @@ export const Dashboard = () => {
                {
                     Data.ProductDetails.map((item,i)=>{
                               return item.featuresProduct==="fature"?
-                                 <div onClick={()=>{futureProdts(item.subcetegory)}} className=' shadow-2xl h-96 bg-gray-50  w-full sm:w-72 md:w-60 lg:w-80 flex flex-col justify-center items-center gap-2'  key={item.id}>
+                                 <div onClick={()=>{futureProdts(item.subcetegory)}} className=' shadow-2xl h-96 bg-gray-50  w-full sm:w-72 md:w-60 lg:w-72 xl:w-80 flex flex-col justify-center items-center gap-2'  key={item.id}>
                                    
                                      <img className=' w-full h-5/6' src={item.img} alt="img" />
                                      <p className=' text-xl font-bold uppercase'>{item.cetegory}</p>

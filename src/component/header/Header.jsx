@@ -14,9 +14,11 @@ import { useCategory } from '../../context/createCont';
 
 export const Header = () => {
 
-         const quantity=useSelector((state)=>state.cart)
+         const cart=useSelector(state=>state.cart)
          const [state,setState]=useState(false)
          const {login}=useCategory()
+         
+         
  
     
   return (
@@ -26,7 +28,7 @@ export const Header = () => {
                      Shopping 
              </div>
               <div className='w-52 sm:flex justify-evenly items-center sm:w-96 hidden sm:block font-bold'>
-                   <Link to="cart" className=' text-lg   hover:bg-gray-100 hover:text-orange-500 p-2 hover:rounded-md flex justify-center items-center'><IoMdCart/><span className='text-[15px] font-sans font font-semibold'>{quantity.cartItems.length}</span> </Link>
+                   <Link to="cart" className=' text-lg   hover:bg-gray-100 hover:text-orange-500 p-2 hover:rounded-md flex justify-center items-center'><IoMdCart/><span className='text-[15px] font-sans font font-semibold'>{cart.cartTotalQty}</span> </Link>
                    <Link to="/home" className=' text-md   hover:bg-gray-100 hover:text-orange-500 p-2 md:text-md hover:rounded-md'>Shop</Link>
                    <Link to="/" className=' text-md       hover:bg-gray-100 hover:text-orange-500 p-2 md:text-md hover:rounded-md'>Home</Link>
                    <Link to="#" className=' text-md       hover:bg-gray-100 hover:text-orange-500 p-2 md:text-md hover:rounded-md'>Service</Link>
@@ -35,7 +37,7 @@ export const Header = () => {
              </div>
              
                <span className='flex justify-center items-center gap-3 sm:hidden'>
-               <Link to="cart" className=' text-[18px] flex justify-center items-center text-purple-950'><IoMdCart/><span className='text-[15px] font-sans font font-semibold'>{quantity.cartItems.length}</span></Link>
+               <Link to="cart" className=' text-[18px] flex justify-center items-center text-purple-950'><IoMdCart/><span className='text-[15px] font-sans font font-semibold'>{cart.cartItems.length}</span></Link>
                <button className=' sm:hidden' onClick={()=>setState(!state)}><FaList/></button>
                </span>
 

@@ -1,8 +1,16 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { addToCart, clearCartItems, decreaseCardItem, removeSingleCart } from '../../context/store/slice/slice';
 import toast, { Toaster } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import { addToCart, clearCartItems, decreaseCardItem } from '../../context/store/slice/slice';
+
+
+
+
+
+
+
+
 
 
 
@@ -11,27 +19,25 @@ export const Cart = () => {
 
      const card=useSelector((state)=>state.cart)
      const dispatch=useDispatch()
-     const [page,setPage]=useState(1)
+   
+     
+   
 
-    const decreaseItem=(item)=>{
-              dispatch(decreaseCardItem(item))
-              toast.success("Decrease item quantity")
-    }
     const increament=(item)=>{
        dispatch(addToCart(item))
        toast.success("Increase item quantity")
     }
 
-    const removeSingpro=(item)=>{
-       dispatch(  removeSingleCart(item))
-       toast.success(" Delete item form cart")
+    const  decreament=(item)=>{
+       dispatch(decreaseCardItem(item))
+       toast.success("Decrease item quantity")
     }
      
-    // const clearCart=(item)=>{
-    //   dispatch(clearCartItems(item))
-    //   toast.success("Delete all Items")
+    const clearCartIallItems=()=>{
+       dispatch(clearCartItems())
+      toast.success("Delete all Items")
 
-    // }
+    }
       
      
   return (
@@ -54,28 +60,35 @@ export const Cart = () => {
                             
                                 <img className=' w-full h-4/6   ' src={item.img} alt="" />
                             
-                             <span className=' mt-[2px] w-full h-1/6 flex justify-center items-center  text-[10px] font-semibold '>{item.Price*item.cartTotalQty}Rs</span>
+                             <span className=' mt-[2px] w-full h-1/6 flex justify-center items-center  text-[10px] font-semibold '>{item.Price*item.prodQyt}Rs</span>
                              <span className='  w-full h-1/6 flex justify-evenly items-center  '>
-                                 <button onClick={()=>{decreaseItem(item)}} className=' w-full h-full text-md    flex justify-center items-center'>-</button>
-                                 <span   className='w-full h-full text-[10px]  font-semibold   flex justify-center items-center'>{item.cartTotalQty}</span>
+                                 <button onClick={()=>{decreament(item)}} className=' w-full h-full text-md    flex justify-center items-center'>-</button>
+                                 <span   className='w-full h-full text-[10px]  font-semibold   flex justify-center items-center'>{item.prodQyt}</span>
                                  <button onClick={()=>{increament(item)}} className='w-full h-full text-md    flex justify-center items-center'>+</button>
                              </span>
                           </div>
                         )
                         }
                         <div className=' bg-gray-100 w-full h-10 col-span-full flex justify-end items-center'>
-                           <button className=' mr-3 w-20 full border border-pink-200 ' >Clear cart</button>
+                           <button className=' mr-3 w-20 full border border-pink-200 ' onClick={()=>{clearCartIallItems()}}>Clear cart</button>
                           </div>
                       </div>
                      }
                      
                      </>:
-                     <div className='  max-[639px]:w-11/12   sm:h-3/6  h-52 flex justify-center items-center flex-col gap-2 mt-28 border-2  '>
-                               <p className=''> There is no items please shopping</p>
-                               <Link className=' shadow-md px-2 border rounded-sm border-fuchsia-400' to="/home">Shopping</Link>
-                     </div>
+                     <>
+                     {
+                      card.cartItems.length<=0?
+                      <div className='w-full col-span-full h-96 flex justify-center items-center border'>
+                         <div className=' w-5/6  h-2/4 flex justify-center items-center flex-col gap-2   '>
+                               <p className=' font-semibold'> There is no items please shopping</p>
+                               <Link className=' shadow-md text-sm px-3 py-1 border rounded-md hover:bg-gradient-to-r from-violet-200 to-pink-200  border-fuchsia-400' to="/home">Shopping</Link>
+                        </div>
+                      </div>:""
+                     }
+                     </>
                    }
-
+{/* payment */}
                    {
                     card.cartItems.length>0?
                     <div className=' w-full   flex justify-center items-center flex-col shadow-md bg-gray-50  p-3 sm:h-full '>
@@ -87,7 +100,7 @@ export const Cart = () => {
                                              Original price
                                          </th>
                                          <td>
-                                            1200000 Rs
+                                          {card.cartPrice}
                                          </td>
                                        </div>
 
@@ -105,14 +118,14 @@ export const Cart = () => {
                                          <th className=' text-black text-sm font-semibold'>
                                              Total Payment
                                          </th>
-                                         <td className=' text-green-600 font-semibold'>
-                                             free
+                                         <td className=' text-black font-semibold'>
+                                              {card.cartPrice}
                                          </td>
                                        </div>
                                        <div className='w-full grid grid-cols-1 justify-items-center items-center'>
                                             <button className=' w-11/12 h-7 bg-blue-500 rounded-md text-sm text-white font-semibold '>Proceed to Checkout</button>
                                             <span className=' text-gray-600'>or</span>
-                                           <span className=' text-[14px] font-semibold underline'>Continue Shopping</span>
+                                           <Link to="/home" className=' text-[14px] font-semibold underline'>Continue Shopping</Link>
                                          
                                        </div>
 
