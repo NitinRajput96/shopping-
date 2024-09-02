@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import toast, { Toaster } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import { MdDeleteForever } from "react-icons/md";
 import { addToCart, clearCartItems, decreaseCardItem } from '../../context/store/slice/slice';
 
 
@@ -62,9 +63,21 @@ export const Cart = () => {
                             
                              <span className=' mt-[2px] w-full h-1/6 flex justify-center items-center  text-[10px] font-semibold '>{item.Price*item.prodQyt}Rs</span>
                              <span className='  w-full h-1/6 flex justify-evenly items-center  '>
-                                 <button onClick={()=>{decreament(item)}} className=' w-full h-full text-md    flex justify-center items-center'>-</button>
-                                 <span   className='w-full h-full text-[10px]  font-semibold   flex justify-center items-center'>{item.prodQyt}</span>
-                                 <button onClick={()=>{increament(item)}} className='w-full h-full text-md    flex justify-center items-center'>+</button>
+                                 {
+                                  item.prodQyt===1?
+                                 <>
+                                  <button onClick={()=>{decreament(item)}} className=' w-full h-full text-[12px]    flex justify-center items-center'><MdDeleteForever/></button>
+                                  <span   className='w-full h-full text-[10px]  font-semibold   flex justify-center items-center'>{item.prodQyt}</span>
+                                  <button onClick={()=>{increament(item)}} className='w-full h-full text-md    flex justify-center items-center'>+</button>
+                                 </>
+                                  :
+                                  <>
+                                  <button onClick={()=>{decreament(item)}} className=' w-full h-full text-md    flex justify-center items-center'>-</button>
+                                  <span   className='w-full h-full text-[10px]  font-semibold   flex justify-center items-center'>{item.prodQyt}</span>
+                                  <button onClick={()=>{increament(item)}} className='w-full h-full text-md    flex justify-center items-center'>+</button>
+                                  </>
+                                 }
+
                              </span>
                           </div>
                         )

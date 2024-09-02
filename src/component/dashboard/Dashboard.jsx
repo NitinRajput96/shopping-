@@ -82,7 +82,7 @@ export const Dashboard = () => {
                          <div className=' w-full h-full flex flex-row justify-center sm:gap-2 items-center bg-gradient-to-r from-zinc-100 to-fuchsia-200 p-3'>
                             
                               <div className='w-2/4 h-full flex justify-center items-center flex-col'> 
-                                     <p className=' text-2xl lg:text-[50px] lg:mb-4 bg-gradient-to-r from-orange-500 to-violet-500 bg-clip-text text-transparent  font-bold'>India's Brand</p>
+                                     <p className=' text-2xl lg:text-[50px] lg:pb-5 bg-gradient-to-r from-orange-500 to-violet-500 bg-clip-text text-transparent  font-bold'>India's Brand</p>
                                      <p className=' text-lg text-semibold text-black'>Fashion shopping </p>
                                      <span className=' w-24 h-6 border rounded-lg px-2 text-xs flex justify-center items-center   border-fuchsia-400 gap-2 mt-5 text-black'><Link to="/home">Shopping</Link> <FaLongArrowAltRight/> </span>
                               </div>
