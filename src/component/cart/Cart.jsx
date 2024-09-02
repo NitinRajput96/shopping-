@@ -66,7 +66,7 @@ export const Cart = () => {
                                  {
                                   item.prodQyt===1?
                                  <>
-                                  <button onClick={()=>{decreament(item)}} className=' w-full h-full text-[12px]    flex justify-center items-center'><MdDeleteForever/></button>
+                                  <button onClick={()=>{decreament(item)}} className=' w-full h-full text-[12px]  hover:text-red-600   flex justify-center items-center'><MdDeleteForever/></button>
                                   <span   className='w-full h-full text-[10px]  font-semibold   flex justify-center items-center'>{item.prodQyt}</span>
                                   <button onClick={()=>{increament(item)}} className='w-full h-full text-md    flex justify-center items-center'>+</button>
                                  </>
