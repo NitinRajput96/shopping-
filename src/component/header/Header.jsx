@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaList } from "react-icons/fa";
 import { IoMdCart } from "react-icons/io";
@@ -16,7 +16,10 @@ export const Header = () => {
 
          const cart=useSelector(state=>state.cart)
          const [state,setState]=useState(false)
-         const {login}=useCategory()
+         const {loginData,setLoginData,loginToggle,setLoginToggle}=useCategory()
+
+       
+         
          
          
  
@@ -42,14 +45,14 @@ export const Header = () => {
                </span>
 
                {
-                  login!=null?<>
+                  loginData!=null?<>
                         <div className='flex justify-center items-center flex-col gap-1 max-[639px]:hidden '>
-                          <span className=' w-[26px] h-[26px]  flex font-extrabold bg-gradient-to-r from-violet-200 to-pink-200 text-purple-950 justify-center items-center border-black  rounded-full'>N</span>
-                            <span className='  text-[8px] font-bold'>Nitin Rajput</span>
+                        <span className=' w-[26px] h-[26px]  flex font-extrabold bg-white text-purple-950 justify-center items-center border-black  rounded-full'>❤️</span>
+                            <span className='  text-[8px] font-bold'>{loginData.name}</span>
                         </div>                  
 
                   </>:<>
-                  <span className=' max-[639px]:hidden border border-black rounded-md text-xs  font-extrabold sm:px-[3px] sm:py-[2px] md:px-2 md:py-1' >Login</span>
+                  <span className=' max-[639px]:hidden border border-black rounded-md text-xs  font-extrabold sm:px-[3px] sm:py-[2px] md:px-2 md:py-1' onClick={()=>{setLoginToggle(!loginToggle)}} >Login</span>
                   </>
                }    
     
@@ -59,13 +62,13 @@ export const Header = () => {
             <div className='w-full  shadow-lg sticky sm:hidden top-[54px] z-20 font-bold bg-gradient-to-r from-violet-200 to-pink-200 text-purple-950 py-3 px-3 flex flex-col items-start '>
                    <Link to="#" className=' text-md  w-full flex justify-start items-center pl-3 hover:bg-gray-100  hover:text-orange-500 p-1 md:text-md'>
                      {
-                        login!=null?<>
+                        loginData!=null?<>
                                 <div className='flex justify-center items-center gap-1 border-b  border-black pb-1  '>
-                                  <span className=' w-[27px] h-[27px] shadow-xl border border-black flex font-extrabold bg-gradient-to-r from-violet-200 to-pink-200 text-purple-950 justify-center items-center  rounded-full'>N</span>
-                                  <span className='text-[10px]'>Nitin Rajput</span>
+                                  <span className=' w-[27px] h-[27px] shadow-xl border border-white flex font-extrabold bg-white text-purple-950 justify-center items-center  rounded-full'>❤️</span>
+                                  <span className='text-[10px]'>{loginData.name}</span>
                                 </div>
                         </>:<>
-                        <span className='border border-purple-600 text-[12px] text-purple-700 py-[2px] text-center px-[8px]  rounded-full'  >Login</span>
+                        <span className='border border-purple-600 text-[12px] text-purple-700 py-[2px] text-center px-[8px]  rounded-full' onClick={()=>{setLoginToggle(!loginToggle)}} >Login</span>
                         </>
                      }
                   </Link>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import toast, { Toaster } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
@@ -39,6 +39,10 @@ export const Cart = () => {
       toast.success("Delete all Items")
 
     }
+
+    useEffect(()=>{
+      window.scroll(0,0)
+    },[])
       
      
   return (

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {  Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css/pagination';
@@ -26,14 +26,16 @@ export const Dashboard = () => {
                navigate("/view")
           }  
            
-     
+     useEffect(()=>{
+          window.scroll(0,0)
+     },[])
            
             
            
      
   return (
    <>
-      <section className=' lg:h-[85vh] h-[40vh] '>
+      <section className='  h-[50vh] sm:h-[80vh] lg:h-[60vh]'>
               <Swiper 
                   spaceBetween={30}
                     centeredSlides={true}
@@ -50,7 +52,7 @@ export const Dashboard = () => {
                     className="mySwiper h-full"
               >
               <SwiperSlide>
-                         <div className=' w-full h-full flex flex-row justify-center sm:gap-5 items-center bg-gradient-to-r from-purple-300 to-sky-50  p-3'>
+                         <div className=' w-full h-full  flex flex-row justify-center sm:gap-5 items-center bg-gradient-to-r from-purple-300 to-sky-50  p-3'>
                             
                               <div className='w-2/4 h-full flex justify-center items-center flex-col'> 
                                      <p className='  text-2xl lg:text-[50px] lg:pb-5 bg-gradient-to-r from-gray-900 to-lime-400 bg-clip-text text-transparent font-bold'>India's Brand</p>
@@ -59,7 +61,7 @@ export const Dashboard = () => {
                               </div>
 
                               <div className='w-2/4 h-full flex justify-center items-center'>
-                                   <img src="/image/without-g-removebg-preview.png" className=' w-5/6 h-5/6' alt="" />
+                                   <img src="/image/without-g-removebg-preview.png" className=' w-full h-full ' alt="" />
                               </div>
                          </div>
               </SwiperSlide>
@@ -73,7 +75,7 @@ export const Dashboard = () => {
                               </div>
 
                               <div className='w-2/4 h-full flex justify-center items-center'>
-                                   <img src="/image/without-removebg-preview.png" className=' w-full h-full' alt="" />
+                                   <img src="/image/without-removebg-preview.png" className=' w-full h-full'  alt="" />
                               </div>
                          </div>
               </SwiperSlide>
@@ -112,11 +114,11 @@ export const Dashboard = () => {
 
            <div className='w-full h-auto  bg-white flex justify-evenly  flex-col items-center py-5  mt-10'>
               <h1 className= ' text-[30px] lg:text-[40px] font-bold'>Futures Products</h1>
-               <div className='w-full h-full p-4 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2  justify-items-center items-center '>
+               <div className='w-full h-full p-4 grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2  justify-items-center items-center '>
                {
                     Data.ProductDetails.map((item,i)=>{
                               return item.featuresProduct==="fature"?
-                                 <div onClick={()=>{futureProdts(item.subcetegory)}} className=' shadow-2xl h-96 bg-gray-50  w-full sm:w-72 md:w-60 lg:w-72 xl:w-80 flex flex-col justify-center items-center gap-2'  key={item.id}>
+                                 <div onClick={()=>{futureProdts(item.subcetegory)}} className=' shadow-2xl h-96 bg-gray-50  w-full sm:w-64 md:w-72 lg:w-64 xl:w-80 flex flex-col justify-center items-center gap-2'  key={item.id}>
                                    
                                      <img className=' w-full h-5/6' src={item.img} alt="img" />
                                      <p className=' text-xl font-bold uppercase'>{item.cetegory}</p>

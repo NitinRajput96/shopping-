@@ -1,24 +1,35 @@
 import React, { useState } from 'react'
 import { TiDeleteOutline } from "react-icons/ti";
 import { useCategory } from '../../context/createCont';
+import toast, { Toaster } from 'react-hot-toast';
+
 
 export const Login = () => {
             
-      const {loginToggle,setLoginToggle}=useCategory()
-      const [loginData,setLoginData]=useState({})
+      const {loginToggle,setLoginToggle,loginData,setLoginData}=useCategory()
+      const [state, setState] = useState({})
+     
+     
 
-
-      const handler=()=>{
-                 
-                    
-      }
-      
-
-      const sendData=(e)=>{
-            e.preventDefault()
-            
+    
+      const handler=(e)=>{
+          const {name,value}=e.target
+          setState({...state,[name]:value})
       }
      
+      const getDataFromIn=(e)=>{
+            e.preventDefault()
+            toast.success("Login Successfully")
+            setLoginData(state)
+             setTimeout(() => {
+              setLoginToggle(!loginToggle)
+             }, 100);     
+      }
+
+      
+      
+     
+      
       
 
        useState(()=>{
@@ -31,34 +42,40 @@ export const Login = () => {
   
   return (
     <>
+    <Toaster/>
         {
           loginToggle?
-          <div className=' w-full h-[95vh]   z-50 absolute  flex justify-center items-center'>
-               <div className=' w-11/12 sm:w-5/6 md:w-4/6 lg:w-2/5 xl:w-2/6 h-4/6 flex gap-2  justify-start items-center flex-col  shadow-xl rounded-lg  bg-black opacity-80  '>
-                  <div className='w-11/12 h-auto  mt-1 flex justify-end  '>
-                       <span className=' text-[40px] text-white  ' onClick={()=>{setLoginToggle(!loginToggle)}}><TiDeleteOutline/></span>
-                  </div>
-                <form action="" className='w-11/12 h-4/6 ' onSubmit={sendData}>
-                <div className=' w-full h-full    opacity-100 '>
-                         
-                         <div className=' w-full h-1/6  flex justify-center items-center flex-col border-b-2'>
-                               <div className=' w-full h-full text-center text-2xl underline  text-purple-400 font-bold'> Login</div>
+          <div className=' w-full h-full  top-28 sm:top-10 md:items-center lg:top-10  z-30  absolute  flex justify-center '>
+               <div className=' w-11/12 h-4/6 sm:h-full sm:w-3/6 md:h-3/6 lg:h-4/6 2xl:h-3/6   md:w-4/6 lg:w-2/5 xl:w-2/6  p-4 flex justify-center flex-col items-center   shadow-xl rounded-lg  bg-black opacity-80  '>
+              
+               <form action="" className='w-full h-full ' onSubmit={getDataFromIn}>
+               <div className=' w-full  h-full   grid grid-rows-5 opacity-100 '>   
+                        <div className=' w-full border-b   grid grid-cols-8 justify-items-center items-center'>
+                               <span className=' text-[40px] underline  text-purple-500 font-bold col-span-7  ml-10'> Login</span>
+                               <span className=' text-[35px] text-white align-text-top  h-full  ' onClick={()=>{setLoginToggle(!loginToggle)}}><TiDeleteOutline/></span>
+                         </div>
+                        
+                        <div className=' w-full  flex justify-center gap-1 items-center flex-col'>
+                             <span className='w-5/6 text-white font-bold'>Name</span>
+                              <input className='w-5/6 h-10 text-white text-sm  rounded-md pl-3 border-2 bg-black' name='name' onChange={handler}  type="text" placeholder=' ' />
                         </div>
-                        <div className=' w-full h-[90px]  flex justify-center gap-1 items-center flex-col'>
-                             <span className='w-5/6 text-white font-bold'>Email.id</span>
-                              <input className='w-5/6 h-8 text-white text-sm  rounded-md pl-3 border-2 bg-black' name='email' onChange={handler} type="email" placeholder='Enter your email ' />
+                        <div className=' w-full  flex justify-center gap-1 items-center flex-col'>
+                              <span className='w-5/6 text-white font-bold'>Email</span>
+                              <input className='w-5/6 h-10 text-white text-sm font-bold   rounded-md pl-3 border-2 bg-black' name='email' onChange={handler}  type="email" placeholder='' />
                         </div>
-                        <div className=' w-full h-[90px]  flex justify-center gap-1 items-center flex-col'>
-                              <span className='w-5/6 text-white font-bold'>Password</span>
-                              <input className='w-5/6 h-8 text-white text-sm font-bold   rounded-md pl-3 border-2 bg-black' name='password' onChange={handler} type="password" placeholder='Enter your email ' />
+                        <div className=' w-full  flex justify-center gap-1 items-center flex-col'>
+                              <span className='w-5/6 text-white font-bold'>Mobile</span>
+                              <input className='w-5/6 h-10 text-white text-sm font-bold   rounded-md pl-3 border-2 bg-black' name='mobile' onChange={handler}  type="mobile" placeholder='' />
                         </div>
  
-                        <div className=' w-full h-1/6  flex justify-center items-center flex-col'>
-                               <button className=' text-white border border-white px-2 py-1 rounded-lg' type='submit'>Submit</button>
+                        <div className=' w-full flex justify-center items-center flex-col'>
+                               <button className=' text-white border border-white px-2 py-1 rounded-lg' type='submit' >Submit</button>
                         </div>
+                       
                    </div>
-                </form>
-                  <div className=' w-11/12 h-1/6 '></div>
+               </form>
+               
+                
                </div>
         </div>:''
         }   
