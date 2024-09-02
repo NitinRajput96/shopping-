@@ -6,9 +6,12 @@ const UseContaxtProvider=({children})=>{
         const [categ,setCateg]=useState()
         const [futures,setFutures]=useState(null)
         const [login,setLogin]=useState(1)
+        const [loginToggle,setLoginToggle]=useState(false)
+       
+        
         
     return(
-         <UseContext.Provider value={{categ,setCateg,futures,setFutures,login,setLogin}}>
+         <UseContext.Provider value={{categ,setCateg,futures,setFutures,login,setLogin,loginToggle,setLoginToggle}}>
          {children}
          </UseContext.Provider>
     )

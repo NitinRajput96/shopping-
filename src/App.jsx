@@ -7,6 +7,7 @@ import { Dashboard } from "./component/dashboard/Dashboard";
 import { About } from "./component/about/About";
 import UseContaxtProvider from "./context/createCont";
 import { Cart } from "./component/cart/Cart";
+import { Login } from "./component/login/Login";
 
 
 
@@ -20,6 +21,7 @@ return(
       <UseContaxtProvider>
       <BrowserRouter>
                <Header/>
+               <Login/>
                <Routes>
                   <Route path="home" element={<Home/>}  />
                   <Route path="about" element={<About/>} />
