@@ -48,7 +48,7 @@ export const Header = () => {
                   loginData!=null?<>
                         <div className='flex justify-center items-center flex-col gap-1 max-[639px]:hidden '>
                         <span className=' w-[26px] h-[26px]  flex font-extrabold bg-white text-purple-950 justify-center items-center border-black  rounded-full'>❤️</span>
-                            <span className='  text-[8px] font-bold'>{loginData.name}</span>
+                            <span className='  text-[8px] font-bold'>{loginData.fristName}</span>
                         </div>                  
 
                   </>:<>
@@ -65,7 +65,7 @@ export const Header = () => {
                         loginData!=null?<>
                                 <div className='flex justify-center items-center gap-1 border-b  border-black pb-1  '>
                                   <span className=' w-[27px] h-[27px] shadow-xl border border-white flex font-extrabold bg-white text-purple-950 justify-center items-center  rounded-full'>❤️</span>
-                                  <span className='text-[10px]'>{loginData.name}</span>
+                                  <span className='text-[14px]'>{loginData.fristName}</span>
                                 </div>
                         </>:<>
                         <span className='border border-purple-600 text-[12px] text-purple-700 py-[2px] text-center px-[8px]  rounded-full' onClick={()=>{setLoginToggle(!loginToggle)}} >Login</span>

@@ -57,7 +57,7 @@ export const View = () => {
         Data.ProductDetails.map((item,i)=>{
               return(item.subcetegory===useP?
                      
-                      <div className=' w-full  max-[640px]:h-auto  sm:h-full md:h-3/6 lg:h-2/6 xl:h-3/5    sm:w-5/6 lg:w-5/6    bg-white    sm:flex sm:flex-row justify-evenly items-center shadow-xl ' key={item.id} >
+                      <div className=' w-full  max-[640px]:h-auto  sm:h-full md:h-3/6 lg:h-2/6 xl:h-4/6    sm:w-5/6 lg:w-5/6    bg-white    sm:flex sm:flex-row justify-evenly items-center shadow-xl ' key={item.id} >
                            <div className=' sm:w-2/4  sm:h-full max-[640px]:h-2/4  p-2   flex justify-center items-center '>
                             <img className='  w-5/6 h-full  max-[640]:h-full sm:w-full  ' src={item.img} alt="" />
                            </div>
@@ -304,7 +304,7 @@ export const View = () => {
 
        {
         ceteData?<>
-        <div className=' w-full h-full md:h-1/6 lg:h-1/6 sm:w-5/6 lg:w-5/6 xl:h-2/6  mt-1 bg-white  shadow-2xl  flex justify-evenly items-center flex-row  flex-wrap pt-1  md:mt-1 '>
+        <div className=' w-full h-full md:h-1/6 lg:h-1/6 sm:w-5/6 lg:w-5/6  xl:h-40  mt-1 bg-white  shadow-2xl  flex justify-evenly items-center flex-row  flex-wrap pt-1  md:mt-1 '>
         <h4 className=' font-bold'>Products  Suggestions</h4>
         <div className=' w-full h-full flex justify-evenly flex-row '>
         {

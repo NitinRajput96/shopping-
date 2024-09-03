@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { TiDeleteOutline } from "react-icons/ti";
 import { useCategory } from '../../context/createCont';
 import toast, { Toaster } from 'react-hot-toast';
@@ -7,7 +7,12 @@ import toast, { Toaster } from 'react-hot-toast';
 export const Login = () => {
             
       const {loginToggle,setLoginToggle,loginData,setLoginData}=useCategory()
-      const [state, setState] = useState({})
+      const [state, setState] = useState({
+             fristName:"",
+             email:'',
+             mobile:""
+
+      })
      
      
 
@@ -15,17 +20,47 @@ export const Login = () => {
       const handler=(e)=>{
           const {name,value}=e.target
           setState({...state,[name]:value})
+          
       }
+      console.log(state);
+      
      
       const getDataFromIn=(e)=>{
             e.preventDefault()
-            toast.success("Login Successfully")
-            setLoginData(state)
-             setTimeout(() => {
-              setLoginToggle(!loginToggle)
-             }, 100);     
-      }
 
+             
+            
+
+           if(state.fristName=="" ){
+            toast.error("please enter your Name")
+              
+           }
+           else if(state.email=="")
+            {
+             toast.error("please enter your Email id")      
+            }
+           else if(state.mobile=="")
+            {
+             toast.error("please enter your Mobile")
+            }else{
+                    
+              toast.success("Login Successfully")
+              setLoginData(state)
+               setTimeout(() => {
+                  setLoginToggle(!loginToggle)
+            }, 100);
+
+            }                        
+             
+          
+            
+        
+          
+          
+    
+      }
+ 
+     
       
       
      
@@ -36,6 +71,10 @@ export const Login = () => {
         setTimeout(() => {
           setLoginToggle(!loginToggle)
         }, 2000);
+
+      
+
+
        },[])
        
          
@@ -57,15 +96,15 @@ export const Login = () => {
                         
                         <div className=' w-full  flex justify-center gap-1 items-center flex-col'>
                              <span className='w-5/6 text-white font-bold'>Name</span>
-                              <input className='w-5/6 h-10 text-white text-sm  rounded-md pl-3 border-2 bg-black' name='name' onChange={handler}  type="text" placeholder=' ' />
+                              <input className='w-5/6 h-10 text-white text-sm  rounded-md pl-3 border-2 bg-black' name='fristName' onChange={handler}   type="text" placeholder=' ' />
                         </div>
                         <div className=' w-full  flex justify-center gap-1 items-center flex-col'>
                               <span className='w-5/6 text-white font-bold'>Email</span>
-                              <input className='w-5/6 h-10 text-white text-sm font-bold   rounded-md pl-3 border-2 bg-black' name='email' onChange={handler}  type="email" placeholder='' />
+                              <input className='w-5/6 h-10 text-white text-sm font-bold   rounded-md pl-3 border-2 bg-black' name='email'  onChange={handler}  type="email" placeholder='' />
                         </div>
                         <div className=' w-full  flex justify-center gap-1 items-center flex-col'>
                               <span className='w-5/6 text-white font-bold'>Mobile</span>
-                              <input className='w-5/6 h-10 text-white text-sm font-bold   rounded-md pl-3 border-2 bg-black' name='mobile' onChange={handler}  type="mobile" placeholder='' />
+                              <input className='w-5/6 h-10 text-white text-sm font-bold   rounded-md pl-3 border-2 bg-black' name='mobile'  onChange={handler}  type="mobile" placeholder='' />
                         </div>
  
                         <div className=' w-full flex justify-center items-center flex-col'>
