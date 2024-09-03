@@ -35,7 +35,7 @@ export const Dashboard = () => {
      
   return (
    <>
-      <section className='  h-[50vh] sm:h-[80vh] lg:h-[60vh]'>
+      <section className='  h-[50vh] sm:h-[80vh] lg:h-[90vh]'>
               <Swiper 
                   spaceBetween={30}
                     centeredSlides={true}

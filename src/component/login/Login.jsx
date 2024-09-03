@@ -84,8 +84,8 @@ export const Login = () => {
     <Toaster/>
         {
           loginToggle?
-          <div className=' w-full h-full  top-28 sm:top-10 md:items-center lg:top-10  z-30  absolute  flex justify-center '>
-               <div className=' w-11/12 h-4/6 sm:h-full sm:w-3/6 md:h-3/6 lg:h-4/6 2xl:h-3/6   md:w-4/6 lg:w-2/5 xl:w-2/6  p-4 flex justify-center flex-col items-center   shadow-xl rounded-lg  bg-black opacity-80  '>
+          <div className='  w-full h-full  top-28 sm:top-10 md:items-center lg:top-10  z-30  absolute  flex justify-center '>
+               <div className=' fixed w-11/12 h-4/6 sm:h-full sm:w-3/6 md:h-3/6 lg:h-4/6 2xl:h-3/6   md:w-4/6 lg:w-2/5 xl:w-2/6  p-4 flex justify-center flex-col items-center   shadow-xl rounded-lg  bg-black opacity-80  '>
               
                <form action="" className='w-full h-full ' onSubmit={getDataFromIn}>
                <div className=' w-full  h-full   grid grid-rows-5 opacity-100 '>   
