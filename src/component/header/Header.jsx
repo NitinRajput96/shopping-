@@ -52,7 +52,7 @@ export const Header = () => {
                         </div>                  
 
                   </>:<>
-                  <span className=' max-[639px]:hidden border border-black rounded-md text-xs  font-extrabold sm:px-[3px] sm:py-[2px] md:px-2 md:py-1' onClick={()=>{setLoginToggle(!loginToggle)}} >Login</span>
+                  <span className=' max-[639px]:hidden border border-black rounded-md text-xs  font-extrabold sm:px-[3px] sm:py-[2px] md:px-2 md:py-1 hover:border  hover:border-purple-600 hover:text-purple-600' onClick={()=>{setLoginToggle(!loginToggle)}} >Login</span>
                   </>
                }    
     

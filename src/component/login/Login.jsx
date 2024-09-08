@@ -22,14 +22,9 @@ export const Login = () => {
           setState({...state,[name]:value})
           
       }
-      console.log(state);
-      
      
       const getDataFromIn=(e)=>{
             e.preventDefault()
-
-             
-            
 
            if(state.fristName=="" ){
             toast.error("please enter your Name")

@@ -49,10 +49,10 @@ export const Home = () => {
     <>
   
       <Toaster/>
-          <div className=' w-full h-auto '> 
+          <div className=' w-full h-auto bg-white  '> 
 
-          <div className='w-full  lg:my-1   md:grid grid-cols-1  justify-items-center items-center '>
-          <div className='w-full   lg:w-5/6 border-4 h-20 md:h-14 max[640px]:mt-2 max-[500px]:py-5 border-fuchsia-200 max-[500px]:border-none   rounded-md  flex justify-center gap-2 items-center max-[500px]:flex-col '>
+          <div className='w-full     md:grid grid-cols-1  justify-items-center items-center '>
+          <div className='w-full lg:my-2   lg:w-5/6 border-4 h-20 md:h-14 max[640px]:mt-2 max-[500px]:py-5 border-fuchsia-200 max-[500px]:border-none   rounded-md  flex justify-center gap-2 items-center max-[500px]:flex-col '>
                     <div className=' w-full lg:w-2/6  h-12 md:pl-2  bg-white flex  justify-start max-[500px]:justify-center  items-center '>
                             <input type="search" placeholder='Search Items' className='  w-11/12 sm:w-5/6  h-8 border border-fuchsia-300 p-1 text-center text:sm rounded-sm  shadow-md outline-none' onChange={(e)=>{setProduct(e.target.value)}} />
                    </div>
@@ -242,7 +242,7 @@ export const Home = () => {
                                 
                                 <div className=' max-[300px]:w-[200px] max-[400px]:w-[165px] max-[500px]:w-[180px] max-[640px]:w-[210px] max-[639px]:h-[220px] sm:w-[290px] md:w-[225px] lg:w-[270px] xl:w-[340px] 2xl:w-[320px] sm:h-[400px] bg-white   pb-3' key={item.id} >
                                        <div className='w-full h-5/6  shadow-md  bg-gray-50 ' onClick={()=>{sendComponent(item.subcetegory)}}>
-                                           <img className=' w-full h-full p-4' src={item.img} alt="" />
+                                           <img className=' w-full h-full p-4 ' src={item.img} alt="" />
                                        </div>
                                        <div className=' w-full h-1/6  grid grid-rows-2'>
                                              <div className='h-10 w-full grid grid-cols-2  '>
