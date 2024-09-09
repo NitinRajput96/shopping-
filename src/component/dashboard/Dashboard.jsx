@@ -25,6 +25,11 @@ export const Dashboard = () => {
                setCateg(item)
                navigate("/view")
           }  
+
+          const electric=(item)=>{
+               setCateg(item)
+               navigate("/home") 
+          }  
            
      useEffect(()=>{
           window.scroll(0,0)
@@ -118,7 +123,7 @@ export const Dashboard = () => {
                {
                     Data.ProductDetails.map((item,i)=>{
                               return item.featuresProduct==="fature"?
-                                 <div onClick={()=>{futureProdts(item.subcetegory)}} className=' shadow-2xl h-96 bg-gray-50  w-full sm:w-64 md:w-72 lg:w-64 xl:w-80 flex flex-col justify-center items-center gap-2'  key={item.id}>
+                                 <div onClick={()=>{futureProdts(item.subcetegory)}} className=' shadow-md h-96 bg-gray-50  w-full sm:w-64 md:w-72 lg:w-64 xl:w-80 flex flex-col justify-center items-center gap-2'  key={item.id}>
                                    
                                      <img className=' w-full h-5/6' src={item.img} alt="img" />
                                      <p className=' text-xl font-bold uppercase'>{item.cetegory}</p>
@@ -130,6 +135,32 @@ export const Dashboard = () => {
                }           
                </div>  
            </div>
+
+
+           
+           <div className=' w-full h-auto bg-violet-100 py-6' >
+              <h1 className= ' text-[30px] lg:text-[40px] font-bold text-center'> Electric Products</h1>
+              <div className='w-full h-auto  grid sm:grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center items-center'>
+                   <div  onClick={()=>{ electric("Sound spaker")}} className='w-60 h-64   bg-white flex flex-col justify-center items-center'>
+                            <img className='w-3/5 h-4/6 ' src="/image/hometheater-2-r.png" alt="" /> 
+                            <p className=' text-sm font-semibold'>Sound</p>                         
+                   </div>
+                    <div onClick={()=>{ electric("fan")}} className='w-60 h-64   bg-white flex flex-col justify-center items-center'>
+                            <img className='w-3/5 h-4/6 ' src="/image/fan3-r.png" alt="" />
+                            <p className=' text-sm font-semibold'>Fan</p>
+                    </div>
+                    <div onClick={()=>{ electric("light")}} className='w-60 h-64   bg-white flex flex-col justify-center items-center'>
+                            <img className='w-3/5 h-4/6 ' src="/image/light-e-1-r.png" alt="" />
+                            <p className=' text-sm font-semibold'>LED Light</p>
+                    </div>
+                    <div onClick={()=>{ electric("fan")}} className='w-60 h-64   bg-white flex flex-col justify-center items-center'>
+                            <img className='w-3/5 h-4/6 ' src="/image/table-fan-r.png" alt="" />
+                            <p className=' text-sm font-semibold'>Table fan</p>
+                    </div>
+              </div>
+           </div>
+
+
       </div>
      
    </>

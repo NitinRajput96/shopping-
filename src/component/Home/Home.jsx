@@ -37,11 +37,15 @@ export const Home = () => {
             const getCateg=()=>{
                Data.ProductDetails.filter((item)=>{item.Department===categ?setProduct(categ):""})
             }
+            const getCateElet=()=>{
+              Data.ProductDetails.filter((item)=>{item.cetegory===categ?setProduct(categ):""})
+           }
           
             
             useEffect(()=>{
               window.scroll(0,0)
                getCateg()
+               getCateElet()
             },[categ])
            
             
